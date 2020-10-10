@@ -14,14 +14,13 @@ public func dispatchOnMain(_ updates: @escaping () -> Void) {
     DispatchQueue.main.async {
         updates()
     }
-    
-
 }
 
 // MARK: Dispatch on Background
-
 public func dispatchOnBackground(_ updates: @escaping () -> Void) {
     DispatchQueue.global(qos: .background).async {
         updates()
     }
+    
+    
 }
