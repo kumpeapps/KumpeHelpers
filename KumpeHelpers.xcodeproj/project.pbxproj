@@ -8,12 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		0F330A1A25325E3F00A0CFF1 /* KumpeHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F330A1825325E3F00A0CFF1 /* KumpeHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F330A2C25325E6300A0CFF1 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2225325E6300A0CFF1 /* GCDBlackBox.swift */; };
+		0F330A2D25325E6300A0CFF1 /* PersistBackgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2325325E6300A0CFF1 /* PersistBackgrounds.swift */; };
+		0F330A2E25325E6300A0CFF1 /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2425325E6300A0CFF1 /* String+Image.swift */; };
+		0F330A2F25325E6300A0CFF1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2525325E6300A0CFF1 /* Logger.swift */; };
+		0F330A3025325E6300A0CFF1 /* DebugHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2625325E6300A0CFF1 /* DebugHelpers.swift */; };
+		0F330A3125325E6300A0CFF1 /* ReachabilitySetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2725325E6300A0CFF1 /* ReachabilitySetup.swift */; };
+		0F330A3225325E6300A0CFF1 /* LaunchURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2825325E6300A0CFF1 /* LaunchURL.swift */; };
+		0F330A3325325E6300A0CFF1 /* Pathifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2925325E6300A0CFF1 /* Pathifier.swift */; };
+		0F330A3425325E6300A0CFF1 /* ManagedAppConfigLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2A25325E6300A0CFF1 /* ManagedAppConfigLib.swift */; };
+		0F330A3525325E6300A0CFF1 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A2B25325E6300A0CFF1 /* ShowAlert.swift */; };
+		0F330A3E253261A700A0CFF1 /* Pods_KumpeHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1CDE8B0344B000F768E352 /* Pods_KumpeHelpers.framework */; };
+		0F330A3F253261A700A0CFF1 /* Pods_KumpeHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1CDE8B0344B000F768E352 /* Pods_KumpeHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0F330A40253261A700A0CFF1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F330A3F253261A700A0CFF1 /* Pods_KumpeHelpers.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F330A1525325E3F00A0CFF1 /* KumpeHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KumpeHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F330A1825325E3F00A0CFF1 /* KumpeHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KumpeHelpers.h; sourceTree = "<group>"; };
 		0F330A1925325E3F00A0CFF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F330A2225325E6300A0CFF1 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		0F330A2325325E6300A0CFF1 /* PersistBackgrounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistBackgrounds.swift; sourceTree = "<group>"; };
+		0F330A2425325E6300A0CFF1 /* String+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
+		0F330A2525325E6300A0CFF1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0F330A2625325E6300A0CFF1 /* DebugHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugHelpers.swift; sourceTree = "<group>"; };
+		0F330A2725325E6300A0CFF1 /* ReachabilitySetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilitySetup.swift; sourceTree = "<group>"; };
+		0F330A2825325E6300A0CFF1 /* LaunchURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchURL.swift; sourceTree = "<group>"; };
+		0F330A2925325E6300A0CFF1 /* Pathifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pathifier.swift; sourceTree = "<group>"; };
+		0F330A2A25325E6300A0CFF1 /* ManagedAppConfigLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedAppConfigLib.swift; sourceTree = "<group>"; };
+		0F330A2B25325E6300A0CFF1 /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
+		431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumpeHelpers.release.xcconfig"; path = "Target Support Files/Pods-KumpeHelpers/Pods-KumpeHelpers.release.xcconfig"; sourceTree = "<group>"; };
+		537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumpeHelpers.debug.xcconfig"; path = "Target Support Files/Pods-KumpeHelpers/Pods-KumpeHelpers.debug.xcconfig"; sourceTree = "<group>"; };
+		6C1CDE8B0344B000F768E352 /* Pods_KumpeHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumpeHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F330A3E253261A700A0CFF1 /* Pods_KumpeHelpers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +72,8 @@
 			children = (
 				0F330A1725325E3F00A0CFF1 /* KumpeHelpers */,
 				0F330A1625325E3F00A0CFF1 /* Products */,
+				8EF6CA0D7C03747824754F8B /* Pods */,
+				BFC317DC15DE3EECC00987C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +88,45 @@
 		0F330A1725325E3F00A0CFF1 /* KumpeHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				0F330A2125325E6300A0CFF1 /* Helper Utilities */,
 				0F330A1825325E3F00A0CFF1 /* KumpeHelpers.h */,
 				0F330A1925325E3F00A0CFF1 /* Info.plist */,
 			);
 			path = KumpeHelpers;
+			sourceTree = "<group>";
+		};
+		0F330A2125325E6300A0CFF1 /* Helper Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0F330A2225325E6300A0CFF1 /* GCDBlackBox.swift */,
+				0F330A2325325E6300A0CFF1 /* PersistBackgrounds.swift */,
+				0F330A2425325E6300A0CFF1 /* String+Image.swift */,
+				0F330A2525325E6300A0CFF1 /* Logger.swift */,
+				0F330A2625325E6300A0CFF1 /* DebugHelpers.swift */,
+				0F330A2725325E6300A0CFF1 /* ReachabilitySetup.swift */,
+				0F330A2825325E6300A0CFF1 /* LaunchURL.swift */,
+				0F330A2925325E6300A0CFF1 /* Pathifier.swift */,
+				0F330A2A25325E6300A0CFF1 /* ManagedAppConfigLib.swift */,
+				0F330A2B25325E6300A0CFF1 /* ShowAlert.swift */,
+			);
+			path = "Helper Utilities";
+			sourceTree = "<group>";
+		};
+		8EF6CA0D7C03747824754F8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */,
+				431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BFC317DC15DE3EECC00987C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C1CDE8B0344B000F768E352 /* Pods_KumpeHelpers.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F330A1D25325E3F00A0CFF1 /* Build configuration list for PBXNativeTarget "KumpeHelpers" */;
 			buildPhases = (
+				9B173A0103208D3872A07686 /* [CP] Check Pods Manifest.lock */,
 				0F330A1025325E3F00A0CFF1 /* Headers */,
 				0F330A1125325E3F00A0CFF1 /* Sources */,
 				0F330A1225325E3F00A0CFF1 /* Frameworks */,
 				0F330A1325325E3F00A0CFF1 /* Resources */,
+				0F330A40253261A700A0CFF1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,11 +204,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9B173A0103208D3872A07686 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KumpeHelpers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F330A1125325E3F00A0CFF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F330A2D25325E6300A0CFF1 /* PersistBackgrounds.swift in Sources */,
+				0F330A3425325E6300A0CFF1 /* ManagedAppConfigLib.swift in Sources */,
+				0F330A3025325E6300A0CFF1 /* DebugHelpers.swift in Sources */,
+				0F330A3225325E6300A0CFF1 /* LaunchURL.swift in Sources */,
+				0F330A3125325E6300A0CFF1 /* ReachabilitySetup.swift in Sources */,
+				0F330A3525325E6300A0CFF1 /* ShowAlert.swift in Sources */,
+				0F330A2C25325E6300A0CFF1 /* GCDBlackBox.swift in Sources */,
+				0F330A2E25325E6300A0CFF1 /* String+Image.swift in Sources */,
+				0F330A3325325E6300A0CFF1 /* Pathifier.swift in Sources */,
+				0F330A2F25325E6300A0CFF1 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +374,7 @@
 		};
 		0F330A1E25325E3F00A0CFF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -284,6 +399,7 @@
 		};
 		0F330A1F25325E3F00A0CFF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

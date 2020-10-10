@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: Dispatch on Main
 
-func dispatchOnMain(_ updates: @escaping () -> Void) {
+public func dispatchOnMain(_ updates: @escaping () -> Void) {
     DispatchQueue.main.async {
         updates()
     }
@@ -20,7 +20,7 @@ func dispatchOnMain(_ updates: @escaping () -> Void) {
 
 // MARK: Dispatch on Background
 
-func dispatchOnBackground(_ updates: @escaping () -> Void) {
+public func dispatchOnBackground(_ updates: @escaping () -> Void) {
     DispatchQueue.global(qos: .background).async {
         updates()
     }

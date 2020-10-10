@@ -8,7 +8,7 @@
 import UIKit
 import CoreText
 
-internal struct Pathifier {
+public struct Pathifier {
     /// Creates a UIBezierPath from a supplied attributed string and font (the
     /// font will be applied to the entire attributed string).
     static func makeBezierPath(for attributedString: NSAttributedString, withFont font: UIFont) -> UIBezierPath {

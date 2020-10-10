@@ -12,7 +12,7 @@ import SwiftMessages
 /* MARK: ShowAlert
  Class to hold reusable UIAlerts
 */
-class ShowAlert {
+public class ShowAlert {
 
 //    Display alert with OK Button
     @available(*, deprecated, message: "banner() or centerView() function is recommended")

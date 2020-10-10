@@ -1,0 +1,22 @@
+PODS:
+  - ReachabilitySwift (5.0.0)
+  - SwiftMessages (8.0.2):
+    - SwiftMessages/App (= 8.0.2)
+  - SwiftMessages/App (8.0.2)
+
+DEPENDENCIES:
+  - ReachabilitySwift
+  - SwiftMessages
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ReachabilitySwift
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+
+PODFILE CHECKSUM: b98724b3b694e281b5baf557eb1598f05afa79a2
+
+COCOAPODS: 1.9.3

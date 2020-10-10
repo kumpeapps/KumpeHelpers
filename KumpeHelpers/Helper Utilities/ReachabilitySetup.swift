@@ -9,11 +9,11 @@
 import UIKit
 import Reachability
 
-class ReachabilitySetup{
+public class ReachabilitySetup{
     
 //    MARK: Parameters
-    var isReachable: Bool = true
-    let reachability = try! Reachability(hostname: "api.kumpeapps.com")
+    public var isReachable: Bool = true
+    public var reachability = try! Reachability(hostname: "api.kumpeapps.com")
     
     init() {
         dispatchOnBackground {
