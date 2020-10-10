@@ -15,7 +15,7 @@ public class ReachabilitySetup{
     public var isReachable: Bool = true
     public var reachability = try! Reachability(hostname: "api.kumpeapps.com")
     
-    init() {
+    public init() {
         dispatchOnBackground {
             
             NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(note:)), name: .reachabilityChanged, object: self.reachability)

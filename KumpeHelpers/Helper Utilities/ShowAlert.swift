@@ -16,7 +16,7 @@ public class ShowAlert {
 
 //    Display alert with OK Button
     @available(*, deprecated, message: "banner() or centerView() function is recommended")
-    static func error(viewController: UIViewController, title: String, message: String) {
+    public static func error(viewController: UIViewController, title: String, message: String) {
         // Ensure alert is called on Main incase it is called from background
         dispatchOnMain {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -26,7 +26,7 @@ public class ShowAlert {
     }
 
 //    Display alert with completion block
-    static func alertDestructive(viewController: UIViewController, title: String, message: String, okButton: String = "Ok", cancelbutton: String = "Cancel", completion: @escaping (Bool) -> Void){
+    public static func alertDestructive(viewController: UIViewController, title: String, message: String, okButton: String = "Ok", cancelbutton: String = "Cancel", completion: @escaping (Bool) -> Void){
         dispatchOnMain {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: okButton, style: .destructive, handler: {(alert: UIAlertAction!) in completion(true)}))
@@ -36,7 +36,7 @@ public class ShowAlert {
     }
     
 //    Display Top Banner
-    static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
         dispatchOnMain{
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .cardView)
@@ -54,7 +54,7 @@ public class ShowAlert {
     }
     
 //    Display Status Bar Banner
-    static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true){
+    public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
@@ -73,7 +73,7 @@ public class ShowAlert {
     }
     
 //    Display Static Status Bar Banner
-    static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false){
+    public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
@@ -95,14 +95,14 @@ public class ShowAlert {
     
     
 //    Dismisses Static Alert/Banner
-    static func dismissStatic(id: String){
+    public static func dismissStatic(id: String){
         dispatchOnMain {
             SwiftMessages.hide(id: id)
         }
     }
     
 //    Display Center Banner
-    static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .centeredView)
             view.button?.isHidden = true
@@ -119,7 +119,7 @@ public class ShowAlert {
     }
     
 //    Display Message View Alert
-    static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
         dispatchOnMain{
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)
@@ -137,7 +137,7 @@ public class ShowAlert {
     }
     
 //    Display banner with confirm button and completion closure
-    static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", completion: @escaping (Bool) -> Void){
+    public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", completion: @escaping (Bool) -> Void){
         dispatchOnMain {
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)

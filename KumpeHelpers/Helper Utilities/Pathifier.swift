@@ -11,7 +11,7 @@ import CoreText
 public struct Pathifier {
     /// Creates a UIBezierPath from a supplied attributed string and font (the
     /// font will be applied to the entire attributed string).
-    static func makeBezierPath(for attributedString: NSAttributedString, withFont font: UIFont) -> UIBezierPath {
+    public static func makeBezierPath(for attributedString: NSAttributedString, withFont font: UIFont) -> UIBezierPath {
         // To generate the bezier path, we'll break the attributed string into
         // a series of `NSGlyph`s using TextKit, and use a CoreText function to
         // create individual individual paths for each glyph.
@@ -45,7 +45,7 @@ public struct Pathifier {
     }
 
     /// Generate an image for an attributed string, using `makeBezierPath(for:withFont:)`
-    static func makeImage(for attributedString: NSAttributedString, withFont font: UIFont, withPatternImage patternImage: UIImage) -> UIImage {
+    public static func makeImage(for attributedString: NSAttributedString, withFont font: UIFont, withPatternImage patternImage: UIImage) -> UIImage {
         let path = makeBezierPath(for: attributedString, withFont: font)
         let bounds = path.bounds
         let pad = CGSize(width: 4, height: 6) // Add some padding so the wide lines don't clip - should figure out the metrics for this via Core Text. :)
@@ -72,7 +72,7 @@ public struct Pathifier {
         return image!
     }
 
-    static func makeMutableAttributedString(for attributedString: NSAttributedString, withFont font: UIFont, withPatternImage patternImage: UIImage) -> NSMutableAttributedString {
+    public static func makeMutableAttributedString(for attributedString: NSAttributedString, withFont font: UIFont, withPatternImage patternImage: UIImage) -> NSMutableAttributedString {
 
         // converts text to image using patternimage
         let image = Pathifier.makeImage(for: attributedString, withFont: font, withPatternImage: patternImage)
