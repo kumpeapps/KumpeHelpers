@@ -74,7 +74,7 @@ public class ManagedAppConfig {
     }
     
     public func getFeedbackValue(forKey: String) -> Any? {
-        if var myAppConfigFeedback = UserDefaults.standard.dictionary(forKey: kFeedbackKey) {
+        if let myAppConfigFeedback = UserDefaults.standard.dictionary(forKey: kFeedbackKey) {
             return myAppConfigFeedback[forKey]
         }
         return nil
