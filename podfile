@@ -6,4 +6,5 @@ target 'KumpeHelpers' do
 #        pod 'Toast-Swift'
         pod 'ReachabilitySwift'
         pod 'SwiftMessages'
+	pod 'Alamofire-SwiftyJSON'
 end
