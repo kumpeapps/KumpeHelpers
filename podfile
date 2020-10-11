@@ -7,4 +7,5 @@ target 'KumpeHelpers' do
         pod 'ReachabilitySwift'
         pod 'SwiftMessages'
 	pod 'Alamofire-SwiftyJSON'
+	pod 'Sync'
 end

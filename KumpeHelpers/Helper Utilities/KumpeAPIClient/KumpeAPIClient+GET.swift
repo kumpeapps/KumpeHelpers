@@ -9,17 +9,17 @@ import Alamofire
 import Alamofire_SwiftyJSON
 import UIKit
 
-public extension APIClient{
+extension KumpeAPIClient{
     //    MARK: Task For Get
-    class func taskForGet<ResponseType: Decodable>(module: String, responseType: ResponseType.Type, parameters: [String:String], completion: @escaping (ResponseType?, String?) -> Void){
-            let url = URL(string: "")!
-            Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default) .responseSwiftyJSON { dataResponse in
+    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 412, completion: @escaping (ResponseType?, String?) -> Void){
+            let url = URL(string: apiUrl)!
+            Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.default) .responseSwiftyJSON { dataResponse in
                         
                 
 //              GUARD: API Key Valid (returns 412 when not valid)
-                guard let statusCode = dataResponse.response?.statusCode, statusCode != 412 else{
+                guard let statusCode = dataResponse.response?.statusCode, statusCode != invalidApiKeyStatusCode else{
                     completion(nil,"API Key Invalid")
-                    NotificationCenter.default.post(name: .invalidAPIKey, object: nil)
+                    apiLogout()
                     return
                 }
                 

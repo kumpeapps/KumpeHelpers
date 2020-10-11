@@ -8,7 +8,7 @@ s.summary = "Swift Helper Files used in KumpeApps."
 #s.requires_arc = true
 
 # 2
-s.version = "1.0.3"
+s.version = "1.0.4"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE"}
@@ -26,6 +26,7 @@ s.framework = "UIKit"
 s.dependency 'ReachabilitySwift'
 s.dependency 'SwiftMessages'
 s.dependency 'Alamofire-SwiftyJSON'
+s.dependency 'Sync'
 
 # 8
 s.source_files = "KumpeHelpers/**/*.{swift,storyboard,xib,png}"

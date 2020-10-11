@@ -55,7 +55,7 @@ public extension DataController{
     func autoSaveViewContext(interval:TimeInterval = 30){
         Logger.log(.action, "autosaving")
         guard interval > 0 else {
-            Logger.log(.error, "cannot set negative autosave inteval")
+            Logger.log(.error, "cannot set negative autosave interval")
             return
         }
         if viewContext.hasChanges{
