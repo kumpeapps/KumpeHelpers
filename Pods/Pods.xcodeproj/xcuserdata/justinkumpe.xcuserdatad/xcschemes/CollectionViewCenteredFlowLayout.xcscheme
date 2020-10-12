@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9132C04D64BB787EAD5FC38C5C7A8FF6"
-               BuildableName = "Pods_KumpeHelpers.framework"
-               BlueprintName = "Pods-KumpeHelpers"
+               BlueprintIdentifier = "5D72C16C28F2E5E37016E6F123B2B004"
+               BuildableName = "CollectionViewCenteredFlowLayout.framework"
+               BlueprintName = "CollectionViewCenteredFlowLayout"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

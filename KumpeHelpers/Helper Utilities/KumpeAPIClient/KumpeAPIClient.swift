@@ -32,7 +32,7 @@ open class KumpeAPIClient{
     }
     
     //    MARK: - apiMethod
-    class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 412, completion: @escaping (Bool, String?) -> Void){
+    open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 412, completion: @escaping (Bool, String?) -> Void){
                 let url = URL(string: apiUrl)!
                 let alertId = "api_\(Int.random(in: 0..<10))"
                 if !silent{

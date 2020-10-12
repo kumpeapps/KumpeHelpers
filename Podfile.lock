@@ -3,6 +3,7 @@ PODS:
   - Alamofire-SwiftyJSON (3.0.0):
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
+  - CollectionViewCenteredFlowLayout (1.0.1)
   - ReachabilitySwift (5.0.0)
   - SwiftMessages (8.0.2):
     - SwiftMessages/App (= 8.0.2)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire-SwiftyJSON
+  - CollectionViewCenteredFlowLayout
   - ReachabilitySwift
   - SwiftMessages
   - Sync
@@ -20,6 +22,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Alamofire-SwiftyJSON
+    - CollectionViewCenteredFlowLayout
     - ReachabilitySwift
     - SwiftMessages
     - SwiftyJSON
@@ -28,11 +31,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
+  CollectionViewCenteredFlowLayout: 339b935be4d8578c59e448c8906117a07c657d85
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
 
-PODFILE CHECKSUM: 7b4e360fdb0d65e6d600f79cd1bf4d059031cce7
+PODFILE CHECKSUM: 6f39927ce2d8d337c355e8f63c99aa247552fb92
 
 COCOAPODS: 1.9.3

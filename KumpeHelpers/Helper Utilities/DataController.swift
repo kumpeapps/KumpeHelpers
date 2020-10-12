@@ -17,7 +17,7 @@ public class DataController {
         return persistentContainer.viewContext
     }
     
-    public static var modelname = "CoreData"
+    public static var modelName = "CoreData"
 
     public let backgroundContext:NSManagedObjectContext!
 
@@ -36,6 +36,10 @@ public class DataController {
     }
 
     public func load(completion: (() -> Void)? = nil) {
+        if DataController.modelName == "CoreData"{
+            Logger.log(.codeWarning, "DataController: modelname is set to CoreData (Default). Please set DataController.modelName to the name of your CoreData Model Name.")
+        }
+        
         persistentContainer.loadPersistentStores { storeDescription, error in
             guard error == nil else {
                 fatalError(error!.localizedDescription)
@@ -46,7 +50,7 @@ public class DataController {
         }
     }
 //  Shared Data Controller
-    public static let shared = DataController(modelName: modelname)
+    public static let shared = DataController(modelName: modelName)
 }
 
 public extension DataController{

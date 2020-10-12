@@ -8,4 +8,5 @@ target 'KumpeHelpers' do
         pod 'SwiftMessages'
 	pod 'Alamofire-SwiftyJSON'
 	pod 'Sync'
+        pod 'CollectionViewCenteredFlowLayout'
 end

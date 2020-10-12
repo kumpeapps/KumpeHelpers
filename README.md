@@ -12,6 +12,7 @@ KumpeHelpers is a collection of helper files commonly used in most of my apps. I
 - [SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)
 - [Sync](https://github.com/3lvis/Sync)
 - [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift)
+- [CollectionViewCenteredFlowLayout](https://github.com/Coeur/CollectionViewCenteredFlowLayout)
 
 ## Scripts that I incorporated form third party sources
 - Pathifier (obtained from a Udacity nanodegree course)
