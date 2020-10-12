@@ -14,7 +14,7 @@ KumpeHelpers is a collection of helper files commonly used in most of my apps. I
 - [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift)
 - [CollectionViewCenteredFlowLayout](https://github.com/Coeur/CollectionViewCenteredFlowLayout)
 
-## Scripts that I incorporated form third party sources
+## Scripts that I incorporated from third party sources
 - Pathifier (obtained from a Udacity nanodegree course)
 - [String+Image (obtained form an example code on stack overflow)](https://stackoverflow.com/questions/38809425/convert-apple-emoji-string-to-uiimage)
 - [Logger (code was copied in part from stack overflow)](https://stackoverflow.com/questions/40583721/print-to-console-log-with-color/41740104)
