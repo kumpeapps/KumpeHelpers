@@ -23,7 +23,6 @@
 		0FF4776AD05C7306C45B3197FDE80670 /* successIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B67484EC6B74F513B35AFB867D9E2E /* successIcon@3x.png */; };
 		1054DDC6515430370E0CA43FBDE99607 /* infoIconSubtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC50A09D37D6CD3A2096301BE0447EA /* infoIconSubtle.png */; };
 		132E0F619E4338E5D1B27E4C72076B3F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1E2E6D934703AAF8E70B57EC165C4 /* Notifications.swift */; };
-		14E0AA0AED11ED50BB5BE1631BF83C3F /* HapticoPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20294C5D2836BCF144E18576582A70B /* HapticoPattern.swift */; };
 		16683CCF2980B612EA38DB421BFA5C1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3841935D027499C4966F318AADDB88E /* Foundation.framework */; };
 		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D16D64338987251B1AA92C41A9CD4C /* Alamofire-dummy.m */; };
 		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC961F454D129F28ED4A25CB1B1B61D /* MultipartFormData.swift */; };
@@ -35,12 +34,12 @@
 		21714570315E10D762541CB537FA95F8 /* StatusLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3688B076AB6748E3CD0175F7A2D9CB46 /* StatusLine.xib */; };
 		22D8923256305FBB5EF59DFE35D7433C /* Sync+NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A00C685D96466E2DDDADA23B62CF89 /* Sync+NSPersistentContainer.swift */; };
 		23C8EC2FE4CB1C0878ABB4D7CB52C88C /* Sync+NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E591F13DC9D143AD88CE2CC71D63C9A /* Sync+NSManagedObjectContext.swift */; };
-		23E56BD6FED427938BDAFB13F5101049 /* UIViewController+Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B09C4A881E1BD58A1549CE2FC07E697 /* UIViewController+Haptico.swift */; };
 		2B324629744E25BD97853AEC292772DF /* Sync+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45515B21DA5FB0A25A3FFEA67BCDDA3 /* Sync+ObjC.swift */; };
 		2C61B040BA6A9A7AE66C4D9BA26D5520 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15C3C286C7108DF52230BFACAC68A6A /* SessionDelegate.swift */; };
 		2DF74933BF2AA1242D321ACBE79DB9FB /* BackgroundViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84BFB3042A5AB7FF33C305CDA3136D5 /* BackgroundViewable.swift */; };
 		2F1F2ECF565754AE88C6DBC0D5C38369 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19EAC8DF9D7588BFEB77D9242508FE3 /* Theme.swift */; };
 		300712A879AF35E6E3976C9936872979 /* errorIconLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90270825673C61246A80D636FE071942 /* errorIconLight@2x.png */; };
+		3134FBE691D544A4F7390D6A91DE5C02 /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412F50DB1D9F941E019B10A9B36E4F28 /* TapticEngine.swift */; };
 		31FED30D3AD6083C5BE1AB8ADAC79E2E /* MaskingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9DBDCA445E1ED95D67C1C0C6EFBD8 /* MaskingView.swift */; };
 		3352B56A194964D47B1AC9ED66AB6059 /* KeyboardTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746E14BEA1E72BB66554D6BB0A2F27E /* KeyboardTrackingView.swift */; };
 		33CF97469D3F267E887B8320493B195A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3841935D027499C4966F318AADDB88E /* Foundation.framework */; };
@@ -50,7 +49,7 @@
 		3951529D73333C52E4D71B82C6828E13 /* errorIconLight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B8AE417C95C8D19E7825B3BD635871 /* errorIconLight@3x.png */; };
 		3A5E9DEB516812CF8C8C1A9EDF94FE03 /* NSArray+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5386B65623A1947962D36310B0A3EEC /* NSArray+Sync.swift */; };
 		3AFC00B1416890196212D9A7FDFFEAC4 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C047DF5858A9C2DF2836818616EFBFD2 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3DB6BC2269A6A28205298D710BE87C6F /* Haptico-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9A7A07F14E9201D6C01C2719719A0 /* Haptico-dummy.m */; };
+		3DB6BC2269A6A28205298D710BE87C6F /* Haptico-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 122EF240D1B912DC869998D69AC9BEA9 /* Haptico-dummy.m */; };
 		4014DB80C7E8F9FFC17BAB49559AAFA4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76983DE0A3EFD7D2B3DE3516104A84AE /* SwiftyJSON.framework */; };
 		41C3DB984C13C5C6EBB94E5963E30DC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3841935D027499C4966F318AADDB88E /* Foundation.framework */; };
 		4607484DFC280549969782206EFE5513 /* warningIconLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBB5FABDC0508FD63AE951FD7854393 /* warningIconLight@2x.png */; };
@@ -59,7 +58,6 @@
 		4A5BF104DF3807EC769515C00B0F9A47 /* NSLayoutConstraint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7EBA7924F6C74B7C6A78E85B4D5DC0 /* NSLayoutConstraint+Utils.swift */; };
 		4B872730A9A2AE31356AADC1134A7D1F /* MarginAdjustable+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232FA1D8EDF47A02C1BFD1E2B88EAC4B /* MarginAdjustable+Animation.swift */; };
 		4D360AC5CFCC7B4BCE5F4E67E6F3C86B /* warningIconSubtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 06622073BCA5542A0BE1EF9D79FD8BFB /* warningIconSubtle.png */; };
-		4DD9F44F63195C19F57518249D4C16D7 /* Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6429330F26A54B0483B70EF524689E /* Haptico.swift */; };
 		50441774261AFC348CCD86946A7E15DE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336D7CC240321BC80CA923BBBDF2899A /* SwiftyJSON.swift */; };
 		53791F5E5F07400F92CFDFC89A432305 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BBEDCF809C9447A5E1BD38F9FEE3FC /* Validation.swift */; };
 		54B4AC560FAC29226FE3F921164BA224 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC77FA821B65A0150B9C57B196C27E /* BaseView.swift */; };
@@ -78,8 +76,7 @@
 		6D5DABE0A485F37A916EFF70B1179D3D /* SyncResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E028D761FBB4B1FC574C2DA58A3842A /* SyncResult.swift */; };
 		6DF80E15FF19EBB871271D08F1C8D7D1 /* Sync-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB576EC0245E7396879B576DFDA7A38 /* Sync-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E71EADFD6236C7377271821F7B95F5A /* SwiftMessages-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B1C201C0531AAE5F6A75158353027D8 /* SwiftMessages-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6FF1FDAE18BDAAD78D083DAE46C5CD3C /* Haptico-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60B956D20A9A3D5A25A24C0680218A6E /* Haptico-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7029DE29AC566D1302C8405AB25505D9 /* PatternEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FD93D1E6F8B5880C95B2A9FC94EDE1 /* PatternEngine.swift */; };
+		6FF1FDAE18BDAAD78D083DAE46C5CD3C /* Haptico-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD190A01CDB392830EA09721B23DD1FC /* Haptico-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		717D132C74B873167CCA3116D72FABBC /* successIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D50F218FA8D020AD1BCD876E6C55617 /* successIcon@2x.png */; };
 		71A8EB3EF7B384744965631E9F1E5CA3 /* errorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A12DCA0222082067AA4BE971E27314CF /* errorIcon.png */; };
 		73D8232D7BAE33E1777F75B8C7E74A7F /* NSManagedObject+PropertyMapperHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 526AB0B89D7A5388A8BCDA925FF1A317 /* NSManagedObject+PropertyMapperHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,7 +84,7 @@
 		77658E5D66A2EECAADD8C5579CD4832C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3841935D027499C4966F318AADDB88E /* Foundation.framework */; };
 		7DEDD6875C916ADD9DECD294E80E75DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3841935D027499C4966F318AADDB88E /* Foundation.framework */; };
 		7F697AB1FAC3F5912C78F2C7FAF65CA8 /* CALayer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79933407BEC1429FB6C72746F0C5848 /* CALayer+Utils.swift */; };
-		81B36B5627CB5BFF0E433DEEAF809211 /* UIButton+Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7991FE1A8482AE72F6CD63F8313C25F0 /* UIButton+Haptico.swift */; };
+		7FF97BCEE5D195D5732754D993E5E72B /* PatternEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3277E95B9D91A2BEC613AA1470A4C1B1 /* PatternEngine.swift */; };
 		81BFB789868EDCE1360540390039EE5B /* infoIconSubtle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F2D94BEB9429CD256A5C2C677DA923 /* infoIconSubtle@3x.png */; };
 		83956E20859CDBBE7BC38ABADE0170FB /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3BA32D29C81A09506D17095DD18080 /* AFError.swift */; };
 		85E3D75085D22199CB53912518E4F254 /* Inflections.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F485A8F670C9C21DF90720E1CC0D3C /* Inflections.m */; };
@@ -96,10 +93,12 @@
 		89A589D04411197399D7FCF7159AAE0A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98ED70A9B397CE221197BB4811AC044 /* CoreTelephony.framework */; };
 		8B2FF4D3A14413A934B8422BBB662597 /* NSDate+PropertyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F9A0E7314621953B364B52AE9B1AC27 /* NSDate+PropertyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BC17FB7612C607BD9007979F4158AE6 /* WindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926CA733A8813B8EB65C55831DB46D39 /* WindowViewController.swift */; };
+		90D591A808204AB9520FC991A0BEE0C1 /* Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABB3AEEC64E3EF3F70BA0ABBDC081 /* Haptico.swift */; };
 		9183BB97AEAF1D9343B3E98E2DD310D9 /* warningIconSubtle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8252B9F984D85A8D89ED9BA8E592F61D /* warningIconSubtle@3x.png */; };
 		931BBB8230A25161D5C37528A8F9FECF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB131CFAE33E2B82E6562B217522999 /* SessionManager.swift */; };
 		933FDA5970AA525D6CB92BFEBA2BAB4A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB665618BE272C0A0F25AF12907BC0C /* Timeline.swift */; };
 		934F1B72A8AAD594A61EE4450DD74A7F /* CollectionViewCenteredFlowLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19E65D8EB8F9CDF2CCFFE55655B487AD /* CollectionViewCenteredFlowLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93E040AB4DE567C89E9CBF1F18F4947C /* UIButton+Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066D7D63F833089D1F99384718F21B28 /* UIButton+Haptico.swift */; };
 		98A929C8E9012AB167672714FFD2113C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B883878A00E137FA4FA7B8BA7E44EF /* Request.swift */; };
 		99D19F54B84B6F45B159C18CFFF7403F /* NSPropertyDescription+Sync.h in Headers */ = {isa = PBXBuildFile; fileRef = C424DF3899AEA7504FA3A8DA7DFA7100 /* NSPropertyDescription+Sync.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E0A543A1589730A2CFA2E4A31FBA04 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3058F7E2FEECE2B631CAA28F3A890 /* PassthroughView.swift */; };
@@ -121,6 +120,7 @@
 		B13DD305A89A3878316B19AD91E67E86 /* infoIconLight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 113E72FDB4224AD6302AA35A774FD6D0 /* infoIconLight@3x.png */; };
 		B3C2E9FE54967E5E562D57F004171E7E /* Sync+DataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78058273095F9FBD074458CF37FCAEB3 /* Sync+DataStack.swift */; };
 		B52BAA8FA749597BDF642740E5A94204 /* PropertyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81760B301C066AA2978E148D89FB2027 /* PropertyMapper.m */; };
+		B6041CA8A02F688E7A9201318905D65A /* HapticoPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F9981F36DFC1086DE0454972B60014 /* HapticoPattern.swift */; };
 		B6963E9872978656DFBD4F958A498CC9 /* NSEntityDescription+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC6A66F259E4A0EB0504B76CD7638A /* NSEntityDescription+Sync.swift */; };
 		B6E28088B28BA16D568B9D5B245B49A9 /* errorIconLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D8C942E38817078019E9A3682327C5 /* errorIconLight.png */; };
 		BA658C8F241030D312E563DEEF487CD9 /* CollectionViewCenteredFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED111041CD5C1EBD9D4BBD03D0EAFE5 /* CollectionViewCenteredFlowLayout.swift */; };
@@ -130,18 +130,17 @@
 		C211B39235BABA164156537AE6E548A4 /* errorIconSubtle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5A354328781C1B0803192701F0D748 /* errorIconSubtle@3x.png */; };
 		C3913B095DB36995CA0BAC6CCACEA046 /* errorIconSubtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 564059DA420E332FEE6319AB3E9080E8 /* errorIconSubtle.png */; };
 		C9115396DC6DAFF7B82C7FA9A2D40ACD /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41E43D332D3BF3FDB99F56E08F65C3 /* Error.swift */; };
-		C9A07AD1D46B29F55DA0CE36ED3BA409 /* TapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA8426266E47857C3198A1ACCF7E90 /* TapticEngine.swift */; };
 		CBAED0097B59597D9F92FFEB1D74B1FC /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AADFE0AA363074576C9A3F3DAB32BF /* Sync.swift */; };
 		CFDFCA59390100419B7DF0BC042D2FF8 /* errorIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C19BC189CF9B78525BF965C7BD306FD /* errorIcon@2x.png */; };
 		D388377AB8C1643FEEF04AA3E00D40A8 /* warningIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F2B2A6D4C27E13985E7889EF12685D /* warningIcon@2x.png */; };
 		D3D8C379C6E4FB487E5ABD6800AD7B7E /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C69E6FBB5DC6CCC879A90DB833F02B /* DispatchQueue+Alamofire.swift */; };
-		D570958FE940EA088EFB71E4BCA3A21F /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCACE1F27EA76794FD5B1250651CE4 /* UIDevice+Extensions.swift */; };
 		D65C254F5ABF2CB5ECEE50FE8F8E1A80 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5653F6AAA446F8B57F458DF3EC555BA8 /* Response.swift */; };
 		D6F8741BDF345E4E79AFCF733EC89784 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D77B747B0D13CC64C6029F41B4B5BBC /* Weak.swift */; };
 		D7699CFDA3F8C09E2E56E71DCCBF6449 /* AccessibleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBDB5C9CC4A3C887B0530DE3861E5A /* AccessibleMessage.swift */; };
 		D79A2E38B339E4C01BD324EB2CFC7C83 /* Sync+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20275C9381FAA1F57D3683F38A836C02 /* Sync+Helpers.swift */; };
 		D96095F430BBDB6FE4F9CFF9224BB18B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1542270EE2B56A05834CEB0B6E00005 /* CardView.xib */; };
 		D9F70EA705012917AE1320346A8EAEB3 /* Sync-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 988EFF7240BE26142E4CD04EEA51B195 /* Sync-dummy.m */; };
+		DC07A18BBAB4633C22614DECC154EE54 /* UIViewController+Haptico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE6AE689A212849CAE8AB7DADD6130 /* UIViewController+Haptico.swift */; };
 		DC1620CD09E65039743F65390FB9558C /* successIconLight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F77666C1F7B0E34E019D02F5EBADB64 /* successIconLight@3x.png */; };
 		DE1FDE6584D1EECA2241D76CA71AED36 /* NSDate+PropertyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E22B01A924EBEEE1D7622064B0DC3FA8 /* NSDate+PropertyMapper.m */; };
 		E08AD1D0994BBC806D029F00A71ECFD0 /* CenteredView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F582822B7BD8E8C6521DA9E0E843742C /* CenteredView.xib */; };
@@ -150,9 +149,10 @@
 		E5938189529B1F8BD074BB166C8BDE57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F6E7A9D4B27938040868260FC98164 /* SystemConfiguration.framework */; };
 		E5F6ACACDF29D937A21E7DEC85A13E3E /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDC1C763400D97DD6132CF5F5B18BC /* ReachabilitySwift-dummy.m */; };
 		E6DF95DA545349A4B6EB3A934CA69F3A /* DataFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDCE05B7E66DC257084851209BFA613 /* DataFilter.swift */; };
-		E6E8F6D8E45758895FD92FB413C6A191 /* HapticFeedbackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF42A4B78491512AEA83C349A416F6 /* HapticFeedbackEngine.swift */; };
+		E778D054DDCDBCEF3E5CC7196252CD0B /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6DDDD6C57039F587209399E4DD2C21 /* UIDevice+Extensions.swift */; };
 		E7CF747743CCD03403A6CB2E62A3B67B /* UIEdgeInsets+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADD746544E9BCCD168035051E74D00 /* UIEdgeInsets+Utils.swift */; };
 		E9F982D52C4EE9EC23A5AC904D5987E5 /* NSManagedObjectContext+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB01CE86A4B1790BB5B91F77999A7ADD /* NSManagedObjectContext+Sync.swift */; };
+		EBBD3E53860FD757BE8B33292019D474 /* HapticFeedbackEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B6AB864AB3AD1D3E665FB64377CC1 /* HapticFeedbackEngine.swift */; };
 		EFFD8727FE2A056DF1939549936F2A05 /* successIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1B97AFF68C316FCA785B3B1F7EAE41A /* successIcon.png */; };
 		F13F2AA7F2E6D95A181CAB99B900D531 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C59F14CAF36AE4640E1AD7210E25FA /* ServerTrustPolicy.swift */; };
 		F44681DF5E733DA00D240CC9E5D06388 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AB3CFDE9ED391CDCBA2A9314CB7BC /* UIViewController+Utils.swift */; };
@@ -254,6 +254,7 @@
 		0206BFDD4C1EE911FBC126C897DF027B /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
 		032E621C14C2589A265DB1B32BDF71B9 /* warningIconLight.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = warningIconLight.png; path = SwiftMessages/Resources/warningIconLight.png; sourceTree = "<group>"; };
 		06622073BCA5542A0BE1EF9D79FD8BFB /* warningIconSubtle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = warningIconSubtle.png; path = SwiftMessages/Resources/warningIconSubtle.png; sourceTree = "<group>"; };
+		066D7D63F833089D1F99384718F21B28 /* UIButton+Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Haptico.swift"; path = "Sources/Haptico/Extensions/UIButton+Haptico.swift"; sourceTree = "<group>"; };
 		0746E14BEA1E72BB66554D6BB0A2F27E /* KeyboardTrackingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardTrackingView.swift; path = SwiftMessages/KeyboardTrackingView.swift; sourceTree = "<group>"; };
 		084FBD7208FDB9245C5DE68E9A17F020 /* CollectionViewCenteredFlowLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollectionViewCenteredFlowLayout-dummy.m"; sourceTree = "<group>"; };
 		0A41E43D332D3BF3FDB99F56E08F65C3 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = SwiftMessages/Error.swift; sourceTree = "<group>"; };
@@ -262,18 +263,20 @@
 		0C19BC189CF9B78525BF965C7BD306FD /* errorIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "errorIcon@2x.png"; path = "SwiftMessages/Resources/errorIcon@2x.png"; sourceTree = "<group>"; };
 		0CE7F43F8D30CEB0AD41FB92039FFE13 /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
 		0DCBDB5C9CC4A3C887B0530DE3861E5A /* AccessibleMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessibleMessage.swift; path = SwiftMessages/AccessibleMessage.swift; sourceTree = "<group>"; };
+		0EBE6AE689A212849CAE8AB7DADD6130 /* UIViewController+Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Haptico.swift"; path = "Sources/Haptico/Extensions/UIViewController+Haptico.swift"; sourceTree = "<group>"; };
 		0F9A0E7314621953B364B52AE9B1AC27 /* NSDate+PropertyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PropertyMapper.h"; path = "Source/DateParser/NSDate+PropertyMapper.h"; sourceTree = "<group>"; };
 		0FC50A09D37D6CD3A2096301BE0447EA /* infoIconSubtle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = infoIconSubtle.png; path = SwiftMessages/Resources/infoIconSubtle.png; sourceTree = "<group>"; };
 		113E72FDB4224AD6302AA35A774FD6D0 /* infoIconLight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "infoIconLight@3x.png"; path = "SwiftMessages/Resources/infoIconLight@3x.png"; sourceTree = "<group>"; };
+		122EF240D1B912DC869998D69AC9BEA9 /* Haptico-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Haptico-dummy.m"; sourceTree = "<group>"; };
 		15BF3820C3E88A64EAB7E4666207D304 /* PhysicsPanHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhysicsPanHandler.swift; path = SwiftMessages/PhysicsPanHandler.swift; sourceTree = "<group>"; };
 		169D4BD6EC4A25AB882C6A6F807D7071 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
-		18FD93D1E6F8B5880C95B2A9FC94EDE1 /* PatternEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatternEngine.swift; path = Haptico/Classes/Engines/PatternEngine.swift; sourceTree = "<group>"; };
+		1722D9A70DA5CDA9BE4BFBBD6A6A7E42 /* Haptico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Haptico.release.xcconfig; sourceTree = "<group>"; };
 		19E65D8EB8F9CDF2CCFFE55655B487AD /* CollectionViewCenteredFlowLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionViewCenteredFlowLayout-umbrella.h"; sourceTree = "<group>"; };
 		1BCC77FA821B65A0150B9C57B196C27E /* BaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = SwiftMessages/BaseView.swift; sourceTree = "<group>"; };
 		1BCEB802FEA157A1AB820A58BECE84AD /* MessageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageView.swift; path = SwiftMessages/MessageView.swift; sourceTree = "<group>"; };
 		1FBB5FABDC0508FD63AE951FD7854393 /* warningIconLight@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "warningIconLight@2x.png"; path = "SwiftMessages/Resources/warningIconLight@2x.png"; sourceTree = "<group>"; };
 		20275C9381FAA1F57D3683F38A836C02 /* Sync+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sync+Helpers.swift"; path = "Source/Sync/Sync+Helpers.swift"; sourceTree = "<group>"; };
-		21B03CA622E690725A6626C088E1D09F /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B03CA622E690725A6626C088E1D09F /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2277F6BF194EF341D7DD245637B80F5E /* Alamofire-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Alamofire-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
 		22DEF7D7AE33C9AECE0AAD18D3E9B9C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		232FA1D8EDF47A02C1BFD1E2B88EAC4B /* MarginAdjustable+Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MarginAdjustable+Animation.swift"; path = "SwiftMessages/MarginAdjustable+Animation.swift"; sourceTree = "<group>"; };
@@ -286,61 +289,56 @@
 		2AC46EC05BB17B6816ABC37E315A356F /* Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sync.debug.xcconfig; sourceTree = "<group>"; };
 		2B1C201C0531AAE5F6A75158353027D8 /* SwiftMessages-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMessages-umbrella.h"; sourceTree = "<group>"; };
 		2EB576EC0245E7396879B576DFDA7A38 /* Sync-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sync-umbrella.h"; sourceTree = "<group>"; };
+		3277E95B9D91A2BEC613AA1470A4C1B1 /* PatternEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PatternEngine.swift; path = Sources/Haptico/Engines/PatternEngine.swift; sourceTree = "<group>"; };
 		336D7CC240321BC80CA923BBBDF2899A /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		358A05AFE52B6321CBC85EC7171FBD80 /* CollectionViewCenteredFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollectionViewCenteredFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		358A05AFE52B6321CBC85EC7171FBD80 /* CollectionViewCenteredFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CollectionViewCenteredFlowLayout.framework; path = CollectionViewCenteredFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3688B076AB6748E3CD0175F7A2D9CB46 /* StatusLine.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = StatusLine.xib; path = SwiftMessages/Resources/StatusLine.xib; sourceTree = "<group>"; };
 		3D38956CFE7808C2A4BF044B4C28B629 /* CollectionViewCenteredFlowLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionViewCenteredFlowLayout.release.xcconfig; sourceTree = "<group>"; };
 		3D616C64E84AF5EE00D51E8DDA55A9B3 /* DataStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataStack.swift; path = Source/DataStack/DataStack.swift; sourceTree = "<group>"; };
 		3D982C7FC75C237D145A757DA5B1DF62 /* Pods-KumpeHelpers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KumpeHelpers.modulemap"; sourceTree = "<group>"; };
 		3F362A6AB9F0A6C31F861694E1DE7B24 /* MessageView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MessageView.xib; path = SwiftMessages/Resources/MessageView.xib; sourceTree = "<group>"; };
 		3F77666C1F7B0E34E019D02F5EBADB64 /* successIconLight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "successIconLight@3x.png"; path = "SwiftMessages/Resources/successIconLight@3x.png"; sourceTree = "<group>"; };
+		40794804FF43B88E76C1306006761D6D /* Haptico-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptico-prefix.pch"; sourceTree = "<group>"; };
 		40EDC1C763400D97DD6132CF5F5B18BC /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		412F50DB1D9F941E019B10A9B36E4F28 /* TapticEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TapticEngine.swift; path = Sources/Haptico/Engines/TapticEngine.swift; sourceTree = "<group>"; };
 		41AA92A9CEA4701C317E7997A285DF26 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		41FCACE1F27EA76794FD5B1250651CE4 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extensions.swift"; path = "Haptico/Classes/Extensions/UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		430E150485BC0DD615C7DF25F0B69444 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		4463930FAEE5F90F03F784AB338EDB67 /* Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4463930FAEE5F90F03F784AB338EDB67 /* Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Sync.framework; path = Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D8C942E38817078019E9A3682327C5 /* errorIconLight.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = errorIconLight.png; path = SwiftMessages/Resources/errorIconLight.png; sourceTree = "<group>"; };
 		45721FBBEAE34EB7E12175ECEE371C65 /* NSManagedObject+Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObject+Sync.swift"; path = "Source/Sync/NSManagedObject+Sync.swift"; sourceTree = "<group>"; };
-		4824F23D80FF9070A5F8A452DB11EB9A /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4824F23D80FF9070A5F8A452DB11EB9A /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftMessages.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F2B2A6D4C27E13985E7889EF12685D /* warningIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "warningIcon@2x.png"; path = "SwiftMessages/Resources/warningIcon@2x.png"; sourceTree = "<group>"; };
-		4DD9A7A07F14E9201D6C01C2719719A0 /* Haptico-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Haptico-dummy.m"; sourceTree = "<group>"; };
+		49F9981F36DFC1086DE0454972B60014 /* HapticoPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticoPattern.swift; path = Sources/Haptico/Engines/HapticoPattern.swift; sourceTree = "<group>"; };
 		4EBC6A66F259E4A0EB0504B76CD7638A /* NSEntityDescription+Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSEntityDescription+Sync.swift"; path = "Source/Sync/NSEntityDescription+Sync.swift"; sourceTree = "<group>"; };
 		4FAB97A8EF444C1F129ECE798BB0AF82 /* infoIconLight@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "infoIconLight@2x.png"; path = "SwiftMessages/Resources/infoIconLight@2x.png"; sourceTree = "<group>"; };
 		5181554D036B5F76639770844D0B4E77 /* CollectionViewCenteredFlowLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollectionViewCenteredFlowLayout.debug.xcconfig; sourceTree = "<group>"; };
 		51B9C3B368D53C9B7F366AFFD0A0830E /* TopBottomAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TopBottomAnimation.swift; path = SwiftMessages/TopBottomAnimation.swift; sourceTree = "<group>"; };
 		526AB0B89D7A5388A8BCDA925FF1A317 /* NSManagedObject+PropertyMapperHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+PropertyMapperHelpers.h"; path = "Source/PropertyMapper/NSManagedObject+PropertyMapperHelpers.h"; sourceTree = "<group>"; };
-		54BF42A4B78491512AEA83C349A416F6 /* HapticFeedbackEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticFeedbackEngine.swift; path = Haptico/Classes/Engines/HapticFeedbackEngine.swift; sourceTree = "<group>"; };
 		55E45533C955F89D0A35CEB31A712C7B /* Pods-KumpeHelpers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KumpeHelpers.release.xcconfig"; sourceTree = "<group>"; };
 		564059DA420E332FEE6319AB3E9080E8 /* errorIconSubtle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = errorIconSubtle.png; path = SwiftMessages/Resources/errorIconSubtle.png; sourceTree = "<group>"; };
 		5653F6AAA446F8B57F458DF3EC555BA8 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		582B6E1E7D764659B99434B15C70A17E /* warningIconSubtle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "warningIconSubtle@2x.png"; path = "SwiftMessages/Resources/warningIconSubtle@2x.png"; sourceTree = "<group>"; };
 		58C69E6FBB5DC6CCC879A90DB833F02B /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		58DB832E9B51CDD817CD166D80B0BA8C /* Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sync.release.xcconfig; sourceTree = "<group>"; };
-		597B4587FF337F22788CFB1F0663A291 /* Haptico-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptico-prefix.pch"; sourceTree = "<group>"; };
 		59AEB2451592EEE7F0253B1D65960F44 /* PassthroughWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughWindow.swift; path = SwiftMessages/PassthroughWindow.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5A354328781C1B0803192701F0D748 /* errorIconSubtle@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "errorIconSubtle@3x.png"; path = "SwiftMessages/Resources/errorIconSubtle@3x.png"; sourceTree = "<group>"; };
 		5F8BA04A5D6603BC304847261B031BFB /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		60B956D20A9A3D5A25A24C0680218A6E /* Haptico-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptico-umbrella.h"; sourceTree = "<group>"; };
 		6136EEF9B3CC137B46FDB33F53FF281A /* NSBundle+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+Utils.swift"; path = "SwiftMessages/NSBundle+Utils.swift"; sourceTree = "<group>"; };
 		62B8AE417C95C8D19E7825B3BD635871 /* errorIconLight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "errorIconLight@3x.png"; path = "SwiftMessages/Resources/errorIconLight@3x.png"; sourceTree = "<group>"; };
 		6708DF612DF9CE87C5A8546712D8E1D7 /* MarginAdjustable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarginAdjustable.swift; path = SwiftMessages/MarginAdjustable.swift; sourceTree = "<group>"; };
 		67AEE8A3571B1A099E41F6CFD23E9DA4 /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = SwiftMessages/Identifiable.swift; sourceTree = "<group>"; };
 		6A3BA32D29C81A09506D17095DD18080 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		6B09C4A881E1BD58A1549CE2FC07E697 /* UIViewController+Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Haptico.swift"; path = "Haptico/Classes/Extensions/UIViewController+Haptico.swift"; sourceTree = "<group>"; };
 		6B59FFF6B62619DE545407D622E7906A /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
-		6C6429330F26A54B0483B70EF524689E /* Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Haptico.swift; path = Haptico/Classes/Haptico.swift; sourceTree = "<group>"; };
 		6D50F218FA8D020AD1BCD876E6C55617 /* successIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "successIcon@2x.png"; path = "SwiftMessages/Resources/successIcon@2x.png"; sourceTree = "<group>"; };
 		72185A10B0941FC737968191F5B186D7 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		72A8F779CF2F0D6755E610F666C7586D /* TestCheck.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestCheck.swift; path = Source/TestCheck/TestCheck.swift; sourceTree = "<group>"; };
 		736C15C46A970F106CC82AE99EAC5DC4 /* NSEntityDescription+PrimaryKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+PrimaryKey.h"; path = "Source/PrimaryKey/NSEntityDescription+PrimaryKey.h"; sourceTree = "<group>"; };
 		74D3058F7E2FEECE2B631CAA28F3A890 /* PassthroughView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassthroughView.swift; path = SwiftMessages/PassthroughView.swift; sourceTree = "<group>"; };
-		753DD909979478A0C1B33E0524504EF1 /* SwiftMessages.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMessages.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		753DD909979478A0C1B33E0524504EF1 /* SwiftMessages.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SwiftMessages.bundle; path = "SwiftMessages-SwiftMessages.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		753EC442692D855DBB10BB1212C141C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		76983DE0A3EFD7D2B3DE3516104A84AE /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78058273095F9FBD074458CF37FCAEB3 /* Sync+DataStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sync+DataStack.swift"; path = "Source/Sync/Sync+DataStack.swift"; sourceTree = "<group>"; };
-		78728E978E5DEE48353243699DFE1A0E /* Haptico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Haptico.debug.xcconfig; sourceTree = "<group>"; };
-		7991FE1A8482AE72F6CD63F8313C25F0 /* UIButton+Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Haptico.swift"; path = "Haptico/Classes/Extensions/UIButton+Haptico.swift"; sourceTree = "<group>"; };
 		79BBEDCF809C9447A5E1BD38F9FEE3FC /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		7BDB6D3A7D5EDD46A3A36E2BA8409F4D /* successIconLight.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = successIconLight.png; path = SwiftMessages/Resources/successIconLight.png; sourceTree = "<group>"; };
 		7BFF01DD219F661FD1112FC92FEB5DB9 /* infoIconSubtle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "infoIconSubtle@2x.png"; path = "SwiftMessages/Resources/infoIconSubtle@2x.png"; sourceTree = "<group>"; };
@@ -359,9 +357,8 @@
 		8DD738D14E70B80914BAAB0FA0FD5AC5 /* Sync-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sync-prefix.pch"; sourceTree = "<group>"; };
 		8E028D761FBB4B1FC574C2DA58A3842A /* SyncResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyncResult.swift; path = Source/Sync/SyncResult.swift; sourceTree = "<group>"; };
 		90270825673C61246A80D636FE071942 /* errorIconLight@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "errorIconLight@2x.png"; path = "SwiftMessages/Resources/errorIconLight@2x.png"; sourceTree = "<group>"; };
-		91DA8426266E47857C3198A1ACCF7E90 /* TapticEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TapticEngine.swift; path = Haptico/Classes/Engines/TapticEngine.swift; sourceTree = "<group>"; };
 		926CA733A8813B8EB65C55831DB46D39 /* WindowViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WindowViewController.swift; path = SwiftMessages/WindowViewController.swift; sourceTree = "<group>"; };
-		93F656D79EB7E98E07E02A8C3EF23795 /* Haptico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Haptico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F656D79EB7E98E07E02A8C3EF23795 /* Haptico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Haptico.framework; path = Haptico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9759809CDA6D4E3A01AB88FA45D2FC38 /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
 		97A2B0C75F1C513A0C8B98EC10C6B6F0 /* Alamofire-SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-SwiftyJSON.debug.xcconfig"; sourceTree = "<group>"; };
 		988EFF7240BE26142E4CD04EEA51B195 /* Sync-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Sync-dummy.m"; sourceTree = "<group>"; };
@@ -369,12 +366,13 @@
 		9BB131CFAE33E2B82E6562B217522999 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		9D6F06790E8D426C997E599CE2B42CA6 /* CollectionViewCenteredFlowLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollectionViewCenteredFlowLayout-prefix.pch"; sourceTree = "<group>"; };
 		9D77B747B0D13CC64C6029F41B4B5BBC /* Weak.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Weak.swift; path = SwiftMessages/Weak.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF7473B6E3FE75C3777AB5D6D507DEF /* SwiftMessages-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftMessages-Info.plist"; sourceTree = "<group>"; };
 		A0580DDF8DEDFA6FA7DAC8312BDCA1DC /* NSPropertyDescription+Sync.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSPropertyDescription+Sync.m"; path = "Source/Sync/NSPropertyDescription+Sync.m"; sourceTree = "<group>"; };
+		A10888D26A35E72DE1D8622104202397 /* Haptico-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Haptico-Info.plist"; sourceTree = "<group>"; };
 		A12DCA0222082067AA4BE971E27314CF /* errorIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = errorIcon.png; path = SwiftMessages/Resources/errorIcon.png; sourceTree = "<group>"; };
-		A20294C5D2836BCF144E18576582A70B /* HapticoPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticoPattern.swift; path = Haptico/Classes/Engines/HapticoPattern.swift; sourceTree = "<group>"; };
 		A3109E533540B8C9740DA7CF2688C8E7 /* SwiftMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftMessages.release.xcconfig; sourceTree = "<group>"; };
+		A39ABB3AEEC64E3EF3F70BA0ABBDC081 /* Haptico.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Haptico.swift; path = Sources/Haptico/Haptico.swift; sourceTree = "<group>"; };
 		A44E3C8A279FD11E9AF1C08BCE8A6C52 /* warningIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = warningIcon.png; path = SwiftMessages/Resources/warningIcon.png; sourceTree = "<group>"; };
 		A538D59D3883371E895EE99B1B7A7E2D /* PropertyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PropertyMapper.h; path = Source/PropertyMapper/PropertyMapper.h; sourceTree = "<group>"; };
 		A638A70B4716E98A3AFB0578C51A1FF7 /* Sync-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Sync-Info.plist"; sourceTree = "<group>"; };
@@ -385,24 +383,25 @@
 		A8F485A8F670C9C21DF90720E1CC0D3C /* Inflections.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Inflections.m; path = Source/Inflections/Inflections.m; sourceTree = "<group>"; };
 		AA2B54338028ECDAE8A1C872A32E1A33 /* Pods-KumpeHelpers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KumpeHelpers-dummy.m"; sourceTree = "<group>"; };
 		AB6F7AB3202B1CD5787FAC41359A64F5 /* warningIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "warningIcon@3x.png"; path = "SwiftMessages/Resources/warningIcon@3x.png"; sourceTree = "<group>"; };
-		AD2F9E7F7425A1CEFD277349ACB8FE86 /* Haptico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Haptico.release.xcconfig; sourceTree = "<group>"; };
 		AE8AB3CFDE9ED391CDCBA2A9314CB7BC /* UIViewController+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Utils.swift"; path = "SwiftMessages/UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		AEC961F454D129F28ED4A25CB1B1B61D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		AEEBACA1208653789E3BEED1E8AC3A00 /* SwiftMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftMessages.debug.xcconfig; sourceTree = "<group>"; };
 		AFCBD92358400BA43A3111FAD9995548 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		B070C125990C55604EE26ABADDE49D76 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		B0F7FF992D9F920AB1D87D287CC3B9D2 /* Haptico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Haptico.debug.xcconfig; sourceTree = "<group>"; };
 		B182BE60477658A2E00007B3E4BFEFAC /* TabView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = TabView.xib; path = SwiftMessages/Resources/TabView.xib; sourceTree = "<group>"; };
 		B19EAC8DF9D7588BFEB77D9242508FE3 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = SwiftMessages/Theme.swift; sourceTree = "<group>"; };
 		B4A00C685D96466E2DDDADA23B62CF89 /* Sync+NSPersistentContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sync+NSPersistentContainer.swift"; path = "Source/Sync/Sync+NSPersistentContainer.swift"; sourceTree = "<group>"; };
 		B4F40F1A2D293D0FC95FA4D5B484B887 /* PhysicsAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhysicsAnimation.swift; path = SwiftMessages/PhysicsAnimation.swift; sourceTree = "<group>"; };
 		B5B1E2E6D934703AAF8E70B57EC165C4 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		B86B77EEF29178AAE9379B4446A2E4A4 /* successIconSubtle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = successIconSubtle.png; path = SwiftMessages/Resources/successIconSubtle.png; sourceTree = "<group>"; };
-		B9BC99C3D5AB976B52AD972AAB155116 /* Haptico.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Haptico.modulemap; sourceTree = "<group>"; };
 		BB01CE86A4B1790BB5B91F77999A7ADD /* NSManagedObjectContext+Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Sync.swift"; path = "Source/Sync/NSManagedObjectContext+Sync.swift"; sourceTree = "<group>"; };
+		BB0B6AB864AB3AD1D3E665FB64377CC1 /* HapticFeedbackEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HapticFeedbackEngine.swift; path = Sources/Haptico/Engines/HapticFeedbackEngine.swift; sourceTree = "<group>"; };
 		BB51217AC0C414619448023641EC7929 /* NSEntityDescription+PrimaryKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+PrimaryKey.m"; path = "Source/PrimaryKey/NSEntityDescription+PrimaryKey.m"; sourceTree = "<group>"; };
-		BB841E879FA1464D3344EB62AAB0BBB5 /* Pods_KumpeHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumpeHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB841E879FA1464D3344EB62AAB0BBB5 /* Pods_KumpeHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KumpeHelpers.framework; path = "Pods-KumpeHelpers.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7F374D263D7189DFA658DD4714DF5F /* Pods-KumpeHelpers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KumpeHelpers.debug.xcconfig"; sourceTree = "<group>"; };
-		BDF6136650C912756E10B2E3F289789C /* Alamofire_SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire_SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD190A01CDB392830EA09721B23DD1FC /* Haptico-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Haptico-umbrella.h"; sourceTree = "<group>"; };
+		BDF6136650C912756E10B2E3F289789C /* Alamofire_SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire_SwiftyJSON.framework; path = "Alamofire-SwiftyJSON.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C047DF5858A9C2DF2836818616EFBFD2 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		C12B654C1E9FB109F9AD7F7128E35FBC /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		C1B97AFF68C316FCA785B3B1F7EAE41A /* successIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = successIcon.png; path = SwiftMessages/Resources/successIcon.png; sourceTree = "<group>"; };
@@ -419,12 +418,12 @@
 		C9491353BE69FB0D09EDFBA32B8DC294 /* NSManagedObject+PropertyMapperHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+PropertyMapperHelpers.m"; path = "Source/PropertyMapper/NSManagedObject+PropertyMapperHelpers.m"; sourceTree = "<group>"; };
 		C98ED70A9B397CE221197BB4811AC044 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		CA57459ECAC9735D749B7492585AEF48 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Alamofire-SwiftyJSON.swift"; path = "Source/Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
-		CBB8C70FD6D7CC1F12DA058D3BAE599F /* Haptico-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Haptico-Info.plist"; sourceTree = "<group>"; };
 		CD0CB2A239B9A443BD73FD43879C9D74 /* Alamofire-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		CD78922C096EDD4CA93DD14C6FD94BBE /* Pods-KumpeHelpers-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KumpeHelpers-umbrella.h"; sourceTree = "<group>"; };
 		CE7EBA7924F6C74B7C6A78E85B4D5DC0 /* NSLayoutConstraint+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Utils.swift"; path = "SwiftMessages/NSLayoutConstraint+Utils.swift"; sourceTree = "<group>"; };
 		CFADD746544E9BCCD168035051E74D00 /* UIEdgeInsets+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIEdgeInsets+Utils.swift"; path = "SwiftMessages/UIEdgeInsets+Utils.swift"; sourceTree = "<group>"; };
 		D276DBA02C5C5D3676C76259E4609B7D /* successIconSubtle@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "successIconSubtle@3x.png"; path = "SwiftMessages/Resources/successIconSubtle@3x.png"; sourceTree = "<group>"; };
+		D3A8EB04A0AAE9A122D9BCF5D9F24AF3 /* Haptico.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Haptico.modulemap; sourceTree = "<group>"; };
 		D541B104A428E9CB5252102CDCD0B22F /* Pods-KumpeHelpers-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KumpeHelpers-acknowledgements.plist"; sourceTree = "<group>"; };
 		D5DD1BA1323228883568763A7FCD49E9 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = SwiftMessages/Animator.swift; sourceTree = "<group>"; };
 		D60ACC8FEBDCEC4870489952E29985E3 /* ResourceBundle-SwiftMessages-SwiftMessages-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SwiftMessages-SwiftMessages-Info.plist"; sourceTree = "<group>"; };
@@ -435,7 +434,7 @@
 		E0E193C6F506A4B83D076F8BEB90F671 /* infoIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = infoIcon.png; path = SwiftMessages/Resources/infoIcon.png; sourceTree = "<group>"; };
 		E15C3C286C7108DF52230BFACAC68A6A /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		E22B01A924EBEEE1D7622064B0DC3FA8 /* NSDate+PropertyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PropertyMapper.m"; path = "Source/DateParser/NSDate+PropertyMapper.m"; sourceTree = "<group>"; };
-		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3841935D027499C4966F318AADDB88E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E45515B21DA5FB0A25A3FFEA67BCDDA3 /* Sync+ObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sync+ObjC.swift"; path = "Source/Sync/Sync+ObjC.swift"; sourceTree = "<group>"; };
 		E5688D7C61ACF75A28586BC6BB0F4DD6 /* Alamofire-SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-SwiftyJSON.release.xcconfig"; sourceTree = "<group>"; };
@@ -457,6 +456,7 @@
 		F9859D3BCBD632C3F456CB891B7303F9 /* ReachabilitySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.release.xcconfig; sourceTree = "<group>"; };
 		FA2EE6742D95C31EC06FCF999E1A8463 /* SwiftMessages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftMessages.swift; path = SwiftMessages/SwiftMessages.swift; sourceTree = "<group>"; };
 		FB3CA4AE19119C3D289825BF0330D4E4 /* ReachabilitySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.debug.xcconfig; sourceTree = "<group>"; };
+		FD6DDDD6C57039F587209399E4DD2C21 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extensions.swift"; path = "Sources/Haptico/Extensions/UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		FE6400C471047C74DDFB3F5D6125EB72 /* SwiftMessages-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMessages-prefix.pch"; sourceTree = "<group>"; };
 		FEED7E26ED2F11BD92F5EC7C8D9C7004 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -586,21 +586,6 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		095F6521288AA55E6407C4305845F0FF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B9BC99C3D5AB976B52AD972AAB155116 /* Haptico.modulemap */,
-				4DD9A7A07F14E9201D6C01C2719719A0 /* Haptico-dummy.m */,
-				CBB8C70FD6D7CC1F12DA058D3BAE599F /* Haptico-Info.plist */,
-				597B4587FF337F22788CFB1F0663A291 /* Haptico-prefix.pch */,
-				60B956D20A9A3D5A25A24C0680218A6E /* Haptico-umbrella.h */,
-				78728E978E5DEE48353243699DFE1A0E /* Haptico.debug.xcconfig */,
-				AD2F9E7F7425A1CEFD277349ACB8FE86 /* Haptico.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Haptico";
-			sourceTree = "<group>";
-		};
 		0C9AAE34328731C1302FEB25EB63CC4A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +622,7 @@
 				074CFF7E49BC6B8B4C7B23D09BA3C075 /* App */,
 				D45CDB11B098C305C1121E1A1FD99C32 /* Support Files */,
 			);
+			name = SwiftMessages;
 			path = SwiftMessages;
 			sourceTree = "<group>";
 		};
@@ -678,6 +664,7 @@
 				79BBEDCF809C9447A5E1BD38F9FEE3FC /* Validation.swift */,
 				8BD1ECBB4604362E210D3FC7177292ED /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -794,6 +781,7 @@
 				72A8F779CF2F0D6755E610F666C7586D /* TestCheck.swift */,
 				72AF9275C9E8EA2292AB664CBB54D7A4 /* Support Files */,
 			);
+			name = Sync;
 			path = Sync;
 			sourceTree = "<group>";
 		};
@@ -803,7 +791,7 @@
 				2382E1224F48E64472AEE374A7DEE789 /* Alamofire */,
 				90E2ECC1D19ECE1CE538385FCAE0BE8F /* Alamofire-SwiftyJSON */,
 				9B70FA5F80FBE4A9072AB763BBD6E5D6 /* CollectionViewCenteredFlowLayout */,
-				E8F82C66C06C2438F438A2A8E07B798F /* Haptico */,
+				D123A7BF00C24C58E6FEE52098B11AA4 /* Haptico */,
 				7141AFE7AFA33C5FB6C9176D6A5F43EE /* ReachabilitySwift */,
 				1FB58D58960BEA420AD2A1CEBEA115D0 /* SwiftMessages */,
 				B647195DC868CB265E9B0F13E6F3DA2E /* SwiftyJSON */,
@@ -818,6 +806,7 @@
 				169D4BD6EC4A25AB882C6A6F807D7071 /* Reachability.swift */,
 				0C9AAE34328731C1302FEB25EB63CC4A /* Support Files */,
 			);
+			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -857,6 +846,7 @@
 				CA57459ECAC9735D749B7492585AEF48 /* Alamofire-SwiftyJSON.swift */,
 				BCBEF5291E31CD52C8E6EDC1C005BB68 /* Support Files */,
 			);
+			name = "Alamofire-SwiftyJSON";
 			path = "Alamofire-SwiftyJSON";
 			sourceTree = "<group>";
 		};
@@ -874,6 +864,7 @@
 				EED111041CD5C1EBD9D4BBD03D0EAFE5 /* CollectionViewCenteredFlowLayout.swift */,
 				2F2AFC82C2850E4C5E62FEB14110A2B3 /* Support Files */,
 			);
+			name = CollectionViewCenteredFlowLayout;
 			path = CollectionViewCenteredFlowLayout;
 			sourceTree = "<group>";
 		};
@@ -883,6 +874,7 @@
 				336D7CC240321BC80CA923BBBDF2899A /* SwiftyJSON.swift */,
 				15396BFA3D35BF63FD1DB436C77631F6 /* Support Files */,
 			);
+			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -922,6 +914,23 @@
 			);
 			sourceTree = "<group>";
 		};
+		D123A7BF00C24C58E6FEE52098B11AA4 /* Haptico */ = {
+			isa = PBXGroup;
+			children = (
+				BB0B6AB864AB3AD1D3E665FB64377CC1 /* HapticFeedbackEngine.swift */,
+				A39ABB3AEEC64E3EF3F70BA0ABBDC081 /* Haptico.swift */,
+				49F9981F36DFC1086DE0454972B60014 /* HapticoPattern.swift */,
+				3277E95B9D91A2BEC613AA1470A4C1B1 /* PatternEngine.swift */,
+				412F50DB1D9F941E019B10A9B36E4F28 /* TapticEngine.swift */,
+				066D7D63F833089D1F99384718F21B28 /* UIButton+Haptico.swift */,
+				FD6DDDD6C57039F587209399E4DD2C21 /* UIDevice+Extensions.swift */,
+				0EBE6AE689A212849CAE8AB7DADD6130 /* UIViewController+Haptico.swift */,
+				ED1BF14147E3C097A6B7EFDCCC96D538 /* Support Files */,
+			);
+			name = Haptico;
+			path = Haptico;
+			sourceTree = "<group>";
+		};
 		D45CDB11B098C305C1121E1A1FD99C32 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,20 +947,19 @@
 			path = "../Target Support Files/SwiftMessages";
 			sourceTree = "<group>";
 		};
-		E8F82C66C06C2438F438A2A8E07B798F /* Haptico */ = {
+		ED1BF14147E3C097A6B7EFDCCC96D538 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				54BF42A4B78491512AEA83C349A416F6 /* HapticFeedbackEngine.swift */,
-				6C6429330F26A54B0483B70EF524689E /* Haptico.swift */,
-				A20294C5D2836BCF144E18576582A70B /* HapticoPattern.swift */,
-				18FD93D1E6F8B5880C95B2A9FC94EDE1 /* PatternEngine.swift */,
-				91DA8426266E47857C3198A1ACCF7E90 /* TapticEngine.swift */,
-				7991FE1A8482AE72F6CD63F8313C25F0 /* UIButton+Haptico.swift */,
-				41FCACE1F27EA76794FD5B1250651CE4 /* UIDevice+Extensions.swift */,
-				6B09C4A881E1BD58A1549CE2FC07E697 /* UIViewController+Haptico.swift */,
-				095F6521288AA55E6407C4305845F0FF /* Support Files */,
+				D3A8EB04A0AAE9A122D9BCF5D9F24AF3 /* Haptico.modulemap */,
+				122EF240D1B912DC869998D69AC9BEA9 /* Haptico-dummy.m */,
+				A10888D26A35E72DE1D8622104202397 /* Haptico-Info.plist */,
+				40794804FF43B88E76C1306006761D6D /* Haptico-prefix.pch */,
+				BD190A01CDB392830EA09721B23DD1FC /* Haptico-umbrella.h */,
+				B0F7FF992D9F920AB1D87D287CC3B9D2 /* Haptico.debug.xcconfig */,
+				1722D9A70DA5CDA9BE4BFBBD6A6A7E42 /* Haptico.release.xcconfig */,
 			);
-			path = Haptico;
+			name = "Support Files";
+			path = "../Target Support Files/Haptico";
 			sourceTree = "<group>";
 		};
 		F5115414402133BD0163D7147EE3C496 /* iOS */ = {
@@ -1248,7 +1256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -1431,15 +1439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6E8F6D8E45758895FD92FB413C6A191 /* HapticFeedbackEngine.swift in Sources */,
+				EBBD3E53860FD757BE8B33292019D474 /* HapticFeedbackEngine.swift in Sources */,
 				3DB6BC2269A6A28205298D710BE87C6F /* Haptico-dummy.m in Sources */,
-				4DD9F44F63195C19F57518249D4C16D7 /* Haptico.swift in Sources */,
-				14E0AA0AED11ED50BB5BE1631BF83C3F /* HapticoPattern.swift in Sources */,
-				7029DE29AC566D1302C8405AB25505D9 /* PatternEngine.swift in Sources */,
-				C9A07AD1D46B29F55DA0CE36ED3BA409 /* TapticEngine.swift in Sources */,
-				81B36B5627CB5BFF0E433DEEAF809211 /* UIButton+Haptico.swift in Sources */,
-				D570958FE940EA088EFB71E4BCA3A21F /* UIDevice+Extensions.swift in Sources */,
-				23E56BD6FED427938BDAFB13F5101049 /* UIViewController+Haptico.swift in Sources */,
+				90D591A808204AB9520FC991A0BEE0C1 /* Haptico.swift in Sources */,
+				B6041CA8A02F688E7A9201318905D65A /* HapticoPattern.swift in Sources */,
+				7FF97BCEE5D195D5732754D993E5E72B /* PatternEngine.swift in Sources */,
+				3134FBE691D544A4F7390D6A91DE5C02 /* TapticEngine.swift in Sources */,
+				93E040AB4DE567C89E9CBF1F18F4947C /* UIButton+Haptico.swift in Sources */,
+				E778D054DDCDBCEF3E5CC7196252CD0B /* UIDevice+Extensions.swift in Sources */,
+				DC07A18BBAB4633C22614DECC154EE54 /* UIViewController+Haptico.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1677,7 +1685,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1712,7 +1720,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CollectionViewCenteredFlowLayout/CollectionViewCenteredFlowLayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CollectionViewCenteredFlowLayout/CollectionViewCenteredFlowLayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1747,7 +1755,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1793,7 +1801,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1848,7 +1855,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1884,7 +1891,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1911,7 +1918,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftMessages";
 				IBSC_MODULE = SwiftMessages;
 				INFOPLIST_FILE = "Target Support Files/SwiftMessages/ResourceBundle-SwiftMessages-SwiftMessages-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = SwiftMessages;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1936,7 +1943,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1972,7 +1979,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire-SwiftyJSON/Alamofire-SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire-SwiftyJSON/Alamofire-SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2008,7 +2015,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftMessages/SwiftMessages-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftMessages/SwiftMessages-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2045,7 +2052,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Sync/Sync-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Sync/Sync-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2081,7 +2088,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CollectionViewCenteredFlowLayout/CollectionViewCenteredFlowLayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CollectionViewCenteredFlowLayout/CollectionViewCenteredFlowLayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2117,7 +2124,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire-SwiftyJSON/Alamofire-SwiftyJSON-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire-SwiftyJSON/Alamofire-SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2162,7 +2169,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2237,7 +2243,7 @@
 		};
 		A50730B72C71317496E5B9B18B7AA46E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD2F9E7F7425A1CEFD277349ACB8FE86 /* Haptico.release.xcconfig */;
+			baseConfigurationReference = 1722D9A70DA5CDA9BE4BFBBD6A6A7E42 /* Haptico.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2251,7 +2257,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Haptico/Haptico-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Haptico/Haptico-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2288,7 +2294,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Sync/Sync-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Sync/Sync-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2315,7 +2321,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftMessages";
 				IBSC_MODULE = SwiftMessages;
 				INFOPLIST_FILE = "Target Support Files/SwiftMessages/ResourceBundle-SwiftMessages-SwiftMessages-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = SwiftMessages;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2340,7 +2346,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2361,7 +2367,7 @@
 		};
 		F16F04E4CBEDF1BF3572185EDC974E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78728E978E5DEE48353243699DFE1A0E /* Haptico.debug.xcconfig */;
+			baseConfigurationReference = B0F7FF992D9F920AB1D87D287CC3B9D2 /* Haptico.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2375,7 +2381,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Haptico/Haptico-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Haptico/Haptico-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2410,7 +2416,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftMessages/SwiftMessages-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftMessages/SwiftMessages-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

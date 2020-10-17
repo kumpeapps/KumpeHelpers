@@ -9,5 +9,5 @@ target 'KumpeHelpers' do
 	pod 'Alamofire-SwiftyJSON'
 	pod 'Sync'
         pod 'CollectionViewCenteredFlowLayout'
-	pod 'Haptico'
+	pod 'Haptico', :git => 'https://github.com/iSapozhnik/Haptico.git', :branch => 'master'
 end
