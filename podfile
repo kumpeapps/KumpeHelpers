@@ -9,4 +9,5 @@ target 'KumpeHelpers' do
 	pod 'Alamofire-SwiftyJSON'
 	pod 'Sync'
         pod 'CollectionViewCenteredFlowLayout'
+	pod 'Haptico'
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftMessages
+import Haptico
 
 /* MARK: ShowAlert
  Class to hold reusable UIAlerts
@@ -36,7 +37,7 @@ public class ShowAlert {
     }
     
 //    Display Top Banner
-    public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
         dispatchOnMain{
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .cardView)
@@ -50,11 +51,20 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
+            
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
 //    Display Status Bar Banner
-    public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true){
+    public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true, invokeHaptics: Bool = true){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
@@ -69,11 +79,20 @@ public class ShowAlert {
                 config.dimMode = .gray(interactive: true)
             }
             SwiftMessages.show(config: config, view: view)
+            
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
 //    Display Static Status Bar Banner
-    public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false){
+    public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false, invokeHaptics: Bool = false){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
@@ -89,6 +108,15 @@ public class ShowAlert {
             }
             view.id = id
             SwiftMessages.show(config: config, view: view)
+            
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
@@ -102,7 +130,7 @@ public class ShowAlert {
     }
     
 //    Display Center Banner
-    public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
         dispatchOnMain{
             let view = MessageView.viewFromNib(layout: .centeredView)
             view.button?.isHidden = true
@@ -115,11 +143,20 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
+            
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
 //    Display Message View Alert
-    public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10){
+    public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
         dispatchOnMain{
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)
@@ -133,11 +170,20 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
+            
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
 //    Display banner with confirm button and completion closure
-    public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", completion: @escaping (Bool) -> Void){
+    public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", invokeHaptics: Bool = false, completion: @escaping (Bool) -> Void){
         dispatchOnMain {
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)
@@ -151,6 +197,14 @@ public class ShowAlert {
             view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
             SwiftMessages.show(config: config, view: view)
             
+            if invokeHaptics{
+                switch theme{
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
         }
     }
     
