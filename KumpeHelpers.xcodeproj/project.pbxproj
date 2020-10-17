@@ -32,6 +32,7 @@
 		0F70E452253393D700062A8C /* KumpeAPIClient+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */; };
 		0F70E4812533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */; };
 		0F70E4A22533EE1900062A8C /* KumpeModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */; };
+		0FF961CB253A974600F6FC5E /* KumpeAPNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +75,7 @@
 		0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+Sync.swift"; sourceTree = "<group>"; };
 		0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeModulesVC.swift; sourceTree = "<group>"; };
+		0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeAPNS.swift; sourceTree = "<group>"; };
 		431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumpeHelpers.release.xcconfig"; path = "Target Support Files/Pods-KumpeHelpers/Pods-KumpeHelpers.release.xcconfig"; sourceTree = "<group>"; };
 		537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KumpeHelpers.debug.xcconfig"; path = "Target Support Files/Pods-KumpeHelpers/Pods-KumpeHelpers.debug.xcconfig"; sourceTree = "<group>"; };
 		6C1CDE8B0344B000F768E352 /* Pods_KumpeHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KumpeHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 		0F330A1725325E3F00A0CFF1 /* KumpeHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				0FF961C9253A96F200F6FC5E /* Protocols */,
 				0F330A2125325E6300A0CFF1 /* Helper Utilities */,
 				0F330A1825325E3F00A0CFF1 /* KumpeHelpers.h */,
 				0F330A1925325E3F00A0CFF1 /* Info.plist */,
@@ -138,7 +141,6 @@
 				0F330A2B25325E6300A0CFF1 /* ShowAlert.swift */,
 				0F330A87253366B000A0CFF1 /* RotateImage.swift */,
 				0F330AA92533727F00A0CFF1 /* Notifications.swift */,
-				0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */,
 			);
 			path = "Helper Utilities";
 			sourceTree = "<group>";
@@ -154,6 +156,15 @@
 				0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */,
 			);
 			path = KumpeAPIClient;
+			sourceTree = "<group>";
+		};
+		0FF961C9253A96F200F6FC5E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */,
+				0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8EF6CA0D7C03747824754F8B /* Pods */ = {
@@ -280,6 +291,7 @@
 			files = (
 				0F330A2D25325E6300A0CFF1 /* PersistBackgrounds.swift in Sources */,
 				0F330A9625336C4400A0CFF1 /* KumpeAPIClient.swift in Sources */,
+				0FF961CB253A974600F6FC5E /* KumpeAPNS.swift in Sources */,
 				0F330A9A2533713A00A0CFF1 /* KumpeAPIClient+GET.swift in Sources */,
 				0F330A88253366B000A0CFF1 /* RotateImage.swift in Sources */,
 				0F330A7E2532724500A0CFF1 /* DataController.swift in Sources */,
@@ -433,7 +445,7 @@
 			baseConfigurationReference = 537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.0.6;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -447,7 +459,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -461,7 +473,7 @@
 			baseConfigurationReference = 431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.5;
+				CURRENT_PROJECT_VERSION = 1.0.6;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -475,7 +487,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
