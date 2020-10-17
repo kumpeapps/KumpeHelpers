@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import UserNotifications
 
-protocol KumpeAPNS: UNUserNotificationCenterDelegate {
+public protocol KumpeAPNS: UNUserNotificationCenterDelegate {
     func registerForPushNotifications()
     func getNotificationSettings()
     func application(
@@ -26,10 +26,13 @@ protocol KumpeAPNS: UNUserNotificationCenterDelegate {
       fetchCompletionHandler completionHandler:
       @escaping (UIBackgroundFetchResult) -> Void
     )
-    func apsAction(_ action: String, _ aps: [String: AnyObject])
+    func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data
+    )
+    func didFailToRegisterForRemoteNotificationsWithError(error: Error
+    )
 }
 
-extension KumpeAPNS {
+public extension KumpeAPNS {
         
     //    MARK: registerForPushNotifications
         func registerForPushNotifications() {
@@ -58,9 +61,7 @@ extension KumpeAPNS {
         }
 
     //    MARK: application: didRegisterForRemoteNotificationsWithDeviceToken
-        func application(
-          _ application: UIApplication,
-          didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+        func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data
         ) {
           let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
           let token = tokenParts.joined()
@@ -69,30 +70,9 @@ extension KumpeAPNS {
         }
 
     //    MARK: application: didFailToRegisterForRemoteNotificationsWithError
-        func application(
-          _ application: UIApplication,
-          didFailToRegisterForRemoteNotificationsWithError error: Error
+        func didFailToRegisterForRemoteNotificationsWithError(error: Error
         ) {
           print("Failed to register: \(error)")
         }
         
-        func application(
-          _ application: UIApplication,
-          didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-          fetchCompletionHandler completionHandler:
-          @escaping (UIBackgroundFetchResult) -> Void
-        ) {
-            
-          guard let aps = userInfo["aps"] as? [String: AnyObject] else {
-            completionHandler(.failed)
-            return
-          }
-            dispatchOnBackground {
-                guard let action:String = aps["action"] as? String else{
-                    return
-                }
-                self.apsAction(action,aps)
-            }
-            completionHandler(.newData)
-        }
 }
