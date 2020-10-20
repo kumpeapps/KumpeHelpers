@@ -10,38 +10,34 @@ import UIKit
 import CoreData
 
 protocol KumpeFetchedResultsControllerDelegate {
-    
+
     var tableView: UITableView! { get set }
-    
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType)
 }
 
-
-
 extension KumpeFetchedResultsControllerDelegate {
-    
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .fade)
-            break
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
-            break
         case .update:
             tableView.reloadRows(at: [indexPath!], with: .fade)
             tableView.setNeedsLayout()
@@ -51,7 +47,7 @@ extension KumpeFetchedResultsControllerDelegate {
             break
         }
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         let indexSet = IndexSet(integer: sectionIndex)
         switch type {
@@ -63,12 +59,10 @@ extension KumpeFetchedResultsControllerDelegate {
             break
         }
     }
-    
+
 }
 
-class test: UIViewController, KumpeFetchedResultsControllerDelegate{
+class test: UIViewController, KumpeFetchedResultsControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    
+
 }

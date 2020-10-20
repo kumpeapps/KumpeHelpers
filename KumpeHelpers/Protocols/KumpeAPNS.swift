@@ -11,30 +11,36 @@ import UserNotifications
 
 public protocol KumpeAPNS: UNUserNotificationCenterDelegate {
     func registerForPushNotifications()
+    
     func getNotificationSettings()
+    
     func application(
       _ application: UIApplication,
       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     )
+    
     func application(
       _ application: UIApplication,
       didFailToRegisterForRemoteNotificationsWithError error: Error
     )
+    
     func application(
       _ application: UIApplication,
       didReceiveRemoteNotification userInfo: [AnyHashable: Any],
       fetchCompletionHandler completionHandler:
       @escaping (UIBackgroundFetchResult) -> Void
     )
+    
     func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data
     )
+    
     func didFailToRegisterForRemoteNotificationsWithError(error: Error
     )
 }
 
 public extension KumpeAPNS {
-        
-    //    MARK: registerForPushNotifications
+
+    // MARK: registerForPushNotifications
         func registerForPushNotifications() {
             UNUserNotificationCenter.current()
               .requestAuthorization(
@@ -44,11 +50,9 @@ public extension KumpeAPNS {
                 self?.getNotificationSettings()
               }
 
-            
         }
 
-
-    //    MARK: getNotificationSettings
+    // MARK: getNotificationSettings
         func getNotificationSettings() {
           UNUserNotificationCenter.current().getNotificationSettings { settings in
             print("Notification settings: \(settings)")
@@ -60,7 +64,7 @@ public extension KumpeAPNS {
           }
         }
 
-    //    MARK: application: didRegisterForRemoteNotificationsWithDeviceToken
+    // MARK: application: didRegisterForRemoteNotificationsWithDeviceToken
         func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data
         ) {
           let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
@@ -69,10 +73,10 @@ public extension KumpeAPNS {
             UserDefaults.standard.set(token, forKey: "apnsToken")
         }
 
-    //    MARK: application: didFailToRegisterForRemoteNotificationsWithError
+    // MARK: application: didFailToRegisterForRemoteNotificationsWithError
         func didFailToRegisterForRemoteNotificationsWithError(error: Error
         ) {
           print("Failed to register: \(error)")
         }
-        
+
 }

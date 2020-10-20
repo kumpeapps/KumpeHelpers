@@ -27,18 +27,18 @@ public class ShowAlert {
     }
 
 //    Display alert with completion block
-    public static func alertDestructive(viewController: UIViewController, title: String, message: String, okButton: String = "Ok", cancelbutton: String = "Cancel", completion: @escaping (Bool) -> Void){
+    public static func alertDestructive(viewController: UIViewController, title: String, message: String, okButton: String = "Ok", cancelbutton: String = "Cancel", completion: @escaping (Bool) -> Void) {
         dispatchOnMain {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: okButton, style: .destructive, handler: {(alert: UIAlertAction!) in completion(true)}))
-            alert.addAction(UIAlertAction(title: cancelbutton, style: .default, handler: {(alert: UIAlertAction!) in completion(false)}))
+            alert.addAction(UIAlertAction(title: okButton, style: .destructive, handler: {(_: UIAlertAction!) in completion(true)}))
+            alert.addAction(UIAlertAction(title: cancelbutton, style: .default, handler: {(_: UIAlertAction!) in completion(false)}))
             viewController.present(alert, animated: true, completion: nil)
         }
     }
-    
+
 //    Display Top Banner
-    public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
-        dispatchOnMain{
+    public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
+        dispatchOnMain {
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .cardView)
             view.button?.isHidden = true
@@ -51,9 +51,9 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -62,10 +62,10 @@ public class ShowAlert {
             }
         }
     }
-    
+
 //    Display Status Bar Banner
-    public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true, invokeHaptics: Bool = true){
-        dispatchOnMain{
+    public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true, invokeHaptics: Bool = true) {
+        dispatchOnMain {
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
             view.configureTheme(theme)
@@ -75,13 +75,13 @@ public class ShowAlert {
             config.presentationContext = .window(windowLevel: .normal)
             config.presentationStyle = .top
             config.duration = .seconds(seconds: seconds)
-            if dim{
+            if dim {
                 config.dimMode = .gray(interactive: true)
             }
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -90,10 +90,10 @@ public class ShowAlert {
             }
         }
     }
-    
+
 //    Display Static Status Bar Banner
-    public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false, invokeHaptics: Bool = false){
-        dispatchOnMain{
+    public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false, invokeHaptics: Bool = false) {
+        dispatchOnMain {
             let view = MessageView.viewFromNib(layout: .statusLine)
             view.button?.isHidden = true
             view.configureTheme(theme)
@@ -103,14 +103,14 @@ public class ShowAlert {
             config.presentationContext = .window(windowLevel: .normal)
             config.presentationStyle = .top
             config.duration = .forever
-            if blockInterface{
+            if blockInterface {
                 config.dimMode = .gray(interactive: false)
             }
             view.id = id
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -119,19 +119,17 @@ public class ShowAlert {
             }
         }
     }
-    
-    
-    
+
 //    Dismisses Static Alert/Banner
-    public static func dismissStatic(id: String){
+    public static func dismissStatic(id: String) {
         dispatchOnMain {
             SwiftMessages.hide(id: id)
         }
     }
-    
+
 //    Display Center Banner
-    public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
-        dispatchOnMain{
+    public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
+        dispatchOnMain {
             let view = MessageView.viewFromNib(layout: .centeredView)
             view.button?.isHidden = true
             view.configureTheme(theme)
@@ -143,9 +141,9 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -154,10 +152,10 @@ public class ShowAlert {
             }
         }
     }
-    
+
 //    Display Message View Alert
-    public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true){
-        dispatchOnMain{
+    public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
+        dispatchOnMain {
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)
             view.button?.isHidden = true
@@ -170,9 +168,9 @@ public class ShowAlert {
             config.duration = .seconds(seconds: seconds)
             config.dimMode = .gray(interactive: true)
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -181,9 +179,9 @@ public class ShowAlert {
             }
         }
     }
-    
+
 //    Display banner with confirm button and completion closure
-    public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", invokeHaptics: Bool = false, completion: @escaping (Bool) -> Void){
+    public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", invokeHaptics: Bool = false, completion: @escaping (Bool) -> Void) {
         dispatchOnMain {
             SwiftMessages.hideAll()
             let view = MessageView.viewFromNib(layout: .messageView)
@@ -196,9 +194,9 @@ public class ShowAlert {
             config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
             view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
             SwiftMessages.show(config: config, view: view)
-            
-            if invokeHaptics{
-                switch theme{
+
+            if invokeHaptics {
+                switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
                 case .warning: Haptico.shared().generate(.warning)
@@ -207,5 +205,5 @@ public class ShowAlert {
             }
         }
     }
-    
+
 }

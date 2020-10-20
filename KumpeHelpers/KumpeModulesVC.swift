@@ -21,17 +21,15 @@ protocol KumpeModulesVC {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
 }
 
+extension KumpeModulesVC {
 
-extension KumpeModulesVC{
-    
-    
     func setupCollectionView() {
         let layout = CollectionViewCenteredFlowLayout()
         collectionView.collectionViewLayout = layout
         collectionView.reloadData()
     }
-    
-//    MARK: centerItemsInCollectionView
+
+// MARK: centerItemsInCollectionView
     func centerItemsInCollectionView(cellWidth: Double, numberOfItems: Double, spaceBetweenCell: Double, collectionView: UICollectionView) -> UIEdgeInsets {
         let totalWidth = cellWidth * numberOfItems
         let totalSpacingWidth = spaceBetweenCell * (numberOfItems - 1)
@@ -39,21 +37,18 @@ extension KumpeModulesVC{
         let rightInset = leftInset
         return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
     }
-    
 
-
-    //  MARK: Set Number of Items
+    // MARK: Set Number of Items
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return modules.count
         }
 
-//    MARK: set cell size
+// MARK: set cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = iconWidth
         return CGSize(width: screenWidth, height: screenWidth)
     }
 }
-
 
 struct K_Module {
     let title: String

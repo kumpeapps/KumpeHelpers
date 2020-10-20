@@ -16,7 +16,7 @@ public class DataController {
     public var viewContext:NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    
+
     public static var modelName = "CoreData"
 
     public let backgroundContext:NSManagedObjectContext!
@@ -39,8 +39,8 @@ public class DataController {
         if DataController.modelName == "CoreData"{
             Logger.log(.codeWarning, "DataController: modelname is set to CoreData (Default). Please set DataController.modelName to the name of your CoreData Model Name.")
         }
-        
-        persistentContainer.loadPersistentStores { storeDescription, error in
+
+        persistentContainer.loadPersistentStores { _, error in
             guard error == nil else {
                 fatalError(error!.localizedDescription)
             }
@@ -53,21 +53,21 @@ public class DataController {
     public static let shared = DataController(modelName: modelName)
 }
 
-public extension DataController{
-    
-//    MARK: Auto Save View Context
-    func autoSaveViewContext(interval:TimeInterval = 30){
+public extension DataController {
+
+// MARK: Auto Save View Context
+    func autoSaveViewContext(interval:TimeInterval = 30) {
         Logger.log(.action, "autosaving")
         guard interval > 0 else {
             Logger.log(.error, "cannot set negative autosave interval")
             return
         }
-        if viewContext.hasChanges{
+        if viewContext.hasChanges {
             try? viewContext.save()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
             self.autoSaveViewContext(interval: interval)
             }
     }
-    
+
 }

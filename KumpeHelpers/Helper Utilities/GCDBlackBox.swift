@@ -21,6 +21,5 @@ public func dispatchOnBackground(_ updates: @escaping () -> Void) {
     DispatchQueue.global(qos: .background).async {
         updates()
     }
-    
-    
+
 }

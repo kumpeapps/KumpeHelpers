@@ -9,26 +9,25 @@
 import UIKit
 import Reachability
 
-public class ReachabilitySetup{
-    
-//    MARK: Parameters
+public class ReachabilitySetup {
+
+// MARK: Parameters
     public var isReachable: Bool = true
     public var reachability = try! Reachability(hostname: "api.kumpeapps.com")
-    
+
     public init() {
         dispatchOnBackground {
-            
+
             NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged(note:)), name: .reachabilityChanged, object: self.reachability)
-            do{
+            do {
                 try self.reachability.startNotifier()
-            }catch{
+            } catch {
                 Logger.log(.error, "could not start reachability notifier")
             }
         }
     }
-    
-    
-    //    MARK: Reachability Changed
+
+    // MARK: Reachability Changed
     //    Handles network connection issues
         @objc func reachabilityChanged(note: Notification) {
           let reachability = note.object as! Reachability
@@ -48,10 +47,10 @@ public class ReachabilitySetup{
             ShowAlert.dismissStatic(id: "reachability")
             }
         }
-    
+
     deinit {
         reachability.stopNotifier()
         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
     }
-    
+
 }

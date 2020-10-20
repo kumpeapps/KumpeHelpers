@@ -11,12 +11,11 @@
 import Foundation
 import UIKit
 
-
 public class RotateImage {
-    
+
     public static var activeView: UIView = UIView()
 
-//    MARK: Start Rotating
+// MARK: Start Rotating
 //    Function accepts UIImageView and makes that image rotate
     public static func start(_ imageView: UIImageView) {
         imageView.isHidden = false
@@ -28,28 +27,27 @@ public class RotateImage {
         imageView.layer.add(rotation, forKey: "rotationAnimation")
     }
 
-//    MARK: Stop Rotating
+// MARK: Stop Rotating
 //    Function accepts UIImageView and makes that image stop rotating
     public static func stop(_ imageView: UIImageView, hideWhenStopped: Bool = true) {
          imageView.layer.removeAnimation(forKey: "rotationAnimation")
-        if hideWhenStopped{
+        if hideWhenStopped {
             imageView.isHidden = true
         }
     }
-    
-//    MARK: Rotate Function
+
+// MARK: Rotate Function
 //    Function accepts Bool and UIImageView them makes image rotate/stop rotating according to Bool
-    public static func rotate(_ rotate: Bool, _ imageView: UIImageView, hideWhenStopped: Bool = true){
-        if rotate{
+    public static func rotate(_ rotate: Bool, _ imageView: UIImageView, hideWhenStopped: Bool = true) {
+        if rotate {
             start(imageView)
-        }else{
+        } else {
             stop(imageView, hideWhenStopped: hideWhenStopped)
         }
     }
 }
 
 public class Spinner: UIView {
-    
 
     public let imageView = UIImageView()
 
@@ -124,25 +122,23 @@ public extension UIView {
 
 }
 
+public func activityIndicator(_ view: UIView, _ animate: Bool, _ indicatorActivity: Spinner) {
 
-public func activityIndicator(_ view: UIView, _ animate: Bool, _ indicatorActivity: Spinner){
-    
     view.addSubview(indicatorActivity)
-    
+
     indicatorActivity.center = view.center
     indicatorActivity.backgroundColor = UIColor.black
     indicatorActivity.alpha = 0.5
     indicatorActivity.round(with: .both)
-    
-    if animate{
+
+    if animate {
         indicatorActivity.startAnimating()
-    }else{
+    } else {
         indicatorActivity.stopAnimating()
     }
-    
+
 }
 
-/*
-//    MARK: Custom Activity Indicator
-let indicatorActivity = Spinner(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: UIImage(named: "loading")!)
-*/
+// MARK: Custom Activity Indicator
+// let indicatorActivity = Spinner(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: UIImage(named: "loading")!)
+

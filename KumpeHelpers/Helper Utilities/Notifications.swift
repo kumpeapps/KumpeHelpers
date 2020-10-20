@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension Notification.Name{
+extension Notification.Name {
 //    Set notification name for invalidAPIKey
     static let invalidAPIKey = Notification.Name("invalidAPIKey")
 }
