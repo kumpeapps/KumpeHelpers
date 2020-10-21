@@ -10,10 +10,10 @@
 
 import UIKit
 
-extension String {
+public extension String {
 
 //    Creates image from string (like an emoji)
-    public func image() -> UIImage? {
+    func image() -> UIImage? {
         let size = CGSize(width: 40, height: 40)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         UIColor.white.set()
