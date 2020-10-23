@@ -8,7 +8,7 @@ s.summary = "Swift Helper Files used in KumpeApps."
 #s.requires_arc = true
 
 # 2
-s.version = "1.0.11"
+s.version = "1.1.0"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE"}
