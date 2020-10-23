@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-Please report vulerabilites to [helpdesk@kumpeapps.com]
+Please report vulerabilites to <helpdesk@kumpeapps.com>
