@@ -1,6 +1,6 @@
-# KumpeHelpers <img src="https://img.shields.io/badge/platform-iOS%2013.6%2B-lightgrey"/> <img src="https://img.shields.io/cocoapods/v/KumpeHelpers"/> <img src="https://img.shields.io/github/last-commit/kumpeapps/kumpehelpers"/>
+# KumpeHelpers
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d860bc1e83234a4faaff8f3f488ce79c)](https://app.codacy.com/gh/kumpeapps/KumpeHelpers?utm_source=github.com&utm_medium=referral&utm_content=kumpeapps/KumpeHelpers&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d860bc1e83234a4faaff8f3f488ce79c)](https://app.codacy.com/gh/kumpeapps/KumpeHelpers?utm_source=github.com&utm_medium=referral&utm_content=kumpeapps/KumpeHelpers&utm_campaign=Badge_Grade) <img src="https://img.shields.io/badge/platform-iOS%2013.6%2B-lightgrey"/> <img src="https://img.shields.io/cocoapods/v/KumpeHelpers"/> <img src="https://img.shields.io/github/last-commit/kumpeapps/kumpehelpers"/>
 
 KumpeHelpers is a collection of helper files commonly used in most of my apps. I created this framework as an easy way of importing my most frequently used scripts instead of having to re-write them or copy/paste in each app and easily syncing changes between all of my apps. So.....this framework is designed for my use but feel free to use it if you wish!
 
