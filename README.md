@@ -37,4 +37,3 @@ KumpeHelpers is a collection of helper files commonly used in most of my apps. I
 ## KumpeHelpers Extensions
 - String+Image
 - UIImage+Color
-
