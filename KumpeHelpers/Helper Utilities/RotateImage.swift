@@ -136,9 +136,7 @@ public func activityIndicator(_ view: UIView, _ animate: Bool, _ indicatorActivi
     } else {
         indicatorActivity.stopAnimating()
     }
-
+    // MARK: Custom Activity Indicator
+    // let indicatorActivity = Spinner(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: UIImage(named: "loading")!)
+    
 }
-
-// MARK: Custom Activity Indicator
-// let indicatorActivity = Spinner(frame: CGRect(x: 0, y: 0, width: 100, height: 100), image: UIImage(named: "loading")!)
-
