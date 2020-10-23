@@ -1,5 +1,5 @@
 # KumpeHelpers <img src="https://img.shields.io/badge/platform-iOS%2013.6%2B-lightgrey"/> <img src="https://img.shields.io/cocoapods/v/KumpeHelpers"/> <img src="https://img.shields.io/github/last-commit/kumpeapps/kumpehelpers"/>
-KumpeHelpers is a collection of helper files commonly used in most of my apps. I created this framework as an easy way of importing my most frequently used scripts instead of having to re-write them or copy/paste in each app and easily syncing changes between all of my apps. So.....this framework is designed for my use but feel free to use it if you wish.
+KumpeHelpers is a collection of helper files commonly used in most of my apps. I created this framework as an easy way of importing my most frequently used scripts instead of having to re-write them or copy/paste in each app and easily syncing changes between all of my apps. So.....this framework is designed for my use but feel free to use it if you wish!
 
 ## Frameworks Used
 -   Foundation
