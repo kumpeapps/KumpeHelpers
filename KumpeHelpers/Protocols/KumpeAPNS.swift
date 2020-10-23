@@ -10,10 +10,11 @@ import UIKit
 import UserNotifications
 
 public protocol KumpeAPNS: UNUserNotificationCenterDelegate {
+
     func registerForPushNotifications()
-    
+
     func getNotificationSettings()
-    
+
     func application(
       _ application: UIApplication,
       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
