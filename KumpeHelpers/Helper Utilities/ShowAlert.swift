@@ -5,6 +5,8 @@
 //  Created by Justin Kumpe on 8/17/20.
 //  Copyright © 2020 Justin Kumpe. All rights reserved.
 //
+// @TODO: clean up ShowAlert
+// @body: clean up ShowAlert file. create sent alert function to remove duplicate code.
 
 import UIKit
 import SwiftMessages
@@ -149,6 +151,55 @@ public class ShowAlert {
     }
     
 //MARK: InterfaceMode
+    public enum InterfaceMode {
+        case dim
+        case block
+        case blur
+        case blurAndBlock
+        case none
+    }
+
+//    MARK: displayMessage
+    public static func displayMessage(layout: MessageView.Layout, showButton: Bool, theme: Theme, title: String, message: String, windowLevel: UIWindow.Level = .normal, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, completion: @escaping (Bool) -> Void) {
+        dispatchOnMain {
+            let view = MessageView.viewFromNib(layout: layout)
+            view.button?.isHidden = !showButton
+            view.configureTheme(theme)
+            view.configureDropShadow()
+            view.configureContent(title: title, body: message)
+            var config = SwiftMessages.Config()
+            config.presentationContext = .window(windowLevel: .normal)
+            config.presentationStyle = .top
+            config.duration = .seconds(seconds: 1)
+            switch interfaceMode {
+            case .block:
+                config.dimMode = .gray(interactive: false)
+            case .dim:
+                config.dimMode = .gray(interactive: true)
+            case .blur:
+                config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
+            case .blurAndBlock:
+                config.dimMode = .blur(style: .dark, alpha: 1, interactive: false)
+            default:
+                config.dimMode = .none
+            }
+            if showButton{
+                view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
+            }
+            SwiftMessages.show(config: config, view: view)
+
+            if invokeHaptics {
+                switch theme {
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
+        }
+    }
+    
+//    MARK: InterfaceMode
     public enum InterfaceMode {
         case dim
         case block
