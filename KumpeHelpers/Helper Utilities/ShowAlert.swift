@@ -147,6 +147,7 @@ public class ShowAlert {
             }
         }
     }
+<<<<<<< Updated upstream
     
 //MARK: InterfaceMode
     public enum InterfaceMode {
@@ -156,5 +157,7 @@ public class ShowAlert {
         case blurAndBlock
         case none
     }
+=======
+>>>>>>> Stashed changes
 
 }
