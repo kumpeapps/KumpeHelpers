@@ -38,30 +38,11 @@ public class ShowAlert {
         }
     }
 
+// MARK: - SwiftMessages Alerts
 //    Display Top Banner
     public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
-        dispatchOnMain {
-            SwiftMessages.hideAll()
-            let view = MessageView.viewFromNib(layout: .cardView)
-            view.button?.isHidden = true
-            view.configureTheme(theme)
-            view.configureDropShadow()
-            view.configureContent(title: title, body: message)
-            var config = SwiftMessages.Config()
-            config.presentationContext = .window(windowLevel: .statusBar)
-            config.presentationStyle = .top
-            config.duration = .seconds(seconds: seconds)
-            config.dimMode = .gray(interactive: true)
-            SwiftMessages.show(config: config, view: view)
-
-            if invokeHaptics {
-                switch theme {
-                case .error: Haptico.shared().generate(.error)
-                case .success: Haptico.shared().generate(.success)
-                case .warning: Haptico.shared().generate(.warning)
-                case .info: return
-                }
-            }
+        
+        displayMessage(layout: .cardView, showButton: false, theme: theme, title: title, message: message, windowLevel: .statusBar, presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
         }
     }
 
@@ -206,6 +187,55 @@ public class ShowAlert {
                 }
             }
         }
+    }
+
+//    MARK: displayMessage
+    public static func displayMessage(layout: MessageView.Layout, showButton: Bool, theme: Theme, title: String, message: String, windowLevel: UIWindow.Level = .normal, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, completion: @escaping (Bool) -> Void) {
+        dispatchOnMain {
+            let view = MessageView.viewFromNib(layout: layout)
+            view.button?.isHidden = !showButton
+            view.configureTheme(theme)
+            view.configureDropShadow()
+            view.configureContent(title: title, body: message)
+            var config = SwiftMessages.Config()
+            config.presentationContext = .window(windowLevel: .normal)
+            config.presentationStyle = .top
+            config.duration = .seconds(seconds: 1)
+            switch interfaceMode {
+            case .block:
+                config.dimMode = .gray(interactive: false)
+            case .dim:
+                config.dimMode = .gray(interactive: true)
+            case .blur:
+                config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
+            case .blurAndBlock:
+                config.dimMode = .blur(style: .dark, alpha: 1, interactive: false)
+            default:
+                config.dimMode = .none
+            }
+            if showButton{
+                view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
+            }
+            SwiftMessages.show(config: config, view: view)
+
+            if invokeHaptics {
+                switch theme {
+                case .error: Haptico.shared().generate(.error)
+                case .success: Haptico.shared().generate(.success)
+                case .warning: Haptico.shared().generate(.warning)
+                case .info: return
+                }
+            }
+        }
+    }
+    
+//    MARK: InterfaceMode
+    public enum InterfaceMode {
+        case dim
+        case block
+        case blur
+        case blurAndBlock
+        case none
     }
 
 }
