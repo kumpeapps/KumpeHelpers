@@ -62,7 +62,7 @@ public class ShowAlert {
     public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false, invokeHaptics: Bool = false) {
 
         var interfaceMode: InterfaceMode = .none
-        if blockInterface{
+        if blockInterface {
             interfaceMode = .block
         }
         displayMessage(layout: .statusLine, showButton: false, theme: theme, title: title, message: message, presentationStyle: .top, duration: .forever, interfaceMode: interfaceMode, invokeHaptics: invokeHaptics, id: id) { (_) in
@@ -128,7 +128,7 @@ public class ShowAlert {
             default:
                 config.dimMode = .none
             }
-            if showButton{
+            if showButton {
                 view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
                 view.button?.setTitle(buttonTitle, for: .normal)
             }
