@@ -43,7 +43,7 @@ public class ShowAlert {
 ///    Display Top Banner
     public static func banner(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
 
-        displayMessage(layout: .cardView, showButton: false, theme: theme, title: title, message: message, windowLevel: .statusBar, presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
+        displayMessage(layout: .cardView, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
         }
 
     }
@@ -52,10 +52,10 @@ public class ShowAlert {
     public static func statusLine(theme: Theme = .error, title: String, message: String, seconds: Double = 10, dim: Bool = true, invokeHaptics: Bool = true) {
 
         var interfaceMode: InterfaceMode = .none
-        if dim{
+        if dim {
             interfaceMode = .dim
         }
-        displayMessage(layout: .statusLine, showButton: false, theme: theme, title: title, message: message, presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: interfaceMode, invokeHaptics: invokeHaptics) { (_) in
+        displayMessage(layout: .statusLine, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: interfaceMode, invokeHaptics: invokeHaptics) { (_) in
         }
 
     }
@@ -64,10 +64,10 @@ public class ShowAlert {
     public static func statusLineStatic(id: String, theme: Theme = .error, title: String, message: String, blockInterface: Bool = false, invokeHaptics: Bool = false) {
 
         var interfaceMode: InterfaceMode = .none
-        if blockInterface{
+        if blockInterface {
             interfaceMode = .block
         }
-        displayMessage(layout: .statusLine, showButton: false, theme: theme, title: title, message: message, presentationStyle: .top, duration: .forever, interfaceMode: interfaceMode, invokeHaptics: invokeHaptics, id: id) { (_) in
+        displayMessage(layout: .statusLine, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .forever, interfaceMode: interfaceMode, invokeHaptics: invokeHaptics, id: id) { (_) in
         }
 
     }
@@ -84,7 +84,7 @@ public class ShowAlert {
 ///    Display Center Banner
     public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
 
-        displayMessage(layout: .centeredView, showButton: false, theme: theme, title: title, message: message, presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
+        displayMessage(layout: .centeredView, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
         }
 
     }
@@ -92,7 +92,7 @@ public class ShowAlert {
 ///    Display Message View Alert
     public static func messageView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
 
-        displayMessage(layout: .messageView, showButton: false, theme: theme, title: title, message: message, presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
+        displayMessage(layout: .messageView, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
         }
 
     }
@@ -100,20 +100,20 @@ public class ShowAlert {
 ///    Display banner with confirm button and completion closure
     public static func choiceMessage(theme: Theme = .error, title: String, message: String, buttonTitle: String = "Confirm", invokeHaptics: Bool = false, completion: @escaping (Bool) -> Void) {
 
-        displayMessage(layout: .messageView, showButton: true, buttonTitle: buttonTitle, theme: theme, title: title, message: message, presentationStyle: .center, duration: .forever, interfaceMode: .blur, invokeHaptics: true) { (success) in
+        displayMessage(layout: .messageView, showButton: true, buttonTitle: buttonTitle, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .center, duration: .forever, interfaceMode: .blur, invokeHaptics: true) { (success) in
             completion(success)
         }
 
     }
 
-//MARK: displayMessage
-    public static func displayMessage(layout: MessageView.Layout, showButton: Bool, buttonTitle: String = "Confirm", theme: Theme, title: String, message: String, windowLevel: UIWindow.Level = .normal, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, id: String? = nil, completion: @escaping (Bool) -> Void) {
+// MARK: displayMessage
+    public static func displayMessage(layout: MessageView.Layout, showButton: Bool, buttonTitle: String = "Confirm", theme: Theme, alertMessage: AlertMessage, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, id: String? = nil, completion: @escaping (Bool) -> Void) {
         dispatchOnMain {
             let view = MessageView.viewFromNib(layout: layout)
             view.button?.isHidden = !showButton
             view.configureTheme(theme)
             view.configureDropShadow()
-            view.configureContent(title: title, body: message)
+            view.configureContent(title: alertMessage.title, body: alertMessage.message)
             var config = SwiftMessages.Config()
             config.presentationContext = .window(windowLevel: .normal)
             config.presentationStyle = .top
@@ -130,7 +130,7 @@ public class ShowAlert {
             default:
                 config.dimMode = .none
             }
-            if showButton{
+            if showButton {
                 view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
                 view.button?.setTitle(buttonTitle, for: .normal)
             }
@@ -149,8 +149,8 @@ public class ShowAlert {
             }
         }
     }
-    
-//MARK: InterfaceMode
+
+// MARK: InterfaceMode
     public enum InterfaceMode {
         case dim
         case block
@@ -159,53 +159,10 @@ public class ShowAlert {
         case none
     }
 
-//    MARK: displayMessage
-    public static func displayMessage(layout: MessageView.Layout, showButton: Bool, theme: Theme, title: String, message: String, windowLevel: UIWindow.Level = .normal, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, completion: @escaping (Bool) -> Void) {
-        dispatchOnMain {
-            let view = MessageView.viewFromNib(layout: layout)
-            view.button?.isHidden = !showButton
-            view.configureTheme(theme)
-            view.configureDropShadow()
-            view.configureContent(title: title, body: message)
-            var config = SwiftMessages.Config()
-            config.presentationContext = .window(windowLevel: .normal)
-            config.presentationStyle = .top
-            config.duration = .seconds(seconds: 1)
-            switch interfaceMode {
-            case .block:
-                config.dimMode = .gray(interactive: false)
-            case .dim:
-                config.dimMode = .gray(interactive: true)
-            case .blur:
-                config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
-            case .blurAndBlock:
-                config.dimMode = .blur(style: .dark, alpha: 1, interactive: false)
-            default:
-                config.dimMode = .none
-            }
-            if showButton{
-                view.buttonTapHandler = { _ in SwiftMessages.hide(); completion(true)}
-            }
-            SwiftMessages.show(config: config, view: view)
-
-            if invokeHaptics {
-                switch theme {
-                case .error: Haptico.shared().generate(.error)
-                case .success: Haptico.shared().generate(.success)
-                case .warning: Haptico.shared().generate(.warning)
-                case .info: return
-                }
-            }
-        }
-    }
-    
-//    MARK: InterfaceMode
-    public enum InterfaceMode {
-        case dim
-        case block
-        case blur
-        case blurAndBlock
-        case none
+// MARK: AlertMessage
+    public struct AlertMessage {
+        let title: String
+        let message: String
     }
 
 }
