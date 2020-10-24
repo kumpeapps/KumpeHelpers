@@ -5,8 +5,6 @@
 //  Created by Justin Kumpe on 8/17/20.
 //  Copyright © 2020 Justin Kumpe. All rights reserved.
 //
-// @TODO: clean up ShowAlert
-// @body: clean up ShowAlert file. create sent alert function to remove duplicate code.
 
 import UIKit
 import SwiftMessages
