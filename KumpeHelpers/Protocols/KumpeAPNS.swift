@@ -10,32 +10,34 @@ import UIKit
 import UserNotifications
 
 public protocol KumpeAPNS: UNUserNotificationCenterDelegate {
+
     func registerForPushNotifications()
-    
+
     func getNotificationSettings()
-    
+
     func application(
       _ application: UIApplication,
       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     )
-    
+
     func application(
       _ application: UIApplication,
       didFailToRegisterForRemoteNotificationsWithError error: Error
     )
-    
+
     func application(
       _ application: UIApplication,
       didReceiveRemoteNotification userInfo: [AnyHashable: Any],
       fetchCompletionHandler completionHandler:
       @escaping (UIBackgroundFetchResult) -> Void
     )
-    
+
     func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data
     )
-    
+
     func didFailToRegisterForRemoteNotificationsWithError(error: Error
     )
+
 }
 
 public extension KumpeAPNS {

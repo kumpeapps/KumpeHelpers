@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol KumpeFetchedResultsControllerDelegate {
+protocol KumpeFetchedResultsControllerDelegate: class {
 
     var tableView: UITableView! { get set }
 
@@ -59,10 +59,5 @@ extension KumpeFetchedResultsControllerDelegate {
             break
         }
     }
-
-}
-
-class test: UIViewController, KumpeFetchedResultsControllerDelegate {
-    @IBOutlet weak var tableView: UITableView!
 
 }
