@@ -104,7 +104,7 @@ public class ShowAlert {
 
     }
 
-//MARK: displayMessage
+// MARK: displayMessage
     public static func displayMessage(layout: MessageView.Layout, showButton: Bool, buttonTitle: String = "Confirm", theme: Theme, alertMessage: AlertMessage, presentationStyle: SwiftMessages.PresentationStyle, duration: SwiftMessages.Duration, interfaceMode: InterfaceMode, invokeHaptics: Bool, id: String? = nil, completion: @escaping (Bool) -> Void) {
         dispatchOnMain {
             let view = MessageView.viewFromNib(layout: layout)
@@ -148,7 +148,7 @@ public class ShowAlert {
         }
     }
 
-//MARK: InterfaceMode
+// MARK: InterfaceMode
     public enum InterfaceMode {
         case dim
         case block
@@ -157,7 +157,7 @@ public class ShowAlert {
         case none
     }
 
-//MARK: AlertMessage
+// MARK: AlertMessage
     public struct AlertMessage {
         let title: String
         let message: String
