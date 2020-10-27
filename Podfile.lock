@@ -4,18 +4,18 @@ PODS:
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
   - CollectionViewCenteredFlowLayout (1.0.1)
-  - Haptico (1.1.0)
+  - Haptico (1.1.1)
   - ReachabilitySwift (5.0.0)
-  - SwiftMessages (8.0.2):
-    - SwiftMessages/App (= 8.0.2)
-  - SwiftMessages/App (8.0.2)
+  - SwiftMessages (8.0.3):
+    - SwiftMessages/App (= 8.0.3)
+  - SwiftMessages/App (8.0.3)
   - SwiftyJSON (4.0.0)
   - Sync (6.5.0)
 
 DEPENDENCIES:
   - Alamofire-SwiftyJSON
   - CollectionViewCenteredFlowLayout
-  - Haptico (from `https://github.com/iSapozhnik/Haptico.git`, branch `master`)
+  - Haptico
   - ReachabilitySwift
   - SwiftMessages
   - Sync
@@ -25,31 +25,22 @@ SPEC REPOS:
     - Alamofire
     - Alamofire-SwiftyJSON
     - CollectionViewCenteredFlowLayout
+    - Haptico
     - ReachabilitySwift
     - SwiftMessages
     - SwiftyJSON
     - Sync
 
-EXTERNAL SOURCES:
-  Haptico:
-    :branch: master
-    :git: https://github.com/iSapozhnik/Haptico.git
-
-CHECKOUT OPTIONS:
-  Haptico:
-    :commit: b6c52d24f5f7a78434bd04aca57f9383114b9523
-    :git: https://github.com/iSapozhnik/Haptico.git
-
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
   CollectionViewCenteredFlowLayout: 339b935be4d8578c59e448c8906117a07c657d85
-  Haptico: f3b9e36957e7ec5a34721c65a0375454a0df7c7b
+  Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+  SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
 
-PODFILE CHECKSUM: 3de83fb863c32f2bd02e36547b40e141558976e0
+PODFILE CHECKSUM: e12f5b9eb9f4cef2c2240623d93b4e7209d90d8f
 
 COCOAPODS: 1.9.3
