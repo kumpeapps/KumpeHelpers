@@ -38,12 +38,15 @@ public protocol KumpeAPNS: UNUserNotificationCenterDelegate {
     func didFailToRegisterForRemoteNotificationsWithError(error: Error
     )
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+
 }
 
 public extension KumpeAPNS {
 
     // MARK: registerForPushNotifications
         func registerForPushNotifications() {
+            UNUserNotificationCenter.current().delegate = self
             UNUserNotificationCenter.current()
               .requestAuthorization(
                 options: [.alert, .sound, .badge, .announcement]) { [weak self] granted, _ in
@@ -80,5 +83,11 @@ public extension KumpeAPNS {
         ) {
           print("Failed to register: \(error)")
         }
+
+    // MARK: userNotificationCenter: willPresent
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+    }
 
 }
