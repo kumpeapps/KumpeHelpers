@@ -84,10 +84,4 @@ public extension KumpeAPNS {
           print("Failed to register: \(error)")
         }
 
-    // MARK: userNotificationCenter: willPresent
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
-    {
-        completionHandler([.alert, .badge, .sound])
-    }
-
 }
