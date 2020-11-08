@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '13.6'
+s.ios.deployment_target = '14.0'
 s.name = "KumpeHelpers"
 s.summary = "Swift Helper Files used in KumpeApps."
 #s.requires_arc = true
@@ -29,6 +29,7 @@ s.dependency 'Alamofire-SwiftyJSON'
 s.dependency 'Sync'
 s.dependency 'CollectionViewCenteredFlowLayout'
 s.dependency 'Haptico'
+s.dependency 'DeviceKit'
 
 # 8
 s.source_files = "KumpeHelpers/**/*.{swift,storyboard,xib,png}"
