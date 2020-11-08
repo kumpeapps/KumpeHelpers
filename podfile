@@ -10,4 +10,5 @@ target 'KumpeHelpers' do
 	pod 'Sync'
         pod 'CollectionViewCenteredFlowLayout'
 	pod 'Haptico'
+	pod 'DeviceKit'
 end
