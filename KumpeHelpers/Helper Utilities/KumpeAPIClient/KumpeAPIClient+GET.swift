@@ -34,12 +34,14 @@ extension KumpeAPIClient {
 
 //              GUARD: Status code 2xx
                 guard statusCode >= 200 && statusCode <= 299 else {
+                    completion(nil,"Your request returned a status code other than 2xx!")
                     Logger.log(.error, "Your request returned a status code other than 2xx! (\(String(describing: dataResponse.response?.statusCode)))")
                     return
                 }
 
 //              GUARD: Status Code 200
                 guard statusCode == 200 else {
+                    completion(nil,"Your request returned a status code other than 200!")
                     Logger.log(.error, "No Data Found")
                     return
                 }
