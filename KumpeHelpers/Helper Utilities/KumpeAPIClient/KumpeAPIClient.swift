@@ -32,14 +32,18 @@ open class KumpeAPIClient {
     }
 
     // MARK: - apiMethod
-    open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 412, completion: @escaping (Bool, String?) -> Void) {
+    class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 412, postToBody: Bool = false, completion: @escaping (Bool, String?) -> Void) {
                 let url = URL(string: apiUrl)!
                 let alertId = "api_\(Int.random(in: 0..<10))"
                 if !silent {
                     ShowAlert.statusLineStatic(id: alertId, theme: .warning, title: "Sending Data", message: "Sending Data, Please Wait ....", blockInterface: blockInterface)
                 }
                 let queue = DispatchQueue(label: "com.kumpeapps.api", qos: .background, attributes: .concurrent)
-            Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding(destination: .queryString)).responseSwiftyJSON(queue: queue) { dataResponse in
+        var encoding: ParameterEncoding = URLEncoding(destination: .queryString)
+        if postToBody {
+            encoding = JSONEncoding.default
+        }
+            Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: encoding).responseSwiftyJSON(queue: queue) { dataResponse in
 
     //            GUARD: API Key Valid
                 guard let statusCode = dataResponse.response?.statusCode, statusCode != invalidApiKeyStatusCode else {
@@ -69,5 +73,5 @@ open class KumpeAPIClient {
                     ShowAlert.dismissStatic(id: alertId)
                     completion(true,nil)
                 }
-            }
+    }
 }
