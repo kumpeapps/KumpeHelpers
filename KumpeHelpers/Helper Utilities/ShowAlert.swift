@@ -138,7 +138,7 @@ public class ShowAlert {
             }
             SwiftMessages.show(config: config, view: view)
 
-            if invokeHaptics && !Device.current.batteryState!.lowPowerMode{
+            if invokeHaptics && !Device.current.batteryState!.lowPowerMode {
                 switch theme {
                 case .error: Haptico.shared().generate(.error)
                 case .success: Haptico.shared().generate(.success)
