@@ -7,6 +7,7 @@ PODS:
   - DeviceKit (4.2.1)
   - Haptico (1.1.1)
   - ReachabilitySwift (5.0.0)
+  - ShipBookSDK (1.1.17)
   - SwiftMessages (9.0.0):
     - SwiftMessages/App (= 9.0.0)
   - SwiftMessages/App (9.0.0)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - DeviceKit
   - Haptico
   - ReachabilitySwift
+  - ShipBookSDK
   - SwiftMessages
   - Sync
 
@@ -30,6 +32,7 @@ SPEC REPOS:
     - DeviceKit
     - Haptico
     - ReachabilitySwift
+    - ShipBookSDK
     - SwiftMessages
     - SwiftyJSON
     - Sync
@@ -41,10 +44,11 @@ SPEC CHECKSUMS:
   DeviceKit: cadb5ff25d45fe186778bf2d0fd2ea4750542189
   Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  ShipBookSDK: bfc42a2f64eaef8ff7858d33f65b1c6cb0111b3a
   SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
 
-PODFILE CHECKSUM: a60db57185384ab6dc7ceab07950066ec78310d2
+PODFILE CHECKSUM: a96ea84e197584acf5bd9807810fc12ebfdd16eb
 
 COCOAPODS: 1.10.0
