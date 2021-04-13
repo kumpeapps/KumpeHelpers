@@ -11,4 +11,5 @@ target 'KumpeHelpers' do
         pod 'CollectionViewCenteredFlowLayout'
 	pod 'Haptico'
 	pod 'DeviceKit'
+	pod 'ShipBookSDK'
 end
