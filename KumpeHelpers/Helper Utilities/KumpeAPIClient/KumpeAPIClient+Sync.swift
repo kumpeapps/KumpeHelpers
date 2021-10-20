@@ -16,7 +16,7 @@ extension KumpeAPIClient {
 
     // MARK: apiSync
     //    Get function to sync data from API to CoreData
-    open class func apiSync(silent: Bool = false, apiUrl: String, parameters: [String:Any], jsonArrayName: String, coreDataEntityName: String, invalidApiKeyStatusCode: Int = 412, completion: @escaping (Bool, String?) -> Void) {
+    open class func apiSync(silent: Bool = false, apiUrl: String, parameters: [String:Any], jsonArrayName: String, coreDataEntityName: String, invalidApiKeyStatusCode: Int = 401, headers: HTTPHeaders = [:], completion: @escaping (Bool, String?) -> Void) {
 
             if !silent {
                 ShowAlert.statusLineStatic(id: "sync_\(coreDataEntityName)", theme: .warning, title: "Syncing", message: "Syncing \(coreDataEntityName) Information....")
@@ -24,9 +24,9 @@ extension KumpeAPIClient {
             let url = URL(string: apiUrl)!
 
             let queue = DispatchQueue(label: "com.kumpeapps.api", qos: .background, attributes: .concurrent)
-            Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseSwiftyJSON(queue: queue) { dataResponse in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseSwiftyJSON(queue: queue) { dataResponse in
 
-                //            GUARD: API Key Valid (returns 412 when not valid)
+                //            GUARD: API Key Valid (returns 401 when not valid)
                 guard let statusCode = dataResponse.response?.statusCode, statusCode != invalidApiKeyStatusCode else {
                     Logger.log(.error, "API Key Not Valid")
                     ShowAlert.dismissStatic(id: "sync_\(coreDataEntityName)")

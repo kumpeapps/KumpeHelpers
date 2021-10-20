@@ -11,9 +11,9 @@ import UIKit
 
 extension KumpeAPIClient {
     // MARK: Task For Get
-    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 412, debug: Bool = false, completion: @escaping (ResponseType?, String?) -> Void) {
+    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 401, debug: Bool = false, headers: HTTPHeaders = [:], completion: @escaping (ResponseType?, String?) -> Void) {
             let url = URL(string: apiUrl)!
-            Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.default) .responseSwiftyJSON { dataResponse in
+        Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.default, headers: headers) .responseSwiftyJSON { dataResponse in
 
                 if debug {
                     Logger.log(.codeWarning, dataResponse)
