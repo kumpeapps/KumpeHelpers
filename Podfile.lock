@@ -4,13 +4,13 @@ PODS:
     - Alamofire (~> 4.5)
     - SwiftyJSON (~> 4.0.0)
   - CollectionViewCenteredFlowLayout (1.0.1)
-  - DeviceKit (4.2.1)
+  - DeviceKit (4.5.1)
   - Haptico (1.1.1)
   - ReachabilitySwift (5.0.0)
   - ShipBookSDK (1.1.17)
-  - SwiftMessages (9.0.0):
-    - SwiftMessages/App (= 9.0.0)
-  - SwiftMessages/App (9.0.0)
+  - SwiftMessages (9.0.5):
+    - SwiftMessages/App (= 9.0.5)
+  - SwiftMessages/App (9.0.5)
   - SwiftyJSON (4.0.0)
   - Sync (6.5.0)
 
@@ -41,14 +41,14 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Alamofire-SwiftyJSON: 2b3649d57dc7bb2880fb8b86f8bb969397666916
   CollectionViewCenteredFlowLayout: 339b935be4d8578c59e448c8906117a07c657d85
-  DeviceKit: cadb5ff25d45fe186778bf2d0fd2ea4750542189
+  DeviceKit: 8664c09f619f53e48000b41ee3bb7573158a333b
   Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   ShipBookSDK: bfc42a2f64eaef8ff7858d33f65b1c6cb0111b3a
-  SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
+  SwiftMessages: 9cca50659fa22bb523b4dd2a958d4442e843a354
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Sync: 86bb8aa0ea2f955ea5ac97b7b73129f86591c39e
 
 PODFILE CHECKSUM: a96ea84e197584acf5bd9807810fc12ebfdd16eb
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

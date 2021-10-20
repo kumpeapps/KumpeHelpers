@@ -22,7 +22,7 @@ open class KumpeAPIClient {
     open class func statusCodeDescription(_ statusCode: Int) -> String {
         var errorMessage = "Unknown Error Occurred"
         switch statusCode {
-        case 412: errorMessage = "API Key Not Valid"
+        case 401: errorMessage = "API Key Not Valid"
         case 409: errorMessage = "The username/email already exists or does not meet the requirements."
         case 410: errorMessage = "Delete unsuccessful. User/Chore may not exist."
         case 451: errorMessage = "App has been blocked for legal reasons. Please email support for more information!"
@@ -32,7 +32,7 @@ open class KumpeAPIClient {
     }
 
     // MARK: - apiMethod
-    open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 412, postToBody: Bool = false, completion: @escaping (Bool, String?) -> Void) {
+    open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 401, postToBody: Bool = false, headers:HTTPHeaders = [:], completion: @escaping (Bool, String?) -> Void) {
                 let url = URL(string: apiUrl)!
                 let alertId = "api_\(Int.random(in: 0..<10))"
                 if !silent {
@@ -43,7 +43,7 @@ open class KumpeAPIClient {
         if postToBody {
             encoding = JSONEncoding.default
         }
-            Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: encoding).responseSwiftyJSON(queue: queue) { dataResponse in
+        Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: encoding, headers: headers).responseSwiftyJSON(queue: queue) { dataResponse in
 
     //            GUARD: API Key Valid
                 guard let statusCode = dataResponse.response?.statusCode, statusCode != invalidApiKeyStatusCode else {
