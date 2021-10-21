@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol KumpeFetchedResultsControllerDelegate: class {
+protocol KumpeFetchedResultsControllerDelegate: AnyObject {
 
     var tableView: UITableView! { get set }
 
