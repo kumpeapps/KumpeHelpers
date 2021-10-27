@@ -11,7 +11,17 @@ import UIKit
 
 // MARK: Launch URL
 public func launchURL(_ urlString: String?) {
-    if let urlString = urlString, let url = URL(string: urlString) {
+    guard let urlString = urlString else {
+        return
+    }
+    var newUrlString = urlString
+    if !urlString.contains("://") {
+        newUrlString = "http://\(urlString)"
+    }
+    guard UIApplication.shared.canOpenURL(URL(string: newUrlString)!) else {
+        return
+    }
+    if let url = URL(string: newUrlString) {
         if #available(iOS 10, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
