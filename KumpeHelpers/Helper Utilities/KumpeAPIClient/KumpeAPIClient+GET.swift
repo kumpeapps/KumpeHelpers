@@ -11,7 +11,7 @@ import UIKit
 
 extension KumpeAPIClient {
     // MARK: Task For Get
-    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 401, debug: Bool = false, headers: HTTPHeaders = [:], completion: @escaping (ResponseType?, String?) -> Void) {
+    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 401, debug: Bool = false, headers: HTTPHeaders = [:], successCode: Int = 200, completion: @escaping (ResponseType?, String?) -> Void) {
             let url = URL(string: apiUrl)!
         Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.default, headers: headers) .responseSwiftyJSON { dataResponse in
 
@@ -40,7 +40,7 @@ extension KumpeAPIClient {
                 }
 
 //              GUARD: Status Code 200
-                guard statusCode == 200 else {
+                guard statusCode == successCode else {
                     completion(nil,"Your request returned a status code other than 200!")
                     Logger.log(.error, "No Data Found")
                     return
