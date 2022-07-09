@@ -49,7 +49,7 @@ public extension KumpeAPNS {
             UNUserNotificationCenter.current().delegate = self
             UNUserNotificationCenter.current()
               .requestAuthorization(
-                options: [.alert, .sound, .badge, .announcement]) { [weak self] granted, _ in
+                options: [.alert, .sound, .badge]) { [weak self] granted, _ in
                 print("Permission granted: \(granted)")
                 guard granted else { return }
                 self?.getNotificationSettings()
