@@ -32,6 +32,7 @@
 		0F70E452253393D700062A8C /* KumpeAPIClient+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */; };
 		0F70E4812533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */; };
 		0F70E4A22533EE1900062A8C /* KumpeModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */; };
+		0F90AEF1287903D40010FC47 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90AEF0287903D40010FC47 /* Share.swift */; };
 		0F9F3A352554DE2B00829133 /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F3A342554DE2B00829133 /* FadeSegue.swift */; };
 		0FD248CF25AB856B009E0CCB /* URL+parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD248CE25AB856B009E0CCB /* URL+parameters.swift */; };
 		0FF961CB253A974600F6FC5E /* KumpeAPNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */; };
@@ -77,6 +78,7 @@
 		0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+Sync.swift"; sourceTree = "<group>"; };
 		0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeModulesVC.swift; sourceTree = "<group>"; };
+		0F90AEF0287903D40010FC47 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		0F9F3A342554DE2B00829133 /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
 		0FD248CE25AB856B009E0CCB /* URL+parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+parameters.swift"; sourceTree = "<group>"; };
 		0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeAPNS.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				0F330AA92533727F00A0CFF1 /* Notifications.swift */,
 				0F9F3A342554DE2B00829133 /* FadeSegue.swift */,
 				0FD248CE25AB856B009E0CCB /* URL+parameters.swift */,
+				0F90AEF0287903D40010FC47 /* Share.swift */,
 			);
 			path = "Helper Utilities";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				0F70E4812533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift in Sources */,
 				0F330A3425325E6300A0CFF1 /* ManagedAppConfigLib.swift in Sources */,
 				0F70E446253392BF00062A8C /* KumpeAPIClient+PUT.swift in Sources */,
+				0F90AEF1287903D40010FC47 /* Share.swift in Sources */,
 				0F330A3025325E6300A0CFF1 /* DebugHelpers.swift in Sources */,
 				0F330A3225325E6300A0CFF1 /* LaunchURL.swift in Sources */,
 				0F330AE82533915300A0CFF1 /* KumpeAPIClient+POST.swift in Sources */,
@@ -453,7 +457,7 @@
 			baseConfigurationReference = 537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2;
+				CURRENT_PROJECT_VERSION = 2.3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -467,7 +471,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -481,7 +485,7 @@
 			baseConfigurationReference = 431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2;
+				CURRENT_PROJECT_VERSION = 2.3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -495,7 +499,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

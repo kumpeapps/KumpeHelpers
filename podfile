@@ -3,6 +3,7 @@ platform :ios, '13.6'
 use_frameworks!
 
 target 'KumpeHelpers' do
+project 'KumpeHelpers.xcodeproj'
 #        pod 'Toast-Swift'
         pod 'ReachabilitySwift'
         pod 'SwiftMessages'
