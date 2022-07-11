@@ -30,6 +30,7 @@ s.dependency 'Sync'
 s.dependency 'CollectionViewCenteredFlowLayout'
 s.dependency 'Haptico'
 s.dependency 'DeviceKit'
+s.dependency 'FetchedResultsControllerCollectionViewUpdater'
 
 # 8
 s.source_files = "KumpeHelpers/**/*.{swift,storyboard,xib,png}"

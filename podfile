@@ -13,4 +13,5 @@ project 'KumpeHelpers.xcodeproj'
 	pod 'Haptico'
 	pod 'DeviceKit'
 	pod 'ShipBookSDK'
+	pod 'FetchedResultsControllerCollectionViewUpdater'
 end
