@@ -27,7 +27,6 @@
 		0F330A9A2533713A00A0CFF1 /* KumpeAPIClient+GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330A992533713A00A0CFF1 /* KumpeAPIClient+GET.swift */; };
 		0F330AAA2533727F00A0CFF1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330AA92533727F00A0CFF1 /* Notifications.swift */; };
 		0F330AE82533915300A0CFF1 /* KumpeAPIClient+POST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F330AE72533915300A0CFF1 /* KumpeAPIClient+POST.swift */; };
-		0F70B7F1287BA499004FD633 /* KumpeCollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70B7F0287BA499004FD633 /* KumpeCollectionViewFetchedResultsControllerDelegate.swift */; };
 		0F70E446253392BF00062A8C /* KumpeAPIClient+PUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E445253392BF00062A8C /* KumpeAPIClient+PUT.swift */; };
 		0F70E448253392E100062A8C /* KumpeAPIClient+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E447253392E100062A8C /* KumpeAPIClient+DELETE.swift */; };
 		0F70E452253393D700062A8C /* KumpeAPIClient+Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */; };
@@ -74,7 +73,6 @@
 		0F330A992533713A00A0CFF1 /* KumpeAPIClient+GET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+GET.swift"; sourceTree = "<group>"; };
 		0F330AA92533727F00A0CFF1 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		0F330AE72533915300A0CFF1 /* KumpeAPIClient+POST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+POST.swift"; sourceTree = "<group>"; };
-		0F70B7F0287BA499004FD633 /* KumpeCollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeCollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		0F70E445253392BF00062A8C /* KumpeAPIClient+PUT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+PUT.swift"; sourceTree = "<group>"; };
 		0F70E447253392E100062A8C /* KumpeAPIClient+DELETE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+DELETE.swift"; sourceTree = "<group>"; };
 		0F70E451253393D700062A8C /* KumpeAPIClient+Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KumpeAPIClient+Sync.swift"; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			children = (
 				0F70E4802533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift */,
 				0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */,
-				0F70B7F0287BA499004FD633 /* KumpeCollectionViewFetchedResultsControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				0F330A2E25325E6300A0CFF1 /* String+Image.swift in Sources */,
 				0F330A3325325E6300A0CFF1 /* Pathifier.swift in Sources */,
 				0F330A2F25325E6300A0CFF1 /* Logger.swift in Sources */,
-				0F70B7F1287BA499004FD633 /* KumpeCollectionViewFetchedResultsControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +457,7 @@
 			baseConfigurationReference = 537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.0;
+				CURRENT_PROJECT_VERSION = 3.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -475,7 +471,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -489,7 +485,7 @@
 			baseConfigurationReference = 431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.0;
+				CURRENT_PROJECT_VERSION = 3.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -503,7 +499,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
