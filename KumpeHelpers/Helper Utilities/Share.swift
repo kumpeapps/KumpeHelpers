@@ -25,6 +25,9 @@ public class Share {
     public static func text(_ text: String, _ viewController: UIViewController, shareButton:UIBarButtonItem,  blockActivities: [UIActivity.ActivityType] = []) {
         dispatchOnMain {
             let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            if let popOverController = activity.popoverPresentationController {
+                popOverController.barButtonItem = shareButton
+            }
             if blockActivities != [] {
                 activity.excludedActivityTypes = blockActivities
             }
@@ -36,6 +39,9 @@ public class Share {
     public static func image(_ image: UIImage, _ viewController: UIViewController, shareButton:UIBarButtonItem,  blockActivities: [UIActivity.ActivityType] = []) {
         dispatchOnMain {
             let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            if let popOverController = activity.popoverPresentationController {
+                popOverController.barButtonItem = shareButton
+            }
             if blockActivities != [] {
                 activity.excludedActivityTypes = blockActivities
             }
