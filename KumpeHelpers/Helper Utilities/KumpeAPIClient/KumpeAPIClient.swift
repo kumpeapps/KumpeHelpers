@@ -12,6 +12,10 @@ import UIKit
 
 open class KumpeAPIClient {
 
+    // MARK: parameters
+    public static let appBuildString: String? = (Bundle.main.infoDictionary!["CFBundleVersion"] as! String)
+    public static let appBuild = Int((Bundle.main.infoDictionary!["CFBundleVersion"] as! String))
+
 // MARK: apiLogout
 //    Initiates logout for invalid API Key
     open class func apiLogout() {
