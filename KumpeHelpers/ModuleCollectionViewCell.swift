@@ -7,7 +7,9 @@
 //
 
 import UIKit
+#if canImport(BadgeSwift)
 import BadgeSwift
+#endif
 
 open class ModuleCollectionViewCell: UICollectionViewCell {
 
