@@ -461,7 +461,7 @@
 			baseConfigurationReference = 537995CE92B45459265E111A /* Pods-KumpeHelpers.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.0;
+				CURRENT_PROJECT_VERSION = 4.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -475,7 +475,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -489,7 +489,7 @@
 			baseConfigurationReference = 431890454BE39AA15CF0724C /* Pods-KumpeHelpers.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.0;
+				CURRENT_PROJECT_VERSION = 4.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2T42Z3DM34;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -503,7 +503,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kumpeapps.ios.frameworks.KumpeHelpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
