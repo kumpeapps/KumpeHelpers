@@ -11,7 +11,7 @@ import CollectionViewCenteredFlowLayout
 import Kingfisher
 #endif
 
-protocol KumpeModulesVC {
+public protocol KumpeModulesVC {
     var collectionView: UICollectionView! { get set }
     var modules:[K_Module] {get set}
     var iconWidth:Int {get set}
@@ -95,7 +95,7 @@ extension KumpeModulesVC {
 
 }
 
-struct K_Module {
+public struct K_Module {
     let title: String
     let action: String
     let icon: UIImage
