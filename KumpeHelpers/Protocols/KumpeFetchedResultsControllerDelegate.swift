@@ -22,7 +22,7 @@ public protocol KumpeFetchedResultsControllerDelegate: AnyObject {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType)
 }
 
-extension KumpeFetchedResultsControllerDelegate {
+public extension KumpeFetchedResultsControllerDelegate {
 
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
