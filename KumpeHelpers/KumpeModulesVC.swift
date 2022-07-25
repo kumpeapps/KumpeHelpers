@@ -25,7 +25,7 @@ public protocol KumpeModulesVC {
     func didSelectModule(_ module: K_Module)
 }
 
-extension KumpeModulesVC {
+public extension KumpeModulesVC {
 
     func setupCollectionView() {
         let layout = CollectionViewCenteredFlowLayout()
