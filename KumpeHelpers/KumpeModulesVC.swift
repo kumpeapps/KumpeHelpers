@@ -22,7 +22,7 @@ protocol KumpeModulesVC {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    func didSelectModule(_ action: String)
+    func didSelectModule(_ module: K_Module)
 }
 
 extension KumpeModulesVC {
@@ -83,7 +83,14 @@ extension KumpeModulesVC {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let module = modules[(indexPath as NSIndexPath).row]
-        didSelectModule(module.action)
+        didSelectModule(module)
+    }
+
+    func didSelectModule(_ module: K_Module) {
+        guard module.isEnabled else {
+            KumpeHelpers.ShowAlert.messageView(theme: .error, title: "Disabled", message: "\(module.title) is disabled.", seconds: .infinity, invokeHaptics: true)
+            return
+        }
     }
 
 }
@@ -94,4 +101,5 @@ struct K_Module {
     let icon: UIImage
     let remoteIconUrl: URL?
     let badge: String?
+    let isEnabled: Bool
 }

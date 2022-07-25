@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '13.6'
+platform :ios, '15'
 use_frameworks!
 
 target 'KumpeHelpers' do
