@@ -23,14 +23,14 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFit
         return iv
     }()
-    var title: UILabel = {
+    let title: UILabel = {
         let iv = UILabel()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.textAlignment = .center
         iv.adjustsFontSizeToFitWidth = true
         return iv
     }()
-    var badge: BadgeSwift = {
+    let badge: BadgeSwift = {
         let iv = BadgeSwift()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.badgeColor = .red

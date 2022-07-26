@@ -72,7 +72,10 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         cell.watermark.isHidden = true
         cell.badge.isHidden = true
         if module.badge.text != "" {
-            cell.badge = module.badge
+            cell.badge.text = module.badge.text
+            cell.badge.badgeColor = module.badge.badgeColor
+            cell.badge.borderColor = module.badge.borderColor
+            cell.badge.cornerRadius = module.badge.cornerRadius
             cell.badge.isHidden = false
         }
         cell.imageView.image = module.icon
@@ -87,7 +90,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
                     .targetCache(ImageCache(name: "iconCache"))
                     ])
         }
-        cell.title = module.titleLabel
+        cell.title.text = module.titleLabel.text
         if !module.isEnabled && module.watermark != nil {
             cell.watermark.image = module.watermark!
             cell.watermark.isHidden = false
@@ -118,7 +121,7 @@ public struct K_Module {
     let action: String
     let icon: UIImage
     let remoteIconUrl: URL?
-    let badge: BadgeSwift
+    public let badge: BadgeSwift
     let isEnabled: Bool
     let watermark: UIImage?
     public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
