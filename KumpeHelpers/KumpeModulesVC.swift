@@ -114,11 +114,11 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 }
 
 public struct K_Module {
-    let titleLabel: UILabel
+    public let titleLabel: UILabel
     let action: String
     let icon: UIImage
     let remoteIconUrl: URL?
-    let badge: BadgeSwift
+    public var badge: BadgeSwift
     let isEnabled: Bool
     let watermark: UIImage?
     public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
