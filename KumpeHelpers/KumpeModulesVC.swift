@@ -115,12 +115,22 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 
     open func didSelectModule(_ module: KModule) {
         guard module.isEnabled else {
-            KumpeHelpers.ShowAlert.banner(theme: .error, title: "Disabled", message: "\(module.title) is disabled.", seconds: .infinity, invokeHaptics: true)
+            KumpeHelpers.ShowAlert.centerView(theme: .error, title: "Access Denied", message: "You do not have access to \(module.title).", seconds: .infinity, invokeHaptics: true)
             return
         }
         if module.action.contains("segue") {
             performSegue(withIdentifier: module.action, sender: self)
         }
+    }
+
+    ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
+    open func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModule_Settings_Badge = KModule_Settings_Badge(), titleSettings: KModule_Settings_Title = KModule_Settings_Title()) -> KModule {
+        var settingsBundle: KModule_Settings = KModule_Settings()
+        settingsBundle.badge = badgeSettings
+        settingsBundle.title = titleSettings
+        var module: KModule = KModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, watermark: watermark, isEnabled: isEnabled)
+        module.settings = settingsBundle
+        return module
     }
 
 }
@@ -140,7 +150,7 @@ public struct KModule {
         self.icon = icon
         self.remoteIconUrl = remoteIconURL
         self.badgeText = badgeText
-        self.isEnabled = true
+        self.isEnabled = isEnabled
         self.watermark = watermark
         self.settings = KModule_Settings()
     }
@@ -152,18 +162,21 @@ public struct KModule_Settings_Badge {
     public var cornerRadius: CGFloat = -1
     public var borderWidth: CGFloat = 0
     public var textColor: UIColor = .white
-    public var font: UIFont = UIFont(name: "Marker Felt", size: 17)!
+    public var font: UIFont = UIFont(name: "Helvetica", size: 14)!
     public var isHidden: Bool = false
+    public init () {}
 }
 
 public struct KModule_Settings_Title {
     public var textColor: UIColor = .white
     public var isHidden: Bool = false
     public var textAlignment: NSTextAlignment = .center
-    public var font: UIFont = UIFont(name: "Helvetica", size: 14)!
+    public var font: UIFont = UIFont(name: "Marker Felt", size: 17)!
+    public init () {}
 }
 
 public struct KModule_Settings {
     public var badge: KModule_Settings_Badge = KModule_Settings_Badge()
     public var title: KModule_Settings_Title = KModule_Settings_Title()
+    public init() {}
 }
