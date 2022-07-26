@@ -96,7 +96,6 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         cell.title.text = module.titleLabel.text
         cell.title.textColor = module.titleLabel.textColor
         cell.title.isHidden = module.titleLabel.isHidden
-        cell.title.isHighlighted = module.titleLabel.isHighlighted
         cell.title.textAlignment = module.titleLabel.textAlignment
         cell.title.font = module.titleLabel.font
         if !module.isEnabled && module.watermark != nil {
