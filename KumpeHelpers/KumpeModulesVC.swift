@@ -16,6 +16,8 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
     open var iconWidth:Int = 100
     open var cellBackgroundColor: UIColor = .clear
     open var collectionViewBackgroundColor: UIColor = .clear
+    open var titleColor: UIColor = .white
+    open var titleFont: UIFont = UIFont(name: "System", size: 17)!
 
     open var collectionView: UICollectionView = {
         var layout = UICollectionViewLayout()
@@ -93,6 +95,8 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
             cell.watermark.isHidden = false
          }
         cell.backgroundColor = cellBackgroundColor
+        cell.title.textColor = titleColor
+        cell.title.font = titleFont
         return cell
     }
 
