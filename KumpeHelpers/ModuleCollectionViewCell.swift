@@ -93,7 +93,11 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         badge.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor).isActive = true
         badge.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         badge.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        watermark.alpha = 0.4
+        watermark.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
+        watermark.bottomAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        watermark.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
+        watermark.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        watermark.alpha = 0.7
         watermark.isHidden = true
     }
 
