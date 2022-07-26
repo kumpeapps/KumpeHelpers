@@ -34,6 +34,7 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         let iv = BadgeSwift()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.badgeColor = .red
+        iv.textColor = .white
         return iv
     }()
 

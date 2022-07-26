@@ -77,8 +77,8 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
             cell.badge.borderColor = module.badge.borderColor
             cell.badge.cornerRadius = module.badge.cornerRadius
             cell.badge.borderWidth = module.badge.borderWidth
-            cell.badge.textColor = cell.badge.textColor
-            cell.badge.font = cell.badge.font
+            cell.badge.textColor = module.badge.textColor
+            cell.badge.font = module.badge.font
             cell.badge.isHidden = false
         }
         cell.imageView.image = module.icon
@@ -96,6 +96,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         cell.title.text = module.titleLabel.text
         cell.title.textColor = module.titleLabel.textColor
         cell.title.isHidden = module.titleLabel.isHidden
+        cell.title.isHighlighted = module.titleLabel.isHighlighted
         cell.title.textAlignment = module.titleLabel.textAlignment
         cell.title.font = module.titleLabel.font
         if !module.isEnabled && module.watermark != nil {
