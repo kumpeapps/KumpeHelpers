@@ -118,7 +118,7 @@ public struct K_Module {
     let action: String
     let icon: UIImage
     let remoteIconUrl: URL?
-    var badge: BadgeSwift
+    let badge: BadgeSwift
     let isEnabled: Bool
     let watermark: UIImage?
     public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
