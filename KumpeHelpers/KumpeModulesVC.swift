@@ -73,8 +73,8 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ModuleCollectionViewCell
         cell.watermark.isHidden = true
         cell.badge.isHidden = true
-        if module.badgeText != "" {
-            cell.badge.text = module.badgeText
+        if module.badgeText != nil {
+            cell.badge.text = module.badgeText!
             cell.badge.badgeColor = module.settings.badge.badgeColor
             cell.badge.borderColor = module.settings.badge.borderColor
             cell.badge.cornerRadius = module.settings.badge.cornerRadius
@@ -86,7 +86,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         cell.imageView.image = module.icon
         if module.remoteIconUrl != nil {
             cell.imageView.kf.setImage(
-                with: module.remoteIconUrl,
+                with: URL(string: module.remoteIconUrl!),
                 placeholder: module.icon,
                 options: [
                     .transition(.fade(1)),
@@ -129,11 +129,21 @@ public struct KModule {
     public var title: String
     public var action: String
     public var icon: UIImage
-    public var remoteIconUrl: URL?
+    public var remoteIconUrl: String?
     public var badgeText: String?
     public var isEnabled: Bool
     public var watermark: UIImage?
     public var settings: KModule_Settings
+    public init(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, watermark: UIImage? = nil, isEnabled: Bool = true) {
+        self.title = title
+        self.action = action
+        self.icon = icon
+        self.remoteIconUrl = remoteIconURL
+        self.badgeText = badgeText
+        self.isEnabled = true
+        self.watermark = watermark
+        self.settings = KModule_Settings()
+    }
 }
 
 public struct KModule_Settings_Badge {
@@ -154,6 +164,6 @@ public struct KModule_Settings_Title {
 }
 
 public struct KModule_Settings {
-    public var badge: KModule_Settings_Badge
-    public var title: KModule_Settings_Title
+    public var badge: KModule_Settings_Badge = KModule_Settings_Badge()
+    public var title: KModule_Settings_Title = KModule_Settings_Title()
 }
