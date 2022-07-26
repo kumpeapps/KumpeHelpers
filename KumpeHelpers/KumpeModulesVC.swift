@@ -76,6 +76,9 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
             cell.badge.badgeColor = module.badge.badgeColor
             cell.badge.borderColor = module.badge.borderColor
             cell.badge.cornerRadius = module.badge.cornerRadius
+            cell.badge.borderWidth = module.badge.borderWidth
+            cell.badge.textColor = cell.badge.textColor
+            cell.badge.font = cell.badge.font
             cell.badge.isHidden = false
         }
         cell.imageView.image = module.icon
@@ -91,6 +94,10 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
                     ])
         }
         cell.title.text = module.titleLabel.text
+        cell.title.textColor = module.titleLabel.textColor
+        cell.title.isHidden = module.titleLabel.isHidden
+        cell.title.textAlignment = module.titleLabel.textAlignment
+        cell.title.font = module.titleLabel.font
         if !module.isEnabled && module.watermark != nil {
             cell.watermark.image = module.watermark!
             cell.watermark.isHidden = false
@@ -106,7 +113,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 
     open func didSelectModule(_ module: K_Module) {
         guard module.isEnabled else {
-            KumpeHelpers.ShowAlert.messageView(theme: .error, title: "Disabled", message: "\(module.titleLabel.text ?? "Module") is disabled.", seconds: .infinity, invokeHaptics: true)
+            KumpeHelpers.ShowAlert.banner(theme: .error, title: "Disabled", message: "\(module.titleLabel.text ?? "Module") is disabled.", seconds: .infinity, invokeHaptics: true)
             return
         }
         if module.action.contains("segue") {
@@ -122,7 +129,7 @@ public struct K_Module {
     let icon: UIImage
     let remoteIconUrl: URL?
     public let badge: BadgeSwift
-    let isEnabled: Bool
+    public let isEnabled: Bool
     let watermark: UIImage?
     public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
         self.titleLabel = UILabel()
