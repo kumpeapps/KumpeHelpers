@@ -16,8 +16,6 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
     open var iconWidth:Int = 100
     open var cellBackgroundColor: UIColor = .clear
     open var collectionViewBackgroundColor: UIColor = .clear
-    open var titleColor: UIColor = .white
-    open var titleFont: UIFont = UIFont(name: "Marker Felt", size: 17)!
 
     open var collectionView: UICollectionView = {
         var layout = UICollectionViewLayout()
@@ -73,8 +71,8 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ModuleCollectionViewCell
         cell.watermark.isHidden = true
         cell.badge.isHidden = true
-        if module.badge != nil {
-            cell.badge.text = module.badge!
+        if module.badge.text != "" {
+            cell.badge = module.badge
             cell.badge.isHidden = false
         }
         cell.imageView.image = module.icon
@@ -89,14 +87,12 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
                     .targetCache(ImageCache(name: "iconCache"))
                     ])
         }
-        cell.title.text = module.title
+        cell.title = module.titleLabel
         if !module.isEnabled && module.watermark != nil {
             cell.watermark.image = module.watermark!
             cell.watermark.isHidden = false
          }
         cell.backgroundColor = cellBackgroundColor
-        cell.title.textColor = titleColor
-        cell.title.font = titleFont
         return cell
     }
 
@@ -107,7 +103,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 
     open func didSelectModule(_ module: K_Module) {
         guard module.isEnabled else {
-            KumpeHelpers.ShowAlert.messageView(theme: .error, title: "Disabled", message: "\(module.title) is disabled.", seconds: .infinity, invokeHaptics: true)
+            KumpeHelpers.ShowAlert.messageView(theme: .error, title: "Disabled", message: "\(module.titleLabel.text ?? "Module") is disabled.", seconds: .infinity, invokeHaptics: true)
             return
         }
         if module.action.contains("segue") {
@@ -118,20 +114,35 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 }
 
 public struct K_Module {
-    let title: String
+    let titleLabel: UILabel
     let action: String
     let icon: UIImage
     let remoteIconUrl: URL?
-    let badge: String?
+    let badge: BadgeSwift
     let isEnabled: Bool
     let watermark: UIImage?
-    public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badge: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
-        self.title = title
+    public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
+        self.titleLabel = UILabel()
+        self.titleLabel.text = title
+        self.titleLabel.textAlignment = .center
+        self.titleLabel.adjustsFontSizeToFitWidth = true
+        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.titleLabel.font = UIFont(name: "Marker Felt", size: 17)!
+        self.titleLabel.textColor = .white
         self.action = action
         self.icon = icon
         self.remoteIconUrl = remoteIconURL
-        self.badge = badge
+        self.badge = BadgeSwift()
+        self.badge.text = badgeText
+        self.badge.translatesAutoresizingMaskIntoConstraints = false
+        self.badge.badgeColor = .red
         self.isEnabled = isEnabled
         self.watermark = watermark
     }
+}
+
+public struct TitleProperties {
+    let font: UIFont
+    let color: UIColor
+    let alignment: NSTextAlignment
 }
