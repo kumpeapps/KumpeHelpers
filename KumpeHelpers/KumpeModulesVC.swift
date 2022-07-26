@@ -9,9 +9,11 @@ import UIKit
 import CollectionViewCenteredFlowLayout
 import Kingfisher
 import BadgeSwift
+import Haptico
+import SwiftMessages
 
 ///Modules VC is a collection view controller for displaying module icons on home screen. This can be used as your home page to display icons to each part of your app
-open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     ///List of Modules
     open var modules:[KModule] = []
@@ -62,9 +64,7 @@ open class ModulesVC: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     ///Calls collectionView.reload on main. You can override this if you need to pull data or other functions before reloading the collectionView. You will want to input your code BEFORE calling super.reloadCollectionView
     open func reloadCollectionView() {
-        KumpeHelpers.dispatchOnMain {
             self.collectionView.reloadData()
-        }
     }
 
     ///Centers module icons in collection view
