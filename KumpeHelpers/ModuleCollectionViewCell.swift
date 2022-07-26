@@ -28,7 +28,7 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.textAlignment = .center
         iv.adjustsFontSizeToFitWidth = true
-        iv.numberOfLines = 0
+        iv.numberOfLines = 2
         return iv
     }()
     let badge: BadgeSwift = {
