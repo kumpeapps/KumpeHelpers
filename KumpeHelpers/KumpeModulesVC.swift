@@ -12,10 +12,11 @@ import BadgeSwift
 
 open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    open var modules:[K_Module] = []
+    open var modules:[KModule] = []
     open var iconWidth:Int = 100
     open var cellBackgroundColor: UIColor = .clear
     open var collectionViewBackgroundColor: UIColor = .clear
+    #warning("Need to set KF icon cache")
 
     open var collectionView: UICollectionView = {
         var layout = UICollectionViewLayout()
@@ -38,6 +39,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = collectionViewBackgroundColor
         collectionView.reloadData()
+        #warning("Set KF icon cache expire")
     }
 
     open func reloadCollectionView() {
@@ -71,14 +73,14 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ModuleCollectionViewCell
         cell.watermark.isHidden = true
         cell.badge.isHidden = true
-        if module.badge.text != "" {
-            cell.badge.text = module.badge.text
-            cell.badge.badgeColor = module.badge.badgeColor
-            cell.badge.borderColor = module.badge.borderColor
-            cell.badge.cornerRadius = module.badge.cornerRadius
-            cell.badge.borderWidth = module.badge.borderWidth
-            cell.badge.textColor = module.badge.textColor
-            cell.badge.font = module.badge.font
+        if module.badgeText != "" {
+            cell.badge.text = module.badgeText
+            cell.badge.badgeColor = module.settings.badge.badgeColor
+            cell.badge.borderColor = module.settings.badge.borderColor
+            cell.badge.cornerRadius = module.settings.badge.cornerRadius
+            cell.badge.borderWidth = module.settings.badge.borderWidth
+            cell.badge.textColor = module.settings.badge.textColor
+            cell.badge.font = module.settings.badge.font
             cell.badge.isHidden = false
         }
         cell.imageView.image = module.icon
@@ -93,11 +95,11 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
                     .targetCache(ImageCache(name: "iconCache"))
                     ])
         }
-        cell.title.text = module.titleLabel.text
-        cell.title.textColor = module.titleLabel.textColor
-        cell.title.isHidden = module.titleLabel.isHidden
-        cell.title.textAlignment = module.titleLabel.textAlignment
-        cell.title.font = module.titleLabel.font
+        cell.title.text = module.title
+        cell.title.textColor = module.settings.title.textColor
+        cell.title.isHidden = module.settings.title.isHidden
+        cell.title.textAlignment = module.settings.title.textAlignment
+        cell.title.font = module.settings.title.font
         if !module.isEnabled && module.watermark != nil {
             cell.watermark.image = module.watermark!
             cell.watermark.isHidden = false
@@ -111,9 +113,9 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
         didSelectModule(module)
     }
 
-    open func didSelectModule(_ module: K_Module) {
+    open func didSelectModule(_ module: KModule) {
         guard module.isEnabled else {
-            KumpeHelpers.ShowAlert.banner(theme: .error, title: "Disabled", message: "\(module.titleLabel.text ?? "Module") is disabled.", seconds: .infinity, invokeHaptics: true)
+            KumpeHelpers.ShowAlert.banner(theme: .error, title: "Disabled", message: "\(module.title) is disabled.", seconds: .infinity, invokeHaptics: true)
             return
         }
         if module.action.contains("segue") {
@@ -123,36 +125,35 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 
 }
 
-public struct K_Module {
-    public let titleLabel: UILabel
-    let action: String
-    let icon: UIImage
-    let remoteIconUrl: URL?
-    public let badge: BadgeSwift
-    public let isEnabled: Bool
-    let watermark: UIImage?
-    public init(title: String, action: String, icon: UIImage, remoteIconURL: URL? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil) {
-        self.titleLabel = UILabel()
-        self.titleLabel.text = title
-        self.titleLabel.textAlignment = .center
-        self.titleLabel.adjustsFontSizeToFitWidth = true
-        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.titleLabel.font = UIFont(name: "Marker Felt", size: 17)!
-        self.titleLabel.textColor = .white
-        self.action = action
-        self.icon = icon
-        self.remoteIconUrl = remoteIconURL
-        self.badge = BadgeSwift()
-        self.badge.text = badgeText
-        self.badge.translatesAutoresizingMaskIntoConstraints = false
-        self.badge.badgeColor = .red
-        self.isEnabled = isEnabled
-        self.watermark = watermark
-    }
+public struct KModule {
+    public var title: String
+    public var action: String
+    public var icon: UIImage
+    public var remoteIconUrl: URL?
+    public var badgeText: String?
+    public var isEnabled: Bool
+    public var watermark: UIImage?
+    public var settings: KModule_Settings
 }
 
-public struct TitleProperties {
-    let font: UIFont
-    let color: UIColor
-    let alignment: NSTextAlignment
+public struct KModule_Settings_Badge {
+    public var badgeColor: UIColor = .red
+    public var borderColor: UIColor = .red
+    public var cornerRadius: CGFloat = -1
+    public var borderWidth: CGFloat = 0
+    public var textColor: UIColor = .white
+    public var font: UIFont = UIFont(name: "Marker Felt", size: 17)!
+    public var isHidden: Bool = false
+}
+
+public struct KModule_Settings_Title {
+    public var textColor: UIColor = .white
+    public var isHidden: Bool = false
+    public var textAlignment: NSTextAlignment = .center
+    public var font: UIFont = UIFont(name: "Helvetica", size: 14)!
+}
+
+public struct KModule_Settings {
+    public var badge: KModule_Settings_Badge
+    public var title: KModule_Settings_Title
 }
