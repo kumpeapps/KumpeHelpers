@@ -48,12 +48,6 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    open override var isSelected: Bool {
-        didSet {
-            // KumpeHelpers.DebugHelpers.notImplementedBanner()
-        }
-    }
-
     open func shake() {
         let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")
         shakeAnimation.duration = 0.05
