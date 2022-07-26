@@ -94,10 +94,10 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         watermark.alpha = 0.4
         watermark.isHidden = true
     }
-    
+
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
