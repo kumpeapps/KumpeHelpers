@@ -17,7 +17,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
     open var cellBackgroundColor: UIColor = .clear
     open var collectionViewBackgroundColor: UIColor = .clear
     open var titleColor: UIColor = .white
-    open var titleFont: UIFont = UIFont(name: "System", size: 17)!
+    open var titleFont: UIFont = UIFont(name: "Marker Felt", size: 17)!
 
     open var collectionView: UICollectionView = {
         var layout = UICollectionViewLayout()
