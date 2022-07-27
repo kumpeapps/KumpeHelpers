@@ -16,7 +16,7 @@ import SwiftMessages
 open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     ///List of Modules
-    open var modules:[KModule] = []
+    open var modules:[K_Module] = []
     ///Sets Icon Width. Default is 100
     open var iconWidth:Int = 100
     ///Sets cell background color. Default is clear
@@ -134,7 +134,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
     }
 
     ///didSelectModule is called by default when a collectionView cell is tapped. By default this method will display Access Denied message if module isEnabled=false or perform segue withIdentifier module.action if module.action contains "segue"
-    open func didSelectModule(_ module: KModule) {
+    open func didSelectModule(_ module: K_Module) {
         guard module.isEnabled else {
             KumpeHelpers.ShowAlert.centerView(theme: .error, title: "Access Denied", message: "You do not have access to \(module.title).", seconds: .infinity, invokeHaptics: true)
             return
@@ -145,11 +145,11 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
     }
 
     ///Returns KModule using given parameters and settiings. This is useful if you need custom badge or title settings that you need applied to multiple modules. Create variables for your settings and pass them to this one function instead of having to set the settings on each module individually.
-    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModule_Settings_Badge = KModule_Settings_Badge(), titleSettings: KModule_Settings_Title = KModule_Settings_Title(), watermarkSettings: KModule_Settings_Watermark = KModule_Settings_Watermark()) -> KModule {
+    public func buildModule(title: String, action: String, icon: UIImage, remoteIconURL: String? = nil, badgeText: String? = nil, isEnabled: Bool = true, watermark: UIImage? = nil, badgeSettings: KModule_Settings_Badge = KModule_Settings_Badge(), titleSettings: KModule_Settings_Title = KModule_Settings_Title(), watermarkSettings: KModule_Settings_Watermark = KModule_Settings_Watermark()) -> K_Module {
         var settingsBundle: KModule_Settings = KModule_Settings()
         settingsBundle.badge = badgeSettings
         settingsBundle.title = titleSettings
-        var module: KModule = KModule(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, watermark: watermark, isEnabled: isEnabled)
+        var module: K_Module = K_Module(title: title, action: action, icon: icon, remoteIconURL: remoteIconURL, badgeText: badgeText, watermark: watermark, isEnabled: isEnabled)
         module.settings = settingsBundle
         return module
     }
@@ -157,7 +157,7 @@ open class KumpeModulesVC: UIViewController, UICollectionViewDelegate, UICollect
 }
 
 ///Defines a module
-public struct KModule {
+public struct K_Module {
     public var title: String
     public var action: String
     public var icon: UIImage
