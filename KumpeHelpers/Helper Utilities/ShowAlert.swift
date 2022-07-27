@@ -82,10 +82,8 @@ public class ShowAlert {
 
 ///    Display Center Banner
     public static func centerView(theme: Theme = .error, title: String, message: String, seconds: Double = 10, invokeHaptics: Bool = true) {
-
         displayMessage(layout: .centeredView, showButton: false, theme: theme, alertMessage: AlertMessage.init(title: title, message: message), presentationStyle: .top, duration: .seconds(seconds: seconds), interfaceMode: .dim, invokeHaptics: invokeHaptics) { (_) in
         }
-
     }
 
 ///    Display Message View Alert

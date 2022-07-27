@@ -7,18 +7,36 @@
 //
 
 import UIKit
-#if canImport(BadgeSwift)
 import BadgeSwift
-#endif
 
 open class ModuleCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var watermark: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    #if canImport(BadgeSwift)
-    @IBOutlet weak var badge: BadgeSwift!
-    #endif
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
+    let watermark: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
+    let title: UILabel = {
+        let iv = UILabel()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.textAlignment = .center
+        iv.adjustsFontSizeToFitWidth = true
+        return iv
+    }()
+    let badge: BadgeSwift = {
+        let iv = BadgeSwift()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.badgeColor = .red
+        iv.textColor = .white
+        return iv
+    }()
 
     var isInEditingMode: Bool = false {
         didSet {
@@ -27,12 +45,6 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
             } else {
                 stopShaking()
             }
-        }
-    }
-
-    open override var isSelected: Bool {
-        didSet {
-            // KumpeHelpers.DebugHelpers.notImplementedBanner()
         }
     }
 
@@ -54,9 +66,38 @@ open class ModuleCollectionViewCell: UICollectionViewCell {
         layer.add(shakeAnimation, forKey:"shaking")
     }
 
-    func stopShaking() {
+    open func stopShaking() {
         let layer: CALayer = self.layer
         layer.removeAnimation(forKey: "shaking")
+    }
+
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(imageView)
+        contentView.addSubview(title)
+        contentView.addSubview(badge)
+        contentView.addSubview(watermark)
+        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
+        imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.8).isActive = true
+        title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        title.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        title.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        badge.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor).isActive = true
+        badge.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        badge.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        watermark.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
+        watermark.bottomAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        watermark.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
+        watermark.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
+        watermark.alpha = 0.7
+        watermark.isHidden = true
+    }
+
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
