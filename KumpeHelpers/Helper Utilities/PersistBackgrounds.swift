@@ -14,6 +14,8 @@ public class PersistBackgrounds {
 // MARK: saveImage
     public class func saveImage(_ image: UIImage, isBackground: Bool, isCustom: Bool = false, iCloud: Bool = false, iCloudContainer: String? = nil) {
 
+        Logger.log(.action, "saveImage")
+
         var imageName = "background.png"
 
         if !isBackground {
@@ -33,9 +35,15 @@ public class PersistBackgrounds {
         var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if iCloud {
-            DispatchQueue.global().async {
-                documents = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
-            }
+            
+            documents = (FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents"))!
+            Logger.log(.codeError, "documents: \(documents)")
+            let fileURL = documents.appendingPathComponent("test.txt")
+            Logger.log(.codeError, "file: \(fileURL)")
+
+            try? "Hello word".data(using: .utf8)?.write(to: fileURL)
+
+            
         }
 
         let url = documents.appendingPathComponent(imageName)
@@ -53,9 +61,11 @@ public class PersistBackgrounds {
 
 // MARK: loadImage
     public class func loadImage(isBackground: Bool, iCloud: Bool = false, iCloudContainer: String? = nil) -> UIImage? {
+
+        Logger.log(.action, "loadImage")
         
         var imageName = "background.png"
-        var documentsUrl: URL = URL(string: "")!
+        var documentsUrl: URL?
 
         if !isBackground {
             imageName = "logo.png"
@@ -69,19 +79,18 @@ public class PersistBackgrounds {
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 
         if iCloud {
-            DispatchQueue.global().async {
                 documentsUrl = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
-            }
+            
         } else if let dirPath = paths.first {
             documentsUrl = URL(fileURLWithPath: dirPath)
-            let imageUrl = documentsUrl.appendingPathComponent(imageName)
+            let imageUrl = documentsUrl!.appendingPathComponent(imageName)
             let image = UIImage(contentsOfFile: imageUrl.path)
             return image
         }
 
-        let imageUrl = documentsUrl.appendingPathComponent(imageName)
+        let imageUrl = documentsUrl!.appendingPathComponent(imageName)
         let image = UIImage(contentsOfFile: imageUrl.path)
-        let customImageUrl = documentsUrl.appendingPathComponent(customImageName)
+        let customImageUrl = documentsUrl!.appendingPathComponent(customImageName)
         let customImage = UIImage(contentsOfFile: customImageUrl.path)
     
         if customImage != nil {
