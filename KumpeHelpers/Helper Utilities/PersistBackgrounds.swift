@@ -35,15 +35,7 @@ public class PersistBackgrounds {
         var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if iCloud {
-            
             documents = (FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents"))!
-            Logger.log(.codeError, "documents: \(documents)")
-            let fileURL = documents.appendingPathComponent("test.txt")
-            Logger.log(.codeError, "file: \(fileURL)")
-
-            try? "Hello word".data(using: .utf8)?.write(to: fileURL)
-
-            
         }
 
         let url = documents.appendingPathComponent(imageName)
@@ -55,6 +47,9 @@ public class PersistBackgrounds {
 
         } catch {
             Logger.log(.error, "Unable to Write Data to Disk (\(error))")
+            if iCloud {
+                saveImage(image, isBackground: isBackground, isCustom: isCustom, iCloud: false)
+            }
         }
 
     }
@@ -79,14 +74,12 @@ public class PersistBackgrounds {
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 
         if iCloud {
-                documentsUrl = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
-            
+            documentsUrl = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
         } else if let dirPath = paths.first {
             documentsUrl = URL(fileURLWithPath: dirPath)
-            let imageUrl = documentsUrl!.appendingPathComponent(imageName)
-            let image = UIImage(contentsOfFile: imageUrl.path)
-            return image
         }
+
+        createDirIfNeeded(dirName: "\(String(describing: documentsUrl!))")
 
         let imageUrl = documentsUrl!.appendingPathComponent(imageName)
         let image = UIImage(contentsOfFile: imageUrl.path)
@@ -94,11 +87,27 @@ public class PersistBackgrounds {
         let customImage = UIImage(contentsOfFile: customImageUrl.path)
     
         if customImage != nil {
+            Logger.log(.action, "Setting Custom Image")
             return customImage
         } else if image != nil {
+            Logger.log(.action, "Setting Default Image")
             return image
         }
 
+        if iCloud {
+            return loadImage(isBackground: isBackground, iCloud: false)
+        }
+        Logger.log(.error, "No Image Found")
         return nil
     }
+
+    public class func createDirIfNeeded(dirName: String) {
+        Logger.log(.action, "creating: \(dirName)")
+            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(dirName + "/")
+            do {
+                try FileManager.default.createDirectory(atPath: dir.path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
 }
