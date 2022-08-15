@@ -33,6 +33,7 @@ s.dependency 'DeviceKit'
 s.dependency 'FetchedResultsControllerCollectionViewUpdater'
 s.dependency 'Kingfisher'
 s.dependency 'BadgeSwift'
+s.dependency 'iCloudSync'
 
 # 8
 s.source_files = "KumpeHelpers/**/*.{swift,storyboard,xib,png}"

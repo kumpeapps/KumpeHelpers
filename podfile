@@ -16,4 +16,5 @@ project 'KumpeHelpers.xcodeproj'
 	pod 'FetchedResultsControllerCollectionViewUpdater'
 	pod 'BadgeSwift'
 	pod 'Kingfisher'
+	pod 'iCloudSync'
 end

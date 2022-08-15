@@ -8,11 +8,12 @@
 //Saves/loads images to/from device. Will use this in future release so users can setup custom backgrounds/logos.
 
 import UIKit
+import iCloudSync
 
 public class PersistBackgrounds {
 
 // MARK: saveImage
-    public class func saveImage(_ image: UIImage, isBackground: Bool, isCustom: Bool = false, iCloud: Bool = false, iCloudContainer: String? = nil) {
+    public class func saveImage(_ image: UIImage, isBackground: Bool, isCustom: Bool = false, useCloud: Bool = false, iCloudContainer: String? = nil) {
 
         Logger.log(.action, "saveImage")
 
@@ -32,45 +33,46 @@ public class PersistBackgrounds {
         }
 
         // Create URL
-        var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
-        if iCloud {
-            let icloudContainer = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)
-            documents = icloudContainer?.appendingPathComponent("Documents") ?? documents
-            if !FileManager.default.fileExists(atPath: documents.path, isDirectory: nil) {
-                Logger.log(.warning, "iCloud folder does not exist, trying to create it.")
-                do {
-                    try FileManager.default.createDirectory(at: documents, withIntermediateDirectories: true, attributes: nil)
-                }
-                catch {
-                    print(error.localizedDescription)
-                }
+        if useCloud {
+            iCloud.shared.setupiCloud(iCloudContainer)
+            let cloudisAvailable: Bool = iCloud.shared.cloudAvailable
+            let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
+            guard cloudisAvailable, cloudContainerIsAvailable else {
+                saveImage(image, isBackground: isBackground, isCustom: isCustom)
+                return
             }
-        }
+            iCloud.shared.updateFiles()
+            iCloud.shared.saveAndCloseDocument(imageName, with: data, completion: {_, _, error in
+                if error != nil {
+                    saveImage(image, isBackground: isBackground, isCustom: isCustom)
+                }
+            })
+        } else {
 
-        let url = documents.appendingPathComponent(imageName)
+            let url = documents.appendingPathComponent(imageName)
 
-        do {
-            // Write to Disk
-            try data.write(to: url, options: .noFileProtection)
-            Logger.log(.action, "\(imageName) saved to \(url)")
+            do {
+                // Write to Disk
+                try data.write(to: url, options: .noFileProtection)
+                Logger.log(.action, "\(imageName) saved to \(url)")
 
-        } catch {
-            Logger.log(.error, "Unable to Write Data to Disk (\(error))")
-            if iCloud {
-                saveImage(image, isBackground: isBackground, isCustom: isCustom, iCloud: false)
+            } catch {
+                Logger.log(.error, "Unable to Write Data to Disk (\(error))")
             }
         }
 
     }
 
 // MARK: loadImage
-    public class func loadImage(isBackground: Bool, iCloud: Bool = false, iCloudContainer: String? = nil) -> UIImage? {
+    public class func loadImage(isBackground: Bool, useCloud: Bool = false, iCloudContainer: String? = nil) -> UIImage? {
 
         Logger.log(.action, "loadImage")
         
         var imageName = "background.png"
         var documentsUrl: URL?
+        var icloudImage: UIImage?
 
         if !isBackground {
             imageName = "logo.png"
@@ -83,10 +85,34 @@ public class PersistBackgrounds {
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 
-        if iCloud, let dirPath = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer){
+        if useCloud, let dirPath = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer){
             documentsUrl = dirPath.appendingPathComponent("Documents")
         } else if let dirPath = paths.first {
             documentsUrl = URL(fileURLWithPath: dirPath)
+        }
+
+        if useCloud {
+            iCloud.shared.setupiCloud(iCloudContainer)
+            let cloudisAvailable: Bool = iCloud.shared.cloudAvailable
+            let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
+            guard cloudisAvailable, cloudContainerIsAvailable else {
+                return loadImage(isBackground: isBackground)
+            }
+            iCloud.shared.updateFiles()
+            var docName = imageName
+            if iCloud.shared.fileExistInCloud(customImageName) {
+                docName = customImageName
+            }
+            guard iCloud.shared.fileExistInCloud(docName) else {
+                return loadImage(isBackground: isBackground)
+            }
+            iCloud.shared.retrieveCloudDocument(docName, completion: {
+                document, data, error in
+                if error == nil, let fileData: Data = data {
+                    icloudImage = UIImage(data: fileData)
+                }
+                }
+            )
         }
 
         let imageUrl = documentsUrl!.appendingPathComponent(imageName)
@@ -94,7 +120,9 @@ public class PersistBackgrounds {
         let customImageUrl = documentsUrl!.appendingPathComponent(customImageName)
         let customImage = UIImage(contentsOfFile: customImageUrl.path)
     
-        if customImage != nil {
+        if icloudImage != nil {
+            return icloudImage
+        } else if customImage != nil {
             Logger.log(.action, "Setting Custom Image")
             return customImage
         } else if image != nil {
@@ -102,8 +130,8 @@ public class PersistBackgrounds {
             return image
         }
 
-        if iCloud {
-            return loadImage(isBackground: isBackground, iCloud: false)
+        if useCloud {
+            return loadImage(isBackground: isBackground, useCloud: false)
         }
         Logger.log(.error, "No Image Found")
         return nil
