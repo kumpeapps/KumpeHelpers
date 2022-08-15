@@ -8,7 +8,8 @@ s.summary = "Swift Helper Files used in KumpeApps."
 #s.requires_arc = true
 
 # 2
-s.version          = ENV['LIB_VERSION'] || '4.4' #fallback to major version
+s.version          = ENV['LIB_VERSION'] || '4.5' #fallback to major 
+version
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE"}

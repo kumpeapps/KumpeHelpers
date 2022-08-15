@@ -35,14 +35,24 @@ public class PersistBackgrounds {
         var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if iCloud {
-            documents = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents") ?? documents
+            let icloudContainer = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)
+            documents = icloudContainer?.appendingPathComponent("Documents") ?? documents
+            if !FileManager.default.fileExists(atPath: documents.path, isDirectory: nil) {
+                Logger.log(.warning, "iCloud folder does not exist, trying to create it.")
+                do {
+                    try FileManager.default.createDirectory(at: documents, withIntermediateDirectories: true, attributes: nil)
+                }
+                catch {
+                    print(error.localizedDescription)
+                }
+            }
         }
 
         let url = documents.appendingPathComponent(imageName)
 
         do {
             // Write to Disk
-            try data.write(to: url)
+            try data.write(to: url, options: .noFileProtection)
             Logger.log(.action, "\(imageName) saved to \(url)")
 
         } catch {
@@ -79,8 +89,6 @@ public class PersistBackgrounds {
             documentsUrl = URL(fileURLWithPath: dirPath)
         }
 
-        createDirIfNeeded(dirName: "\(String(describing: documentsUrl!))")
-
         let imageUrl = documentsUrl!.appendingPathComponent(imageName)
         let image = UIImage(contentsOfFile: imageUrl.path)
         let customImageUrl = documentsUrl!.appendingPathComponent(customImageName)
@@ -101,13 +109,4 @@ public class PersistBackgrounds {
         return nil
     }
 
-    public class func createDirIfNeeded(dirName: String) {
-        Logger.log(.action, "creating: \(dirName)")
-            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(dirName + "/")
-            do {
-                try FileManager.default.createDirectory(atPath: dir.path, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
 }
