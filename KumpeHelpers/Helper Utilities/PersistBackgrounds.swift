@@ -35,7 +35,7 @@ public class PersistBackgrounds {
         var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         if iCloud {
-            documents = (FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents"))!
+            documents = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents") ?? documents
         }
 
         let url = documents.appendingPathComponent(imageName)
@@ -73,8 +73,8 @@ public class PersistBackgrounds {
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 
-        if iCloud {
-            documentsUrl = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
+        if iCloud, let dirPath = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer){
+            documentsUrl = dirPath.appendingPathComponent("Documents")
         } else if let dirPath = paths.first {
             documentsUrl = URL(fileURLWithPath: dirPath)
         }
