@@ -12,14 +12,8 @@ import iCloudSync
 
 public class PersistBackgrounds {
 
-// MARK: saveImage
-    public class func saveImage(_ image: UIImage, isBackground: Bool) {
-
-        var imageName = "background.png"
-
-        if !isBackground {
-            imageName = "logo.png"
-        }
+    ///Saves image to local documents
+    public class func saveImage(_ image: UIImage, imageName: String) {
 
         // Convert to Data
         if let data = image.pngData() {
@@ -38,14 +32,8 @@ public class PersistBackgrounds {
         }
     }
 
-// MARK: loadImage
-    public class func loadImage(isBackground: Bool) -> UIImage? {
-
-        var imageName = "background.png"
-
-        if !isBackground {
-            imageName = "logo.png"
-        }
+    ///Loads image from local documents
+    public class func loadImage(imageName: String) -> UIImage? {
 
       let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
 
@@ -62,11 +50,13 @@ public class PersistBackgrounds {
         return nil
     }
 
+    /// Saves image to documents in iCloud
     public class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
         var imageName = imageName
         if !imageName.contains(".") {
             imageName = "\(imageName).png"
         }
+        saveImage(image, imageName: imageName)
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         if (icloudContainerID != nil || !cloudContainerIsAvailable) {
@@ -95,7 +85,11 @@ public class PersistBackgrounds {
 
 // MARK: - UIImageView+imageFromCloud
 public extension UIImageView {
+    /// Loads image from iCloud documents
     func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil, waitForUpdate: Bool = true) {
+        if defaultImage == nil {
+            self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
+        }
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         var imageName = imageName
@@ -111,7 +105,7 @@ public extension UIImageView {
             self.image = defaultImage
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             if waitForUpdate {
                 iCloud.shared.updateFiles()
             }
@@ -127,7 +121,6 @@ public extension UIImageView {
                 self.image = defaultImage
                 return
             }
-            iCloud.shared.updateFiles()
             iCloud.shared.retrieveCloudDocument(imageName, completion: { _, data, error in
                 if error == nil, let filedata: Data = data {
                     Logger.log(.action, "using \(imageName)")
