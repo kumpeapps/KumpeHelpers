@@ -111,7 +111,7 @@ public extension UIImageView {
             self.image = defaultImage
             return
         }
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .userInitiated).async {
             if waitForUpdate {
                 iCloud.shared.updateFiles()
             }
