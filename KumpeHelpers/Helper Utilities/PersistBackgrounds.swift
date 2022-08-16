@@ -62,7 +62,7 @@ class PersistBackgrounds {
         return nil
     }
 
-    func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
+    class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
         var imageName = imageName
         if !imageName.contains(".") {
             imageName = "\(imageName).png"
