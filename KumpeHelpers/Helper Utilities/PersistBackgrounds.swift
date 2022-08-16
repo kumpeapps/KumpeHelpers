@@ -87,9 +87,6 @@ public class PersistBackgrounds {
 public extension UIImageView {
     /// Loads image from iCloud documents
     func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil, waitForUpdate: Bool = true) {
-        if defaultImage == nil {
-            self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
-        }
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         var imageName = imageName
@@ -105,7 +102,7 @@ public extension UIImageView {
             self.image = defaultImage
             return
         }
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global(qos: .background).async {
             if waitForUpdate {
                 iCloud.shared.updateFiles()
             }
@@ -114,11 +111,16 @@ public extension UIImageView {
                 imageName = "custom_\(imageName)"
                 Logger.log(.success, "custom_\(imageName) exists")
             }
+            DispatchQueue.main.async {
+                self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
+            }
             let imageExists: Bool = iCloud.shared.fileExistInCloud(imageName)
             guard imageExists else {
                 Logger.log(.error, "\(imageName) does not exist")
                 Logger.log(.success, "returning default image")
-                self.image = defaultImage
+                DispatchQueue.main.async {
+                    self.image = defaultImage
+                }
                 return
             }
             iCloud.shared.retrieveCloudDocument(imageName, completion: { _, data, error in
@@ -126,6 +128,8 @@ public extension UIImageView {
                     Logger.log(.action, "using \(imageName)")
                     self.image = UIImage(data: filedata)!
                     Logger.log(.success, "returned \(imageName)")
+                    KumpeHelpers.PersistBackgrounds.saveImage(UIImage(data: filedata)!, imageName: imageName)
+                    Logger.log(.action, "Saved image to local store for quick retrieving.")
                 }
             }
             )
