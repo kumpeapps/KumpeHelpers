@@ -86,6 +86,7 @@ public class PersistBackgrounds {
                 _, data, error in
                 if error == nil {
                     imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
+                    Logger.log(.success, "Saved \(imageName) to iCloud")
                 }
             })
         }
