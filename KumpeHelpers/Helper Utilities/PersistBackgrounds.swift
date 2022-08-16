@@ -95,7 +95,7 @@ public class PersistBackgrounds {
 
 // MARK: - UIImageView+imageFromCloud
 public extension UIImageView {
-    func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil) {
+    func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil, waitForUpdate: Bool = true) {
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         var imageName = imageName
@@ -112,7 +112,9 @@ public extension UIImageView {
             return
         }
         DispatchQueue.global().async {
-            iCloud.shared.updateFiles()
+            if waitForUpdate {
+                iCloud.shared.updateFiles()
+            }
             let customImageExists: Bool = iCloud.shared.fileExistInCloud("custom_\(imageName)")
             if customImageExists {
                 imageName = "custom_\(imageName)"
