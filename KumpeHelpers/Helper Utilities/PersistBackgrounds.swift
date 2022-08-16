@@ -90,7 +90,7 @@ class PersistBackgrounds {
 
 // MARK: - UIImageView+imageFromCloud
 extension UIImageView {
-    func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil) {
+    public func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil) {
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         if (icloudContainerID != nil || !cloudContainerIsAvailable) {
