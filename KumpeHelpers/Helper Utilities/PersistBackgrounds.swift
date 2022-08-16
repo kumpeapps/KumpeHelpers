@@ -10,10 +10,10 @@
 import UIKit
 import iCloudSync
 
-class PersistBackgrounds {
+public class PersistBackgrounds {
 
 // MARK: saveImage
-    class func saveImage(_ image: UIImage, isBackground: Bool) {
+    public class func saveImage(_ image: UIImage, isBackground: Bool) {
 
         var imageName = "background.png"
 
@@ -39,7 +39,7 @@ class PersistBackgrounds {
     }
 
 // MARK: loadImage
-    class func loadImage(isBackground: Bool) -> UIImage? {
+    public class func loadImage(isBackground: Bool) -> UIImage? {
 
         var imageName = "background.png"
 
@@ -62,7 +62,7 @@ class PersistBackgrounds {
         return nil
     }
 
-    class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
+    public class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
         var imageName = imageName
         if !imageName.contains(".") {
             imageName = "\(imageName).png"
