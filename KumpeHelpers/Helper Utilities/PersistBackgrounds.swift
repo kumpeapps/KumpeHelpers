@@ -63,6 +63,10 @@ class PersistBackgrounds {
     }
 
     func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
+        var imageName = imageName
+        if !imageName.contains(".") {
+            imageName = "\(imageName).png"
+        }
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         if (icloudContainerID != nil || !cloudContainerIsAvailable) {
@@ -89,10 +93,14 @@ class PersistBackgrounds {
 }
 
 // MARK: - UIImageView+imageFromCloud
-extension UIImageView {
-    public func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil) {
+public extension UIImageView {
+    func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil) {
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
+        var imageName = imageName
+        if !imageName.contains(".") {
+            imageName = "\(imageName).png"
+        }
         if (icloudContainerID != nil || !cloudContainerIsAvailable) {
             iCloud.shared.setupiCloud(icloudContainerID)
             Logger.log(.success, "Setup iCloud")
@@ -104,7 +112,6 @@ extension UIImageView {
         }
         DispatchQueue.global().async {
             iCloud.shared.updateFiles()
-            var imageName = imageName
             let customImageExists: Bool = iCloud.shared.fileExistInCloud("custom_\(imageName)")
             if customImageExists {
                 imageName = "custom_\(imageName)"
