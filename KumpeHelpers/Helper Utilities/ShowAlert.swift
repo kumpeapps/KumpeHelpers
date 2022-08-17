@@ -160,6 +160,7 @@ public class ShowAlert {
     public struct AlertMessage {
         let title: String
         let message: String
+        public init() { }
     }
 
 }
