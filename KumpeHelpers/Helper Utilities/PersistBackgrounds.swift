@@ -12,7 +12,7 @@ import iCloudSync
 
 public class PersistBackgrounds {
 
-    ///Saves image to local documents
+    /// Saves image to local documents
     public class func saveImage(_ image: UIImage, imageName: String) {
 
         // Convert to Data
@@ -32,7 +32,7 @@ public class PersistBackgrounds {
         }
     }
 
-    ///Loads image from local documents
+    /// Loads image from local documents
     public class func loadImage(imageName: String) -> UIImage? {
 
       let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -76,8 +76,7 @@ public class PersistBackgrounds {
         }
         DispatchQueue.global().async {
             iCloud.shared.updateFiles()
-            iCloud.shared.saveAndCloseDocument(imageName, with: image.pngData()!, completion: {
-                _, data, error in
+            iCloud.shared.saveAndCloseDocument(imageName, with: image.pngData()!, completion: { _, data, error in
                 if error == nil {
                     imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
                     Logger.log(.success, "Saved \(imageName) to iCloud")
