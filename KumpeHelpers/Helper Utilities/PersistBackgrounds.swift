@@ -76,7 +76,7 @@ public class PersistBackgrounds {
         }
         DispatchQueue.global().async {
             iCloud.shared.updateFiles()
-            iCloud.shared.saveAndCloseDocument(imageName, with: image.pngData()!, completion: { _, data, error in
+            iCloud.shared.saveAndCloseDocument(imageName, with: image.pngData()!, completion: { _, _git, error in
                 if error == nil {
                     imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
                     Logger.log(.success, "Saved \(imageName) to iCloud")
