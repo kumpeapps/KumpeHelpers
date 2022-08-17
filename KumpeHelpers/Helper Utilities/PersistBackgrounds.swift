@@ -102,7 +102,7 @@ public extension UIImageView {
         }
         guard cloudIsAvailable, cloudContainerIsAvailable else {
             Logger.log(.error, "iCloud Not Available, returning default image")
-            self.image = defaultImage
+            self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
             return
         }
         DispatchQueue.global(qos: .background).async {
