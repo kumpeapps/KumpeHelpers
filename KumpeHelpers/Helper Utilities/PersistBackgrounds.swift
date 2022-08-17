@@ -57,7 +57,7 @@ public class PersistBackgrounds {
             imageName = "\(imageName).png"
         }
         saveImage(image, imageName: imageName)
-        guard !onlyCustomToCloud || !imageName.contains("custom_") else {
+        guard !onlyCustomToCloud || imageName.contains("custom_") else {
             imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
             return
         }
