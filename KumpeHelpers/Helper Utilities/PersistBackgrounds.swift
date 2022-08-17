@@ -51,12 +51,16 @@ public class PersistBackgrounds {
     }
 
     /// Saves image to documents in iCloud
-    public class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil) {
+    public class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil, onlyCustomToCloud: Bool = true) {
         var imageName = imageName
         if !imageName.contains(".") {
             imageName = "\(imageName).png"
         }
         saveImage(image, imageName: imageName)
+        guard !onlyCustomToCloud || !imageName.contains("custom_") else {
+            imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
+            return
+        }
         let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
         let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
         if (icloudContainerID != nil || !cloudContainerIsAvailable) {
@@ -119,7 +123,7 @@ public extension UIImageView {
                 Logger.log(.error, "\(imageName) does not exist")
                 Logger.log(.success, "returning default image")
                 DispatchQueue.main.async {
-                    self.image = defaultImage
+                    self.image = defaultImage ?? KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
                 }
                 return
             }
