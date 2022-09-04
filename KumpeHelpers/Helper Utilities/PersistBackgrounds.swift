@@ -5,109 +5,138 @@
 //  Created by Justin Kumpe on 9/7/20.
 //  Copyright © 2020 Justin Kumpe. All rights reserved.
 //
-//Saves/loads images to/from device. Will use this in future release so users can setup custom backgrounds/logos.
+// Saves/loads images to/from device. Will use this in future release so users can setup custom backgrounds/logos.
 
 import UIKit
+import iCloudSync
 
 public class PersistBackgrounds {
 
-// MARK: saveImage
-    public class func saveImage(_ image: UIImage, isBackground: Bool, isCustom: Bool = false, iCloud: Bool = false, iCloudContainer: String? = nil) {
-
-        Logger.log(.action, "saveImage")
-
-        var imageName = "background.png"
-
-        if !isBackground {
-            imageName = "logo.png"
-        }
-
-        if isCustom {
-            imageName = "custom_\(imageName)"
-        }
+    /// Saves image to local documents
+    public class func saveImage(_ image: UIImage, imageName: String) {
 
         // Convert to Data
-        guard let data = image.pngData() else {
-            return
-        }
+        if let data = image.pngData() {
+            // Create URL
+            let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let url = documents.appendingPathComponent(imageName)
 
-        // Create URL
-        var documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            do {
+                // Write to Disk
+                try data.write(to: url)
+                Logger.log(.action, "\(imageName) saved to \(url)")
 
-        if iCloud {
-            documents = (FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)?.appendingPathComponent("Documents"))!
-        }
-
-        let url = documents.appendingPathComponent(imageName)
-
-        do {
-            // Write to Disk
-            try data.write(to: url)
-            Logger.log(.action, "\(imageName) saved to \(url)")
-
-        } catch {
-            Logger.log(.error, "Unable to Write Data to Disk (\(error))")
-            if iCloud {
-                saveImage(image, isBackground: isBackground, isCustom: isCustom, iCloud: false)
+            } catch {
+            print("Unable to Write Data to Disk (\(error))")
             }
         }
-
     }
 
-// MARK: loadImage
-    public class func loadImage(isBackground: Bool, iCloud: Bool = false, iCloudContainer: String? = nil) -> UIImage? {
+    /// Loads image from local documents
+    public class func loadImage(imageName: String) -> UIImage? {
 
-        Logger.log(.action, "loadImage")
-        
-        var imageName = "background.png"
-        var documentsUrl: URL?
-
-        if !isBackground {
-            imageName = "logo.png"
-        }
-
-        let customImageName = "custom_\(imageName)"
-
-        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+      let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
 
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
         let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
 
-        if iCloud {
-            documentsUrl = FileManager.default.url(forUbiquityContainerIdentifier: iCloudContainer)!.appendingPathComponent("Documents")
-        } else if let dirPath = paths.first {
-            documentsUrl = URL(fileURLWithPath: dirPath)
-        }
-
-        createDirIfNeeded(dirName: "\(String(describing: documentsUrl!))")
-
-        let imageUrl = documentsUrl!.appendingPathComponent(imageName)
-        let image = UIImage(contentsOfFile: imageUrl.path)
-        let customImageUrl = documentsUrl!.appendingPathComponent(customImageName)
-        let customImage = UIImage(contentsOfFile: customImageUrl.path)
-    
-        if customImage != nil {
-            Logger.log(.action, "Setting Custom Image")
-            return customImage
-        } else if image != nil {
-            Logger.log(.action, "Setting Default Image")
+        if let dirPath = paths.first {
+            let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(imageName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
             return image
+
         }
 
-        if iCloud {
-            return loadImage(isBackground: isBackground, iCloud: false)
-        }
-        Logger.log(.error, "No Image Found")
         return nil
     }
 
-    public class func createDirIfNeeded(dirName: String) {
-        Logger.log(.action, "creating: \(dirName)")
-            let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(dirName + "/")
-            do {
-                try FileManager.default.createDirectory(atPath: dir.path, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print(error.localizedDescription)
-            }
+    /// Saves image to documents in iCloud
+    public class func imageToiCloud(image: UIImage, imageName: String, icloudContainerID: String? = nil, imageView: UIImageView? = nil, onlyCustomToCloud: Bool = true) {
+        var imageName = imageName
+        if !imageName.contains(".") {
+            imageName = "\(imageName).png"
         }
+        saveImage(image, imageName: imageName)
+        guard !onlyCustomToCloud || imageName.contains("custom_") else {
+            imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
+            return
+        }
+        let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
+        let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
+        if (icloudContainerID != nil || !cloudContainerIsAvailable) {
+            iCloud.shared.setupiCloud(icloudContainerID)
+            Logger.log(.success, "Setup iCloud")
+        }
+        guard cloudIsAvailable, cloudContainerIsAvailable else {
+            Logger.log(.error, "iCloud Not Available")
+            if imageView != nil {
+                imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
+            }
+            return
+        }
+        DispatchQueue.global().async {
+            iCloud.shared.updateFiles()
+            iCloud.shared.saveAndCloseDocument(imageName, with: image.pngData()!, completion: { _, _, error in
+                if error == nil {
+                    imageView?.imageFromiCloud(imageName: imageName, defaultImage: image, icloudContainerID: icloudContainerID)
+                    Logger.log(.success, "Saved \(imageName) to iCloud")
+                }
+            })
+        }
+    }
+}
+
+// MARK: - UIImageView+imageFromCloud
+public extension UIImageView {
+    /// Loads image from iCloud documents
+    func imageFromiCloud(imageName: String, defaultImage:UIImage? = nil, icloudContainerID: String? = nil, waitForUpdate: Bool = true) {
+        let cloudIsAvailable: Bool = iCloud.shared.cloudAvailable
+        let cloudContainerIsAvailable: Bool = iCloud.shared.ubiquityContainerAvailable
+        var imageName = imageName
+        if !imageName.contains(".") {
+            imageName = "\(imageName).png"
+        }
+        if (icloudContainerID != nil || !cloudContainerIsAvailable) {
+            iCloud.shared.setupiCloud(icloudContainerID)
+            Logger.log(.success, "Setup iCloud")
+        }
+        guard cloudIsAvailable, cloudContainerIsAvailable else {
+            Logger.log(.error, "iCloud Not Available, returning default image")
+            self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
+            return
+        }
+        DispatchQueue.global(qos: .background).async {
+            if waitForUpdate {
+                iCloud.shared.updateFiles()
+            }
+            let customImageExists: Bool = iCloud.shared.fileExistInCloud("custom_\(imageName)")
+            if customImageExists {
+                imageName = "custom_\(imageName)"
+                Logger.log(.success, "custom_\(imageName) exists")
+            }
+            DispatchQueue.main.async {
+                self.image = KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
+            }
+            let imageExists: Bool = iCloud.shared.fileExistInCloud(imageName)
+            guard imageExists else {
+                Logger.log(.error, "\(imageName) does not exist")
+                Logger.log(.success, "returning default image")
+                DispatchQueue.main.async {
+                    self.image = defaultImage ?? KumpeHelpers.PersistBackgrounds.loadImage(imageName: imageName)
+                }
+                return
+            }
+            iCloud.shared.retrieveCloudDocument(imageName, completion: { _, data, error in
+                if error == nil, let filedata: Data = data {
+                    Logger.log(.action, "using \(imageName)")
+                    self.image = UIImage(data: filedata)!
+                    Logger.log(.success, "returned \(imageName)")
+                    KumpeHelpers.PersistBackgrounds.saveImage(UIImage(data: filedata)!, imageName: imageName)
+                    Logger.log(.action, "Saved image to local store for quick retrieving.")
+                }
+            }
+            )
+
+        }
+    }
 }
