@@ -16,6 +16,12 @@ extension KumpeAPIClient {
 
     // MARK: apiSync
     //    Get function to sync data from API to CoreData
+    @available(*, deprecated, message: "Completion Handler changed to (success,error,httpStatusResponse)")
+    open class func apiSync(silent: Bool = false, apiUrl: String, parameters: [String:Any], jsonArrayName: String, coreDataEntityName: String, invalidApiKeyStatusCode: Int = 401, headers: HTTPHeaders = [:], completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+        apiSync(silent: silent, apiUrl: apiUrl, parameters: parameters, jsonArrayName: jsonArrayName, coreDataEntityName: coreDataEntityName, invalidApiKeyStatusCode: invalidApiKeyStatusCode, headers: headers) { success, error, _ in
+            completion(success,error)
+        }
+    }
     open class func apiSync(silent: Bool = false, apiUrl: String, parameters: [String:Any], jsonArrayName: String, coreDataEntityName: String, invalidApiKeyStatusCode: Int = 401, headers: HTTPHeaders = [:], completion: @escaping (_ success: Bool, _ error: String?, _ httpStatusResponse: HTTP_Status_Response) -> Void) {
 
             if !silent {

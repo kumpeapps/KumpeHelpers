@@ -11,6 +11,12 @@ import UIKit
 
 extension KumpeAPIClient {
     // MARK: Task For Get
+    @available(*, deprecated, message: "Completion Handler changed to (response,error,httpStatusResponse)")
+    open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 401, debug: Bool = false, headers: HTTPHeaders = [:], successCode: Int = 200, completion: @escaping (_ response: ResponseType?, _ error: String?) -> Void) {
+        taskForGet(apiUrl: apiUrl, httpMethod: httpMethod, responseType: responseType, parameters: parameters, invalidApiKeyStatusCode: invalidApiKeyStatusCode, debug: debug, headers: headers, successCode: successCode) { response, error, _ in
+            completion(response,error)
+        }
+    }
     open class func taskForGet<ResponseType: Decodable>(apiUrl: String, httpMethod: HTTPMethod = .get, responseType: ResponseType.Type, parameters: [String:String], invalidApiKeyStatusCode: Int = 401, debug: Bool = false, headers: HTTPHeaders = [:], successCode: Int = 200, completion: @escaping (_ response: ResponseType?, _ error: String?, _ httpStatusResponse: HTTP_Status_Response) -> Void) {
             let url = URL(string: apiUrl)!
         Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.default, headers: headers) .responseSwiftyJSON { dataResponse in

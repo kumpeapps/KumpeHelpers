@@ -41,6 +41,12 @@ open class KumpeAPIClient {
     }
 
     // MARK: - apiMethod
+    @available(*, deprecated, message: "Completion Handler changed to (success,error,httpStatusResponse)")
+    open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 401, postToBody: Bool = false, headers:HTTPHeaders = [:], completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+        apiMethod(silent: silent, apiUrl: apiUrl, httpMethod: httpMethod, parameters: parameters, blockInterface: blockInterface, invalidApiKeyStatusCode: invalidApiKeyStatusCode, postToBody: postToBody, headers: headers) { success, error, _ in
+            completion(success,error)
+        }
+    }
     open class func apiMethod(silent: Bool = false, apiUrl: String, httpMethod: HTTPMethod, parameters: [String:Any], blockInterface: Bool = false, invalidApiKeyStatusCode: Int = 401, postToBody: Bool = false, headers:HTTPHeaders = [:], completion: @escaping (_ success: Bool, _ error: String?, _ httpStatusResponse: HTTP_Status_Response) -> Void) {
                 let url = URL(string: apiUrl)!
                 let alertId = "api_\(Int.random(in: 0..<10))"
