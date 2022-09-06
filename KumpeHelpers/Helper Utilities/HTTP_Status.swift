@@ -8,8 +8,8 @@
 import UIKit
 
 public struct HTTP_Status_Response {
-    let statusCode: Int
-    var statusCategory: HTTP_Status_Category {
+    public let statusCode: Int
+    public var statusCategory: HTTP_Status_Category {
         switch statusCode {
         case 100...199:
             return .Informational
@@ -25,7 +25,7 @@ public struct HTTP_Status_Response {
             return .Unknown
         }
     }
-    var statusDescription: String {
+    public var statusDescription: String {
         switch statusCode {
         case 100:
             return "Continue"
