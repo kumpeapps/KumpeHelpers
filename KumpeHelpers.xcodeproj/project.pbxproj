@@ -34,6 +34,7 @@
 		0F70E4A22533EE1900062A8C /* KumpeModulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */; };
 		0F90AEF1287903D40010FC47 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90AEF0287903D40010FC47 /* Share.swift */; };
 		0F9F3A352554DE2B00829133 /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F3A342554DE2B00829133 /* FadeSegue.swift */; };
+		0FA14FE228C66D9200460ACD /* HTTP_Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA14FE128C66D9200460ACD /* HTTP_Status.swift */; };
 		0FC6AD7D288E198A00A49730 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6AD7C288E198A00A49730 /* ModuleCollectionViewCell.swift */; };
 		0FD248CF25AB856B009E0CCB /* URL+parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD248CE25AB856B009E0CCB /* URL+parameters.swift */; };
 		0FF961CB253A974600F6FC5E /* KumpeAPNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */; };
@@ -81,6 +82,7 @@
 		0F70E4A12533EE1900062A8C /* KumpeModulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeModulesVC.swift; sourceTree = "<group>"; };
 		0F90AEF0287903D40010FC47 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		0F9F3A342554DE2B00829133 /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
+		0FA14FE128C66D9200460ACD /* HTTP_Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP_Status.swift; sourceTree = "<group>"; };
 		0FC6AD7C288E198A00A49730 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FD248CE25AB856B009E0CCB /* URL+parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+parameters.swift"; sourceTree = "<group>"; };
 		0FF961CA253A974600F6FC5E /* KumpeAPNS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumpeAPNS.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				0F9F3A342554DE2B00829133 /* FadeSegue.swift */,
 				0FD248CE25AB856B009E0CCB /* URL+parameters.swift */,
 				0F90AEF0287903D40010FC47 /* Share.swift */,
+				0FA14FE128C66D9200460ACD /* HTTP_Status.swift */,
 			);
 			path = "Helper Utilities";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				0F330A9A2533713A00A0CFF1 /* KumpeAPIClient+GET.swift in Sources */,
 				0F330A88253366B000A0CFF1 /* RotateImage.swift in Sources */,
 				0F330A7E2532724500A0CFF1 /* DataController.swift in Sources */,
+				0FA14FE228C66D9200460ACD /* HTTP_Status.swift in Sources */,
 				0F70E4A22533EE1900062A8C /* KumpeModulesVC.swift in Sources */,
 				0F70E4812533DDCB00062A8C /* KumpeFetchedResultsControllerDelegate.swift in Sources */,
 				0F330A3425325E6300A0CFF1 /* ManagedAppConfigLib.swift in Sources */,

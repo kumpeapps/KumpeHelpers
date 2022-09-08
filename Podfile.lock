@@ -9,7 +9,7 @@ PODS:
   - FetchedResultsControllerCollectionViewUpdater (0.1.0)
   - Haptico (1.1.1)
   - iCloudSync (8.0.21)
-  - Kingfisher (7.3.0)
+  - Kingfisher (7.3.2)
   - ReachabilitySwift (5.0.0)
   - ShipBookSDK (1.1.19)
   - SwiftMessages (9.0.6):
@@ -58,7 +58,7 @@ SPEC CHECKSUMS:
   FetchedResultsControllerCollectionViewUpdater: 10e88db1403d8d6e17a5d323efe1d1fd31dd0e1c
   Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
   iCloudSync: 9db5fec951673172886bd75203971c003b02e988
-  Kingfisher: cdb1189a9223b1bc028816bd47c8b8101a58831c
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   ShipBookSDK: 2086b80c9beef01f44a28390012223ee863410eb
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
